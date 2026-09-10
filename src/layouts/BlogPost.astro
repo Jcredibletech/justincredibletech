@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import { readingTime } from '../utils/readingTime';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const minutes = readingTime(post.body ?? '');
+const date = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  type="article"
+  pubDate={post.data.pubDate}
+>
+  <article class="prose">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{date}</time>
+        <span aria-hidden="true">·</span>
+        <span>{minutes}</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      <p class="lede muted">{post.data.description}</p>
+      {post.data.tags.length > 0 && (
+        <ul class="tag-list" aria-label="Tags">
+          {post.data.tags.map((tag) => (
+            <li><span class="tag">{tag}</span></li>
+          ))}
+        </ul>
+      )}
+    </header>
+    <div class="post-body">
+      <slot />
+    </div>
+    <p class="back">
+      <a href="/blog/">← All posts</a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .post-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .lede {
+    margin: 0 0 var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .back {
+    margin-top: var(--space-xl);
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  .back a {
+    text-decoration: none;
+  }
+</style>

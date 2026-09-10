@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE_TAGLINE, SITE_HANDLE } from '../consts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const featured = posts.filter((p) => p.data.featured);
+const featuredList = featured.length > 0 ? featured.slice(0, 3) : posts.slice(0, 3);
+---
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow muted">Welcome to JustinCredibleTech</p>
+    <h1>Tech that actually ships — explained like a human.</h1>
+    <p class="tagline">{SITE_TAGLINE}</p>
+    <p class="blurb">
+      I’m Justin McBroom ({SITE_HANDLE}). This is the long-form companion to the short drops:
+      consumer gadgets, space missions, and science that bumps into tech — Tesla, SpaceX, xAI,
+      Starlink, EVs, and whatever lands next. Lighthearted. Accurate. No politics.
+    </p>
+    <p>
+      <a class="btn" href="/blog/">Browse the blog</a>
+      <a class="btn btn-ghost" href="/about/" style="margin-left: 0.5rem;">About Justin</a>
+    </p>
+  </section>
+
+  <section aria-labelledby="featured-heading">
+    <h2 id="featured-heading" class="section-title">Featured posts</h2>
+    <div class="card-grid featured-grid">
+      {featuredList.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+</style>

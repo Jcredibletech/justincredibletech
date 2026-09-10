@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { readingTime } from '../utils/readingTime';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  heading?: 'h2' | 'h3';
+}
+
+const { post, heading: Heading = 'h2' } = Astro.props;
+const minutes = readingTime(post.body ?? '');
+const date = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+<a class="post-card" href={`/blog/${post.id}/`}>
+  <div class="post-meta">
+    <time datetime={post.data.pubDate.toISOString()}>{date}</time>
+    <span aria-hidden="true">·</span>
+    <span>{minutes}</span>
+  </div>
+  <Heading>{post.data.title}</Heading>
+  <p>{post.data.description}</p>
+  {post.data.tags.length > 0 && (
+    <ul class="tag-list" aria-label="Tags">
+      {post.data.tags.slice(0, 4).map((tag) => (
+        <li><span class="tag">{tag}</span></li>
+      ))}
+    </ul>
+  )}
+</a>

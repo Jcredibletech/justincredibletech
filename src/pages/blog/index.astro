@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+<BaseLayout
+  title="Blog"
+  description="All JustinCredibleTech posts — tech drops, space, and science explained clearly."
+>
+  <header class="page-header">
+    <h1>Blog</h1>
+    <p class="muted">Newest first. Grab the <a href="/rss.xml">RSS feed</a> if that’s your vibe.</p>
+  </header>
+
+  <div class="card-grid">
+    {posts.map((post) => (
+      <PostCard post={post} heading="h2" />
+    ))}
+  </div>
+</BaseLayout>
