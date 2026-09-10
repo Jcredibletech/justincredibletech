@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/paths';
+
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -9,9 +11,9 @@ const year = new Date().getFullYear();
       <a href="https://x.com/JCredibleTech" rel="noopener noreferrer">@JCredibleTech</a>
     </p>
     <nav aria-label="Footer">
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
-      <a href="/rss.xml">RSS</a>
+      <a href={withBase('blog')}>Blog</a>
+      <a href={withBase('about')}>About</a>
+      <a href={withBase('rss.xml')}>RSS</a>
     </nav>
   </div>
 </footer>

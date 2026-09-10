@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 ---
 <BaseLayout
   title="About"
@@ -55,8 +56,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
 
     <p>
-      Glad you’re here. Start with the <a href="/blog/">latest posts</a>, or grab the
-      <a href="/rss.xml">RSS feed</a> and read on your own schedule.
+      Glad you’re here. Start with the <a href={withBase("blog/")}>latest posts</a>, or grab the
+      <a href={withBase("rss.xml")}>RSS feed</a> and read on your own schedule.
     </p>
   </article>
 </BaseLayout>

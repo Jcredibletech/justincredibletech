@@ -1,5 +1,6 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { withBase } from '../utils/paths';
 
 interface Props {
   title?: string;
@@ -12,7 +13,7 @@ interface Props {
 const {
   title,
   description = SITE_DESCRIPTION,
-  image = '/og-default.png',
+  image = withBase('og-default.png'),
   type = 'website',
   pubDate,
 } = Astro.props;
@@ -23,9 +24,9 @@ const ogImage = new URL(image, Astro.site);
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href={withBase('favicon-32.png')} />
+<link rel="icon" type="image/png" sizes="16x16" href={withBase('favicon-16.png')} />
+<link rel="apple-touch-icon" href={withBase('apple-touch-icon.png')} />
 <link rel="canonical" href={canonicalURL} />
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
@@ -46,5 +47,5 @@ const ogImage = new URL(image, Astro.site);
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
-<link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} RSS`} href="/rss.xml" />
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} RSS`} href={withBase('rss.xml')} />
+<link rel="sitemap" href={withBase('sitemap-index.xml')} />

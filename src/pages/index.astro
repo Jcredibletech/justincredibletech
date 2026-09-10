@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { SITE_TAGLINE, SITE_HANDLE } from '../consts';
+import { withBase } from '../utils/paths';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -22,8 +23,8 @@ const featuredList = featured.length > 0 ? featured.slice(0, 3) : posts.slice(0,
       Starlink, EVs, and whatever lands next. Lighthearted. Accurate. No politics.
     </p>
     <p>
-      <a class="btn" href="/blog/">Browse the blog</a>
-      <a class="btn btn-ghost" href="/about/" style="margin-left: 0.5rem;">About Justin</a>
+      <a class="btn" href={withBase("blog/")}>Browse the blog</a>
+      <a class="btn btn-ghost" href={withBase("about/")} style="margin-left: 0.5rem;">About Justin</a>
     </p>
   </section>
 

@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import { readingTime } from '../utils/readingTime';
+import { withBase } from '../utils/paths';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -43,7 +44,7 @@ const date = post.data.pubDate.toLocaleDateString('en-US', {
       <slot />
     </div>
     <p class="back">
-      <a href="/blog/">← All posts</a>
+      <a href={withBase("blog/")}>← All posts</a>
     </p>
   </article>
 </BaseLayout>
