@@ -1,5 +1,5 @@
 ---
-title: "Tesla's Cybercab Is Leaving Austin, and Dallas Is Next"
+title: "Tesla's Cybercab Expands Beyond Austin, and Dallas Is Next"
 description: "On its Q3 earnings call, Tesla said its two-seat Cybercab robotaxi expands to Dallas next month, with more cities and fleet sales by the end of 2026. NHTSA is still reviewing whether a car with no brake pedal or mirrors meets federal rules."
 pubDate: 2026-10-23
 tags: ["Tesla", "Cybercab", "Robotaxi", "Self-Driving", "Waymo", "EV"]
@@ -8,7 +8,7 @@ featured: true
 
 <video controls playsinline preload="metadata" src="/justincredibletech/videos/tesla-cybercab-dallas-expansion.mp4" poster="/justincredibletech/videos/tesla-cybercab-dallas-expansion.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
 
-The shiny gold robotaxi with no steering wheel is about to get a passport. Well, a Texas driver's license, anyway.
+The shiny gold robotaxi with no steering wheel is staying in Austin and adding a second Texas city.
 
 On Tesla's **Q3 2026 earnings call on Wednesday, October 21**, the company said its two-seat **Cybercab** will expand beyond Austin, starting with **Dallas next month** and spreading to **other cities by the end of this year**. Cybercab service first went live in Austin on **September 3**.
 
