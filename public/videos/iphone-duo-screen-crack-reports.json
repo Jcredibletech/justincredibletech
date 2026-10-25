@@ -1,0 +1,62 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/iphone-duo-screen-crack-reports.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": false,
+  "duration": 45.53,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.3,
+      "idx": 0,
+      "vis_end": 5.58,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.58,
+      "end": 14.65,
+      "idx": 1,
+      "vis_end": 14.93,
+      "start_vis": 5.58
+    },
+    {
+      "kind": "beat",
+      "start": 14.93,
+      "end": 22.9,
+      "idx": 2,
+      "vis_end": 23.18,
+      "start_vis": 14.93
+    },
+    {
+      "kind": "beat",
+      "start": 23.18,
+      "end": 30.91,
+      "idx": 3,
+      "vis_end": 31.19,
+      "start_vis": 23.18
+    },
+    {
+      "kind": "beat",
+      "start": 31.19,
+      "end": 38.0,
+      "idx": 4,
+      "vis_end": 38.28,
+      "start_vis": 31.19
+    },
+    {
+      "kind": "outro",
+      "start": 38.28,
+      "end": 44.36,
+      "idx": 5,
+      "vis_end": 45.56,
+      "start_vis": 38.28
+    }
+  ]
+}
