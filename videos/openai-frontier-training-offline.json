@@ -1,0 +1,62 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/openai-frontier-training-offline.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 49.7,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.21,
+      "idx": 0,
+      "vis_end": 5.49,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.49,
+      "end": 13.87,
+      "idx": 1,
+      "vis_end": 14.15,
+      "start_vis": 5.49
+    },
+    {
+      "kind": "beat",
+      "start": 14.15,
+      "end": 24.07,
+      "idx": 2,
+      "vis_end": 24.35,
+      "start_vis": 14.15
+    },
+    {
+      "kind": "beat",
+      "start": 24.35,
+      "end": 34.09,
+      "idx": 3,
+      "vis_end": 34.37,
+      "start_vis": 24.35
+    },
+    {
+      "kind": "beat",
+      "start": 34.37,
+      "end": 42.33,
+      "idx": 4,
+      "vis_end": 42.61,
+      "start_vis": 34.37
+    },
+    {
+      "kind": "outro",
+      "start": 42.61,
+      "end": 48.55,
+      "idx": 5,
+      "vis_end": 49.75,
+      "start_vis": 42.61
+    }
+  ]
+}
