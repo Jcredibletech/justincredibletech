@@ -1,0 +1,62 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/openai-ai-eth-proof-claims.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": true,
+  "duration": 53.93,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.1,
+      "idx": 0,
+      "vis_end": 8.38,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 8.38,
+      "end": 21.48,
+      "idx": 1,
+      "vis_end": 21.76,
+      "start_vis": 8.38
+    },
+    {
+      "kind": "beat",
+      "start": 21.76,
+      "end": 30.25,
+      "idx": 2,
+      "vis_end": 30.53,
+      "start_vis": 21.76
+    },
+    {
+      "kind": "beat",
+      "start": 30.53,
+      "end": 39.53,
+      "idx": 3,
+      "vis_end": 39.81,
+      "start_vis": 30.53
+    },
+    {
+      "kind": "beat",
+      "start": 39.81,
+      "end": 45.77,
+      "idx": 4,
+      "vis_end": 46.05,
+      "start_vis": 39.81
+    },
+    {
+      "kind": "outro",
+      "start": 46.05,
+      "end": 52.82,
+      "idx": 5,
+      "vis_end": 54.02,
+      "start_vis": 46.05
+    }
+  ]
+}
