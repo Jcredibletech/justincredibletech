@@ -1,0 +1,62 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/discord-messages-google-search.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 49.35,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 6.01,
+      "idx": 0,
+      "vis_end": 6.29,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.29,
+      "end": 15.57,
+      "idx": 1,
+      "vis_end": 15.85,
+      "start_vis": 6.29
+    },
+    {
+      "kind": "beat",
+      "start": 15.85,
+      "end": 24.82,
+      "idx": 2,
+      "vis_end": 25.1,
+      "start_vis": 15.85
+    },
+    {
+      "kind": "beat",
+      "start": 25.1,
+      "end": 33.99,
+      "idx": 3,
+      "vis_end": 34.27,
+      "start_vis": 25.1
+    },
+    {
+      "kind": "beat",
+      "start": 34.27,
+      "end": 41.92,
+      "idx": 4,
+      "vis_end": 42.2,
+      "start_vis": 34.27
+    },
+    {
+      "kind": "outro",
+      "start": 42.2,
+      "end": 48.23,
+      "idx": 5,
+      "vis_end": 49.43,
+      "start_vis": 42.2
+    }
+  ]
+}
