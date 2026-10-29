@@ -8,7 +8,7 @@ featured: true
 
 <video controls playsinline preload="metadata" src="/justincredibletech/videos/google-gemini-4-carbon.mp4" poster="/justincredibletech/videos/google-gemini-4-carbon.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
 
-88.2%. That's the score Google says its newest AI model hit on SEC-bench Pro, a test of finding real security flaws buried in real-world software. The model is called Gemini 4 Carbon, Google announced it on October 28, and it's the most talked-about AI launch of the day on X and Hacker News.
+88.2%. That's the score Google says its newest AI model hit on SEC-bench Pro, a test of finding real security flaws buried in real-world software. The model is called Gemini 4 Carbon, Google announced it on October 28, and it was one of the most talked-about tech stories of the day on X and Hacker News.
 
 There's one big asterisk, though: almost nobody can use it yet.
 
