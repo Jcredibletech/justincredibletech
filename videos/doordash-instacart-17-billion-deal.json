@@ -1,0 +1,12 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/doordash-instacart-17-billion-deal.mp4",
+  "voice": "elevenlabs:Noah",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 47.13,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac"
+}
