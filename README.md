@@ -60,3 +60,6 @@ Any other static host (GitHub Pages with an Actions build, S3+CloudFront, etc.) 
 ## License / content
 
 Site code is yours to deploy. Post content © JustinCredibleTech unless noted.
+
+## Social icons
+Footer follow icons come from `SOCIALS` in `src/consts.ts`. To add a new social, add one line there; the icon glyphs (official Simple Icons, CC0) live in `src/utils/socialIcons.ts`. Keep brand logos unmodified and equal in size.

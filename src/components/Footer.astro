@@ -1,7 +1,8 @@
 ---
 import { SECTIONS } from '../utils/posts';
 import { withBase } from '../utils/paths';
-import { SITE_X, SITE_TIKTOK, SITE_DESCRIPTION } from '../consts';
+import { SOCIALS, SITE_DESCRIPTION } from '../consts';
+import { SOCIAL_ICONS } from '../utils/socialIcons';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -16,12 +17,13 @@ const year = new Date().getFullYear();
     </nav>
     <nav aria-label="More">
       <h4>Follow</h4>
-      <ul>
-        <li><a href={SITE_X} rel="noopener">X · @JCredibleTech</a></li>
-        <li><a href={SITE_TIKTOK} rel="noopener">TikTok</a></li>
-        <li><a href={withBase('rss.xml')}>RSS feed</a></li>
-        <li><a href={withBase('about/')}>About</a></li>
+      <ul class="social-icons">
+        {SOCIALS.map((s) => (
+          <li><a href={s.url} rel="noopener" target="_blank" aria-label={`Follow on ${s.name}`} title={`${s.name} · ${s.label}`}><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={SOCIAL_ICONS[s.icon]} fill="currentColor" /></svg></a></li>
+        ))}
+        <li><a href={withBase('rss.xml')} aria-label="RSS feed" title="RSS feed" class="rss"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={SOCIAL_ICONS.rss} fill="currentColor" /></svg></a></li>
       </ul>
+      <ul class="follow-more"><li><a href={withBase('about/')}>About</a></li></ul>
     </nav>
   </div>
   <div class="container foot-base">© {year} JustinCredibleTech. Independent coverage; no politics.</div>
@@ -38,4 +40,9 @@ const year = new Date().getFullYear();
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
   a { color: #d8d8dc; text-decoration: none; font: 500 .92rem/1.2 var(--font-sans); } a:hover { color: #fff; }
   .foot-base { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c2e34; color: #8a8d95; font: 500 .8rem/1.4 var(--font-sans); }
+  .social-icons { display: flex; flex-wrap: wrap; gap: .7rem; }
+  .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1a2540; color: #fff; transition: background .15s; }
+  .social-icons a:hover { background: #26345a; }
+  .social-icons a.rss { color: #FFA500; }
+  .follow-more { margin-top: 1rem; }
 </style>
