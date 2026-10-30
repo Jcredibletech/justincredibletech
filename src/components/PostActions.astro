@@ -1,0 +1,132 @@
+---
+// Reactions (thumbs up/down with shared counts) + share row, shown at the end of every post.
+// Votes go through a guarded Supabase RPC (public.set_reaction): one row per browser per post,
+// hashed-IP rate limits, no raw IPs stored. Only the public publishable key is used here.
+// If the API is unreachable the bar simply shows no counts; the post is unaffected.
+import { SOCIAL_ICONS } from '../utils/socialIcons';
+import { REACTIONS_API, REACTIONS_KEY } from '../consts';
+
+interface Props { slug: string; title: string; url: string; }
+const { slug, title, url } = Astro.props;
+const withUtm = (medium: string) => `${url}?utm_source=share&utm_medium=${medium}`;
+const e = encodeURIComponent;
+const shares = [
+  { id: 'x', name: 'X', href: `https://x.com/intent/post?text=${e(title)}&url=${e(withUtm('x'))}`, icon: SOCIAL_ICONS.x },
+  { id: 'facebook', name: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${e(withUtm('facebook'))}`, icon: SOCIAL_ICONS.facebook },
+  { id: 'linkedin', name: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${e(withUtm('linkedin'))}`, icon: '' },
+  { id: 'reddit', name: 'Reddit', href: `https://www.reddit.com/submit?url=${e(withUtm('reddit'))}&title=${e(title)}`, icon: SOCIAL_ICONS.reddit },
+  { id: 'whatsapp', name: 'WhatsApp', href: `https://wa.me/?text=${e(`${title} ${withUtm('whatsapp')}`)}`, icon: SOCIAL_ICONS.whatsapp },
+];
+const mailto = `mailto:?subject=${e(title)}&body=${e(`${title}\n\n${withUtm('email')}`)}`;
+---
+<section class="post-actions" id="reactions" aria-label="Reactions and sharing" data-slug={slug} data-api={REACTIONS_API} data-key={REACTIONS_KEY}>
+  <div class="pa-react">
+    <p class="pa-q" id="pa-q">Was this helpful?</p>
+    <div class="pa-votes" role="group" aria-labelledby="pa-q">
+      <button type="button" class="pa-vote" data-v="1" aria-pressed="false" aria-label="Yes, thumbs up">
+        <span class="pa-emoji" aria-hidden="true">👍</span><span class="pa-count" data-c="up" aria-live="polite"></span>
+      </button>
+      <button type="button" class="pa-vote" data-v="-1" aria-pressed="false" aria-label="No, thumbs down">
+        <span class="pa-emoji" aria-hidden="true">👎</span><span class="pa-count" data-c="down" aria-live="polite"></span>
+      </button>
+    </div>
+    <p class="pa-note" aria-live="polite"></p>
+  </div>
+  <div class="pa-share">
+    <p class="pa-q">Share this story</p>
+    <ul>
+      <li class="pa-native" hidden><button type="button" class="pa-btn" data-native aria-label="Share" title="Share"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>
+      {shares.map((s) => (
+        <li><a class={`pa-btn pa-${s.id}`} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${s.name}`} title={`Share on ${s.name}`}>
+          {s.icon ? <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d={s.icon} fill="currentColor" /></svg> : <span class="pa-txt" aria-hidden="true">in</span>}
+        </a></li>
+      ))}
+      <li><a class="pa-btn" href={mailto} aria-label="Share by email" title="Share by email"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a></li>
+      <li><button type="button" class="pa-btn" data-copy={url} aria-label="Copy link" title="Copy link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></li>
+    </ul>
+  </div>
+  <div class="pa-toast" role="status" aria-live="polite" hidden>Copied!</div>
+</section>
+
+<script is:inline>
+(function () {
+  var root = document.getElementById('reactions'); if (!root) return;
+  var slug = root.dataset.slug, api = root.dataset.api, key = root.dataset.key;
+  var LS = 'jct-react:' + slug, btns = root.querySelectorAll('.pa-vote'), note = root.querySelector('.pa-note');
+  var mine = 0; try { mine = parseInt(localStorage.getItem(LS) || '0', 10) || 0; } catch (e) {}
+  var counts = null, busy = false;
+  function voter() {
+    try {
+      var v = localStorage.getItem('jct-voter');
+      if (!v) { v = crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g, function () { return (Math.random() * 16 | 0).toString(16); }); localStorage.setItem('jct-voter', v); }
+      return v;
+    } catch (e) { return null; }
+  }
+  function paint() {
+    btns.forEach(function (b) { var on = +b.dataset.v === mine; b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    if (counts) {
+      root.querySelector('[data-c="up"]').textContent = counts.up;
+      root.querySelector('[data-c="down"]').textContent = counts.down;
+      btns[0].setAttribute('aria-label', 'Yes, thumbs up (' + counts.up + ')');
+      btns[1].setAttribute('aria-label', 'No, thumbs down (' + counts.down + ')');
+    }
+  }
+  function call(fn, body) {
+    var ctl = 'AbortController' in window ? new AbortController() : null;
+    if (ctl) setTimeout(function () { ctl.abort(); }, 6000);
+    return fetch(api + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: key, 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: ctl && ctl.signal })
+      .then(function (r) { if (!r.ok) throw r; return r.json(); });
+  }
+  paint();
+  if (api && key) call('get_reactions', { p_slug: slug }).then(function (c) { counts = c; paint(); }).catch(function () {});
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var id = voter(); if (busy || !id || !api) return;
+      var v = +b.dataset.v, next = mine === v ? 0 : v, prev = mine;
+      busy = true; mine = next;
+      if (counts) { if (prev === 1) counts.up--; if (prev === -1) counts.down--; if (next === 1) counts.up++; if (next === -1) counts.down++; }
+      paint(); note.textContent = next ? 'Thanks for the feedback!' : '';
+      call('set_reaction', { p_slug: slug, p_voter: id, p_vote: next })
+        .then(function (c) { counts = c; try { next ? localStorage.setItem(LS, String(next)) : localStorage.removeItem(LS); } catch (e) {} })
+        .catch(function () { mine = prev; note.textContent = "Couldn't save your vote right now. Try again in a bit."; call('get_reactions', { p_slug: slug }).then(function (c) { counts = c; paint(); }).catch(function () {}); })
+        .then(function () { busy = false; paint(); });
+    });
+  });
+  var toast = root.querySelector('.pa-toast'), tt;
+  function showToast(t) { toast.textContent = t; toast.hidden = false; clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 1800); }
+  root.querySelector('[data-copy]').addEventListener('click', function (ev) {
+    var u = ev.currentTarget.dataset.copy;
+    var done = function () { showToast('Copied!'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(done, function () { prompt('Copy this link:', u); });
+    else prompt('Copy this link:', u);
+  });
+  if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+    var n = root.querySelector('.pa-native'); n.hidden = false;
+    n.querySelector('button').addEventListener('click', function () {
+      navigator.share({ title: document.title, text: document.querySelector('h1') ? document.querySelector('h1').textContent : '', url: root.querySelector('[data-copy]').dataset.copy + '?utm_source=share&utm_medium=native' }).catch(function () {});
+    });
+  }
+})();
+</script>
+
+<style>
+  .post-actions { position: relative; margin: 2.6rem 0 0; padding: 1.4rem 1.5rem; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: var(--radius); background: var(--surface-2); font-family: var(--font-sans); display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; align-items: center; justify-content: space-between; }
+  .pa-q { margin: 0 0 .7rem; font: 800 .78rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .12em; color: var(--text); }
+  .pa-votes { display: flex; gap: .6rem; }
+  .pa-vote { display: inline-flex; align-items: center; gap: .5rem; min-width: 5rem; min-height: 44px; padding: .5rem 1rem; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--text); font: 800 1rem/1 var(--font-sans); cursor: pointer; transition: border-color .15s, background .15s, transform .1s; }
+  .pa-vote:hover { border-color: var(--gold); }
+  .pa-vote:active { transform: scale(.96); }
+  .pa-vote[aria-pressed='true'] { background: #0B1426; border-color: #D8B03A; color: #fff; }
+  .pa-emoji { font-size: 1.25rem; line-height: 1; }
+  .pa-count { min-width: 1ch; font-variant-numeric: tabular-nums; }
+  .pa-note { margin: .55rem 0 0; min-height: 1.1em; font-size: .82rem; color: var(--muted); }
+  .pa-share ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .pa-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 0; padding: 0; background: #0B1426; color: #fff; text-decoration: none; cursor: pointer; transition: background .15s, color .15s; }
+  .pa-btn:hover { background: #1a2540; color: #D8B03A; }
+  .pa-txt { font: 900 1.05rem/1 var(--font-sans); letter-spacing: -.02em; width: 20px; text-align: center; }
+  :global([data-theme='dark']) .pa-btn { background: #1a2540; }
+  :global([data-theme='dark']) .pa-btn:hover { background: #26345a; }
+  .pa-vote:focus-visible, .pa-btn:focus-visible { outline: 3px solid #D8B03A; outline-offset: 2px; }
+  .pa-toast { position: absolute; right: 1.2rem; top: -1rem; background: #0B1426; color: #fff; border: 1px solid #D8B03A; border-radius: 999px; padding: .4rem .85rem; font: 700 .8rem/1 var(--font-sans); }
+  @media (max-width: 560px) { .post-actions { padding: 1.2rem 1rem; } .pa-share, .pa-react { width: 100%; } .pa-btn { width: 42px; height: 42px; } }
+</style>
