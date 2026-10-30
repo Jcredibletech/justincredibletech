@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Story from '../../components/Story.astro';
+import { getPosts, SECTIONS, postsInSection, type Section, type Post } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { s, items: postsInSection(posts, s.slug) } }));
+}
+const { s, items } = Astro.props as { s: Section; items: Post[] };
+const [lead, ...rest] = items;
+---
+<BaseLayout title={`${s.name} news`} description={`${s.name} on JustinCredibleTech: ${s.blurb}`} noindex={items.length === 0}>
+  <div class="container" style={`--sec:${s.color}`}>
+    <header class="page-hero"><span class="eyebrow">Section</span><h1>{s.name}</h1><p>{s.blurb}</p></header>
+    {lead ? (
+      <>
+        <div class="cat-lead"><Story post={lead} variant="row" eager /></div>
+        {rest.length > 0 && <div class="grid-3">{rest.map((p) => <Story post={p} showDek />)}</div>}
+      </>
+    ) : (
+      <p class="empty">No {s.name} stories yet. Check back soon.</p>
+    )}
+  </div>
+</BaseLayout>
+<style>
+  .cat-lead { margin: 2rem 0 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .cat-lead :global(.story-title) { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+  .empty { padding: 3rem 0; color: var(--muted); }
+</style>

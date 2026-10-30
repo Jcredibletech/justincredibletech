@@ -3,6 +3,7 @@ title: "Google Announces Genie 4, an AI World Model With Sound. Only Testers Can
 description: "Google DeepMind's Genie 4 generates explorable worlds in real time, adds native audio and talking characters, and doubles world length to about two minutes. Here's what it is and what it means for you."
 pubDate: 2026-10-27
 tags: ["AI", "Tech", "Google", "News"]
+imageCredit: "Google DeepMind"
 featured: true
 ---
 

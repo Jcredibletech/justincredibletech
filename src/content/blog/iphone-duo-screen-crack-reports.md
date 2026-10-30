@@ -3,6 +3,7 @@ title: "Some iPhone Duo Owners Report Cracked Inner Screens Days After Launch"
 description: "A small number of early iPhone Duo owners say their inner screens cracked along the hinge within hours or days. How widespread it is remains unclear, and Apple hasn't commented."
 pubDate: 2026-10-25
 tags: ["Tech", "Apple", "iPhone", "Foldables", "Gadgets", "News"]
+imageCredit: "Apple (press image)"
 featured: true
 ---
 

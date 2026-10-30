@@ -3,6 +3,7 @@ title: "DoorDash Agrees to Buy Instacart for About $17 Billion: What It Could Me
 description: "DoorDash has agreed to acquire Instacart in a roughly $17 billion deal. Members would eventually pay one fee instead of two, but regulators still have to sign off and closing isn't expected until late 2027 or the first half of 2028."
 pubDate: 2026-10-29
 tags: ["Tech", "News", "Apps"]
+imageCredit: "Paul Sableman / CC BY 2.0"
 featured: true
 ---
 

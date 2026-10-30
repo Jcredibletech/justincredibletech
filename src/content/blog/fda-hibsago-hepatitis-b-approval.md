@@ -3,6 +3,7 @@ title: "FDA Approves a First-of-Its-Kind Hepatitis B Drug: What It Means"
 description: "The FDA approved GSK's Hibsago (bepirovirsen) on Oct. 20 for certain adults with chronic hepatitis B. In two phase 3 trials, 19% kept the virus under control 24 weeks after stopping all treatment. Here's who it's for and what the catch is."
 pubDate: 2026-10-25
 tags: ["Health", "Science", "Medicine", "FDA", "News"]
+imageCredit: "Hepatitis B virus: CDC / Erskine Palmer, Public domain"
 featured: true
 ---
 

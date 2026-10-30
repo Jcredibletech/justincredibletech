@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_AUTHOR, CANONICAL_ORIGIN } from '../consts';
 import { withBase } from '../utils/paths';
 
 interface Props {
@@ -8,44 +8,65 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   pubDate?: Date;
+  updatedDate?: Date;
+  section?: string;
+  tags?: string[];
+  jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }
+const { title, description = SITE_DESCRIPTION, image, type = 'website', pubDate, updatedDate, section, tags = [], jsonLd, noindex } = Astro.props;
 
-const {
-  title,
-  description = SITE_DESCRIPTION,
-  image = withBase('og-default.png'),
-  type = 'website',
-  pubDate,
-} = Astro.props;
-
-const pageTitle = title ? `${title} · ${SITE_TITLE}` : `${SITE_TITLE} — Tech drops, space, and science`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL(image, Astro.site);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const rel = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base.length) || '/' : Astro.url.pathname;
+const canonicalURL = new URL(rel, CANONICAL_ORIGIN).href;
+const isMirror = !CANONICAL_ORIGIN.startsWith(String(Astro.site).replace(/\/$/, ''));
+const imgPath = image ?? '/og-default.png';
+const imgRel = imgPath.startsWith(base) && base ? imgPath.slice(base.length) : imgPath;
+const ogImage = /^https?:/.test(imgPath) ? imgPath : new URL(imgRel, CANONICAL_ORIGIN).href;
+const pageTitle = title ? `${title} | ${SITE_TITLE}` : `${SITE_TITLE}: Tech, EVs, Space, Science & Health News`;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+{isMirror && <meta http-equiv="refresh" content={`0; url=${canonicalURL}`} />}
+{noindex && <meta name="robots" content="noindex" />}
+<meta name="author" content={SITE_AUTHOR} />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0f1013" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
 <link rel="icon" type="image/png" sizes="32x32" href={withBase('favicon-32.png')} />
 <link rel="icon" type="image/png" sizes="16x16" href={withBase('favicon-16.png')} />
 <link rel="apple-touch-icon" href={withBase('apple-touch-icon.png')} />
-<link rel="canonical" href={canonicalURL} />
-<title>{pageTitle}</title>
-<meta name="description" content={description} />
-<meta name="author" content="Justin McBroom" />
-<meta name="generator" content={Astro.generator} />
-<meta name="theme-color" content="#1a1a1a" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} RSS`} href={withBase('rss.xml')} />
+<link rel="sitemap" href={withBase('sitemap-index.xml')} />
 
 <meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title ?? SITE_TITLE} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="en_US" />
 {pubDate && <meta property="article:published_time" content={pubDate.toISOString()} />}
-
-<meta name="twitter:card" content="summary" />
+{updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
+{section && <meta property="article:section" content={section} />}
+{tags.map((t) => <meta property="article:tag" content={t} />)}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@JCredibleTech" />
+<meta name="twitter:creator" content="@JCredibleTech" />
 <meta name="twitter:title" content={title ?? SITE_TITLE} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
-
-<link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} RSS`} href={withBase('rss.xml')} />
-<link rel="sitemap" href={withBase('sitemap-index.xml')} />
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+<script is:inline>
+  (function () {
+    try {
+      var t = localStorage.getItem('jct-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>

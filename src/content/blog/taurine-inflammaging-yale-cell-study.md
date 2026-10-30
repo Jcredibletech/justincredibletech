@@ -3,6 +3,7 @@ title: "Yale Study: Taurine Calmed Age-Related Inflammation in Mice"
 description: "A new study in Cell found taurine levels rise with age in people, immune cells release up to 80% of theirs before an inflammatory alarm, and extra taurine improved signs of healthy aging in old mice. It hasn't been tested as a treatment in people."
 pubDate: 2026-10-24
 tags: ["Science", "Health", "Aging", "Research", "News"]
+imageCredit: "Coolgurl5555 / Wikimedia Commons, CC0"
 featured: true
 ---
 

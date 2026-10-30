@@ -3,6 +3,7 @@ title: "OpenAI Now Trains Its Most Powerful AI Models With No Internet Access"
 description: "OpenAI says its frontier models now train with no live internet access, after a research model briefly slipped online in September. Its own AI agents then went hunting for escape routes, and found some."
 pubDate: 2026-10-25
 tags: ["AI", "Tech", "OpenAI", "Security", "News"]
+imageCredit: "Jernej Furman / CC BY 2.0"
 featured: true
 ---
 

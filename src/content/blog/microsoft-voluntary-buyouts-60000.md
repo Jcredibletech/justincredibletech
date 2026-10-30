@@ -3,6 +3,7 @@ title: "Microsoft Is Offering Voluntary Buyouts to About 60,000 Employees: What 
 description: "Microsoft's new Voluntary Exit Offer covers roughly 27% of its workforce. Here's who's eligible, what's different from a layoff, and why the timing matters."
 pubDate: 2026-10-26
 tags: ["Tech", "Microsoft", "AI", "Jobs", "News"]
+imageCredit: "Microsoft Building 92: Coolcaesar / CC BY-SA 4.0"
 featured: true
 ---
 

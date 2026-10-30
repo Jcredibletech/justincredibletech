@@ -1,49 +1,68 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
-import { SITE_TAGLINE, SITE_HANDLE } from '../consts';
+import Story from '../components/Story.astro';
+import { getPosts, SECTIONS, postsInSection, postUrl, sectionFor, formatDate } from '../utils/posts';
 import { withBase } from '../utils/paths';
+import { SITE_TITLE, SITE_DESCRIPTION, CANONICAL_ORIGIN } from '../consts';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const featured = posts.filter((p) => p.data.featured);
-const featuredList = featured.length > 0 ? featured.slice(0, 3) : posts.slice(0, 3);
+const posts = await getPosts();
+const [lead, ...rest] = posts;
+const side = rest.slice(0, 4);
+const latest = rest.slice(4, 12);
+const shown = new Set([lead, ...side, ...latest].filter(Boolean).map((p) => p.id));
+const rails = SECTIONS.map((s) => ({ s, items: postsInSection(posts, s.slug) }))
+  .filter((r) => r.items.length >= 2)
+  .map((r) => ({ ...r, items: [...r.items.filter((p) => !shown.has(p.id)), ...r.items.filter((p) => shown.has(p.id))].slice(0, 4) }));
+const ticker = posts.slice(0, 6);
+const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_TITLE, url: CANONICAL_ORIGIN, description: SITE_DESCRIPTION };
 ---
-<BaseLayout>
-  <section class="hero">
-    <p class="eyebrow muted">Welcome to JustinCredibleTech</p>
-    <h1>What just shipped in tech, space, and science.</h1>
-    <p class="tagline">{SITE_TAGLINE}</p>
-    <p class="blurb">
-      I’m Justin McBroom ({SITE_HANDLE}). This is the long-form companion to the short drops:
-      consumer gadgets, space missions, and science that bumps into tech — Tesla, SpaceX, xAI,
-      Starlink, EVs, and whatever lands next. Lighthearted. Accurate. No politics.
-    </p>
-    <p>
-      <a class="btn" href={withBase("blog/")}>Browse the blog</a>
-      <a class="btn btn-ghost" href={withBase("about/")} style="margin-left: 0.5rem;">About Justin</a>
-    </p>
-  </section>
-
-  <section aria-labelledby="featured-heading">
-    <h2 id="featured-heading" class="section-title">Featured posts</h2>
-    <div class="card-grid featured-grid">
-      {featuredList.map((post) => (
-        <PostCard post={post} />
-      ))}
+<BaseLayout description={SITE_DESCRIPTION} jsonLd={jsonLd}>
+  <h1 class="visually-hidden">{SITE_TITLE}: tech, EVs, space, science and health news</h1>
+  {ticker.length > 0 && (
+    <div class="ticker">
+      <div class="container ticker-in">
+        <span class="ticker-label">Latest</span>
+        <ul>{ticker.map((p) => <li><a href={postUrl(p)}>{p.data.title}</a></li>)}</ul>
+      </div>
     </div>
-  </section>
-</BaseLayout>
+  )}
+  <div class="container">
+    {lead ? (
+      <section class="top" aria-label="Top stories">
+        <div class="top-lead"><Story post={lead} variant="lead" eager /></div>
+        <div class="top-side">
+          {side.map((p, i) => <Story post={p} variant={i < 2 ? 'card' : 'compact'} />)}
+        </div>
+      </section>
+    ) : (
+      <p class="empty">No stories yet. Check back soon.</p>
+    )}
 
+    {latest.length > 0 && (
+      <section aria-labelledby="latest-h">
+        <div class="section-head"><h2 id="latest-h">The Latest</h2><a href={withBase('blog/')}>All stories →</a></div>
+        <div class="grid-4">{latest.map((p) => <Story post={p} />)}</div>
+      </section>
+    )}
+
+    {rails.map(({ s, items }) => (
+      <section aria-labelledby={`h-${s.slug}`} style={`--sec:${s.color}`}>
+        <div class="section-head"><h2 id={`h-${s.slug}`}><i>■</i> {s.name}</h2><a href={withBase(`category/${s.slug}/`)}>More {s.name} →</a></div>
+        <div class="grid-4">{items.map((p) => <Story post={p} />)}</div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
 <style>
-  .eyebrow {
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
+  .ticker { background: var(--ink); color: #fff; font: 600 .84rem/1 var(--font-sans); }
+  .ticker-in { display: flex; align-items: center; gap: 1rem; overflow: hidden; min-height: 2.6rem; }
+  .ticker-label { flex: none; background: var(--gold); color: #111; padding: .35rem .55rem; border-radius: 3px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; }
+  .ticker ul { display: flex; gap: 2.2rem; list-style: none; margin: 0; padding: 0; white-space: nowrap; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  .ticker a { color: #e8e8ea; text-decoration: none; } .ticker a:hover { color: #fff; text-decoration: underline; }
+  .top { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 2rem; padding-top: 2rem; }
+  .top-side { display: grid; gap: 1.4rem; align-content: start; border-left: 1px solid var(--line); padding-left: 2rem; }
+  .top-side :global(.story--card .story-media) { display: none; }
+  .top-side :global(.story--card:first-child .story-media) { display: block; }
+  @media (max-width: 900px) { .top { grid-template-columns: 1fr; } .top-side { border-left: 0; padding-left: 0; } }
+  .empty { padding: 4rem 0; color: var(--muted); text-align: center; }
 </style>

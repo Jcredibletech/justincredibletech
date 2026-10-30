@@ -12,6 +12,13 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    // Optional extras (all backward compatible):
+    // category: one of the section slugs in src/utils/posts.ts (auto-detected from tags if omitted)
+    category: z.string().optional(),
+    // image: site-relative path, e.g. "/images/my-slug.jpg". If omitted, public/images/<slug>.jpg is used when present.
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageCredit: z.string().optional(),
   }),
 });
 

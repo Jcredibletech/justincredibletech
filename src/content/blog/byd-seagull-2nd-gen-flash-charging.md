@@ -3,6 +3,7 @@ title: "BYD's New Seagull EV Starts at $9,800 in China, With 5-Minute Charging o
 description: "BYD launched the second-generation Seagull in China on October 20 from 65,900 yuan (about $9,800). It's bigger, seats five and is rear-wheel drive, and its three bigger-battery trims add Flash Charging that goes from 10% to 70% in five minutes."
 pubDate: 2026-10-23
 tags: ["BYD", "EV", "Seagull", "Fast Charging", "China", "Affordable EVs"]
+imageCredit: "Previous-gen Seagull: User3204 / CC BY-SA 4.0"
 featured: true
 ---
 

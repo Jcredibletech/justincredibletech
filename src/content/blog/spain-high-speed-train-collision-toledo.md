@@ -3,6 +3,7 @@ title: "At Least 64 Dead After Two High-Speed Trains Collide in Spain"
 description: "A Renfe AVE train ran into the back of a stopped Iryo train on the Madrid-Seville high-speed line near Urda, in Spain's Toledo province, on October 28. The cause is under investigation."
 pubDate: 2026-10-28
 tags: ["News", "Breaking News", "Spain", "Trains"]
+imageCredit: "Iryo train / Javier Perez Montes / CC BY-SA 4.0"
 featured: true
 ---
 

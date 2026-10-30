@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Story from '../components/Story.astro';
+import { getPosts } from '../utils/posts';
+import { withBase } from '../utils/paths';
+const posts = (await getPosts()).slice(0, 4);
+---
+<BaseLayout title="Page not found" noindex>
+  <div class="container">
+    <header class="page-hero"><span class="eyebrow">404</span><h1>We couldn't find that page.</h1><p>It may have moved. Try the <a href={withBase('')}>front page</a> or one of the latest stories below.</p></header>
+    <div class="grid-4" style="margin-top:2rem">{posts.map((p) => <Story post={p} />)}</div>
+  </div>
+</BaseLayout>

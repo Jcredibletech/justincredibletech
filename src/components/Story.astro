@@ -1,0 +1,42 @@
+---
+import Cover from './Cover.astro';
+import { sectionFor, postUrl, formatDate, type Post } from '../utils/posts';
+import { withBase } from '../utils/paths';
+interface Props { post: Post; variant?: 'lead' | 'card' | 'row' | 'compact'; eager?: boolean; showDek?: boolean; }
+const { post, variant = 'card', eager = false, showDek } = Astro.props;
+const sec = sectionFor(post);
+const dek = showDek ?? (variant === 'lead' || variant === 'row');
+---
+<article class={`story story--${variant}`} style={`--sec:${sec.color}`}>
+  {variant !== 'compact' && (
+    <a class="story-media" href={postUrl(post)} tabindex="-1" aria-hidden="true"><Cover post={post} eager={eager} /></a>
+  )}
+  <div class="story-body">
+    <a class="kicker" href={withBase(`category/${sec.slug}/`)}>{sec.name}</a>
+    <h3 class="story-title"><a href={postUrl(post)}>{post.data.title}</a></h3>
+    {dek && <p class="story-dek">{post.data.description}</p>}
+    <p class="story-meta"><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, 'short')}</time></p>
+  </div>
+</article>
+<style>
+  .story { display: grid; gap: .75rem; align-content: start; }
+  .story-media { display: block; }
+  .kicker { font: 800 .7rem/1 var(--font-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--sec); text-decoration: none; }
+  .kicker:hover { text-decoration: underline; }
+  .story-title { margin: .45rem 0 0; font: 800 1.08rem/1.25 var(--font-sans); letter-spacing: -.015em; }
+  .story-title a { color: var(--text); text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .25s; }
+  .story-title a:hover { background-size: 100% 2px; }
+  .story-dek { margin: .5rem 0 0; color: var(--muted); font-size: .95rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .story-meta { margin: .55rem 0 0; color: var(--muted); font: 500 .78rem/1 var(--font-sans); }
+
+  .story--lead .story-title { font-size: clamp(1.6rem, 3.4vw, 2.5rem); line-height: 1.1; letter-spacing: -.03em; }
+  .story--lead .story-dek { font-size: 1.05rem; -webkit-line-clamp: 4; }
+  .story--lead { gap: 1.1rem; }
+
+  .story--row { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 1.25rem; align-items: start; }
+  .story--row .story-title { font-size: 1.3rem; }
+  @media (max-width: 640px) { .story--row { grid-template-columns: 1fr; } }
+
+  .story--compact { padding: .9rem 0; border-top: 1px solid var(--line); }
+  .story--compact .story-title { font-size: 1rem; }
+</style>

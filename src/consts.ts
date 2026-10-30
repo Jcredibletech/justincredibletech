@@ -1,6 +1,10 @@
 export const SITE_TITLE = 'JustinCredibleTech';
-export const SITE_TAGLINE = 'Tech drops, space, and science — explained clearly';
+export const SITE_TAGLINE = 'Tech, EVs, space, science and health news, explained clearly';
 export const SITE_DESCRIPTION =
-  'Consumer tech drops, space exploration, and science that touches tech — explained clearly by Justin McBroom.';
+  'JustinCredibleTech covers consumer tech, AI, cars and EVs, space, science and medical breakthroughs, plus non-political breaking news, explained clearly by Justin McBroom.';
 export const SITE_AUTHOR = 'Justin McBroom';
 export const SITE_HANDLE = '@JCredibleTech';
+export const SITE_X = 'https://x.com/JCredibleTech';
+export const SITE_TIKTOK = 'https://www.tiktok.com/@justincredible814';
+/** Official home of the site. Canonical URLs always point here. */
+export const CANONICAL_ORIGIN = 'https://justincredibletech.com';

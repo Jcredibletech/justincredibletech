@@ -6,14 +6,7 @@ import { withBase } from '../utils/paths';
   title="About"
   description="Meet Justin McBroom — JustinCredibleTech is the long-form companion to @JCredibleTech: consumer tech, space, science, Tesla/SpaceX/xAI/Starlink/EV."
 >
-  <article class="prose">
-    <header class="page-header" style="max-width: none; margin-bottom: 0;">
-      <h1>About JustinCredibleTech</h1>
-      <p class="muted" style="font-family: var(--font-sans); margin-top: 0;">
-        Long-form companion to <strong>@JCredibleTech</strong> — for when a post needs room to breathe.
-      </p>
-    </header>
-
+  <div class="container about"><header class="page-hero"><span class="eyebrow">About</span><h1>About JustinCredibleTech</h1><p>Long-form companion to <strong>@JCredibleTech</strong>, for when a post needs room to breathe.</p></header><article class="prose">
     <p>
       Hey — I’m <strong>Justin McBroom</strong>. Online you’ll usually see me as
       <a href="https://x.com/JCredibleTech" rel="noopener noreferrer">@JCredibleTech</a>.
@@ -59,5 +52,6 @@ import { withBase } from '../utils/paths';
     <p>
       Glad you’re here.
     </p>
-  </article>
+  </article></div>
 </BaseLayout>
+<style>.about .prose{max-width:700px;margin-top:2rem}</style>

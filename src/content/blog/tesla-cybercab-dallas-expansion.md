@@ -3,6 +3,7 @@ title: "Tesla's Cybercab Expands Beyond Austin, and Dallas Is Next"
 description: "On its Q3 earnings call, Tesla said its two-seat Cybercab robotaxi expands to Dallas next month, with more cities and fleet sales by the end of 2026. NHTSA is still reviewing whether a car with no brake pedal or mirrors meets federal rules."
 pubDate: 2026-10-23
 tags: ["Tesla", "Cybercab", "Robotaxi", "Self-Driving", "Waymo", "EV"]
+imageCredit: "9yz / CC BY 4.0"
 featured: true
 ---
 

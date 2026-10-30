@@ -1,58 +1,40 @@
 ---
+import { SECTIONS } from '../utils/posts';
 import { withBase } from '../utils/paths';
-
+import { SITE_X, SITE_TIKTOK, SITE_DESCRIPTION } from '../consts';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copy">© {year} JustinCredibleTech</p>
-    <p class="footer-note muted">
-      Built by Justin McBroom · Companion long-form to{' '}
-      <a href="https://x.com/JCredibleTech" rel="noopener noreferrer">@JCredibleTech</a>
-    </p>
-    <nav aria-label="Footer">
-      <a href={withBase('blog')}>Blog</a>
-      <a href={withBase('about')}>About</a>
-      <a href={withBase('rss.xml')}>RSS</a>
+  <div class="container foot-grid">
+    <div>
+      <a class="foot-mark" href={withBase('')}>Justin<span>Credible</span><b>Tech</b></a>
+      <p class="foot-blurb">{SITE_DESCRIPTION}</p>
+    </div>
+    <nav aria-label="Sections">
+      <h4>Sections</h4>
+      <ul>{SECTIONS.map((s) => <li><a href={withBase(`category/${s.slug}/`)}>{s.name}</a></li>)}</ul>
+    </nav>
+    <nav aria-label="More">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href={SITE_X} rel="noopener">X · @JCredibleTech</a></li>
+        <li><a href={SITE_TIKTOK} rel="noopener">TikTok</a></li>
+        <li><a href={withBase('rss.xml')}>RSS feed</a></li>
+        <li><a href={withBase('about/')}>About</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="container foot-base">© {year} Justin McBroom · JustinCredibleTech. Independent coverage; no politics.</div>
 </footer>
-
 <style>
-  .site-footer {
-    border-top: 1px solid var(--color-border);
-    margin-top: auto;
-  }
-
-  .footer-inner {
-    width: min(100% - 2rem, var(--max-width-wide));
-    margin-inline: auto;
-    padding-block: 1.5rem 2rem;
-    display: grid;
-    gap: 0.5rem;
-  }
-
-  .copy {
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .footer-note {
-    margin: 0;
-    font-size: 0.92rem;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-    margin-top: 0.35rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.92rem;
-  }
+  .site-footer { margin-top: 4rem; background: var(--ink); color: #d8d8dc; padding: 3rem 0 1.5rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+  @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-grid > div:first-child { grid-column: 1 / -1; } }
+  .foot-mark { font: 900 1.6rem/1 var(--font-sans); letter-spacing: -.05em; color: #fff; text-decoration: none; }
+  .foot-mark span { font-weight: 300; } .foot-mark b { color: #c9a227; }
+  .foot-blurb { color: #a4a6ad; max-width: 34rem; font-size: .92rem; line-height: 1.55; }
+  h4 { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: #c9a227; margin: 0 0 .9rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+  a { color: #d8d8dc; text-decoration: none; font: 500 .92rem/1.2 var(--font-sans); } a:hover { color: #fff; }
+  .foot-base { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c2e34; color: #8a8d95; font: 500 .8rem/1.4 var(--font-sans); }
 </style>

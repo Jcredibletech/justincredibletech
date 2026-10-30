@@ -3,6 +3,7 @@ title: "Apple's First Foldable iPhone Is in Stores, Starting at $1,999"
 description: "iPhone Duo went on sale October 23 with a 7.6-inch folding screen, a 5.4-inch outer display and Touch ID in the side button. Supply is tight, and early reviews love the hinge but question the small cover screen."
 pubDate: 2026-10-24
 tags: ["Tech", "Apple", "iPhone", "Foldables", "Gadgets", "News"]
+imageCredit: "Apple (press image)"
 featured: true
 ---
 

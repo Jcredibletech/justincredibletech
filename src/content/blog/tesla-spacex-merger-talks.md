@@ -3,6 +3,7 @@ title: "Tesla and SpaceX Are Officially Exploring a Merger, but Nothing's Agreed
 description: "Both companies' boards have formed special committees of independent directors to study a possible combination. Musk is recused, no terms exist, and Tesla would need a yes from half of all its shares."
 pubDate: 2026-10-25
 tags: ["Tesla", "SpaceX", "EV", "Cars", "News"]
+imageCredit: "SpaceX / CC0"
 featured: true
 ---
 

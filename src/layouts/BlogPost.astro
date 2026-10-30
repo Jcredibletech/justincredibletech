@@ -1,73 +1,115 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
+import Story from '../components/Story.astro';
 import { readingTime } from '../utils/readingTime';
 import { withBase } from '../utils/paths';
+import { getPosts, sectionFor, imageFor, formatDate, relatedPosts, postUrl, type Post } from '../utils/posts';
+import { SITE_AUTHOR, SITE_TITLE, SITE_X, CANONICAL_ORIGIN } from '../consts';
 
-interface Props {
-  post: CollectionEntry<'blog'>;
-}
-
+interface Props { post: Post; }
 const { post } = Astro.props;
+const all = await getPosts();
+const sec = sectionFor(post);
+const img = imageFor(post);
 const minutes = readingTime(post.body ?? '');
-const date = post.data.pubDate.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  timeZone: 'UTC',
-});
+let related = relatedPosts(post, all, 4);
+if (related.length < 4) related = [...related, ...all.filter((p) => p.id !== post.id && !related.includes(p))].slice(0, 4);
+const idx = all.findIndex((p) => p.id === post.id);
+const more = all.filter((p) => p.id !== post.id && !related.includes(p)).slice(0, 5);
+const canonical = new URL(`/blog/${post.id}/`, CANONICAL_ORIGIN).href;
+const imgAbs = img ? new URL(img.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), ''), CANONICAL_ORIGIN).href : undefined;
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'NewsArticle', headline: post.data.title, description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(), dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: { '@type': 'Person', name: SITE_AUTHOR, url: SITE_X }, publisher: { '@type': 'Organization', name: SITE_TITLE, logo: { '@type': 'ImageObject', url: `${CANONICAL_ORIGIN}/logo.png` } },
+  mainEntityOfPage: canonical, articleSection: sec.name, keywords: post.data.tags.join(', '), ...(imgAbs ? { image: [imgAbs] } : {}),
+};
+const shareText = encodeURIComponent(post.data.title);
+const shareUrl = encodeURIComponent(canonical);
 ---
-<BaseLayout
-  title={post.data.title}
-  description={post.data.description}
-  type="article"
-  pubDate={post.data.pubDate}
->
-  <article class="prose">
-    <header class="post-header">
-      <div class="post-meta">
-        <time datetime={post.data.pubDate.toISOString()}>{date}</time>
-        <span aria-hidden="true">·</span>
-        <span>{minutes}</span>
-      </div>
+<BaseLayout title={post.data.title} description={post.data.description} type="article" image={img}
+  pubDate={post.data.pubDate} updatedDate={post.data.updatedDate} section={sec.name} tags={post.data.tags} jsonLd={jsonLd}>
+  <article class="article" style={`--sec:${sec.color}`}>
+    <header class="a-head container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={withBase('')}>Home</a><span>/</span><a class="sec" href={withBase(`category/${sec.slug}/`)}>{sec.name}</a></nav>
       <h1>{post.data.title}</h1>
-      <p class="lede muted">{post.data.description}</p>
-      {post.data.tags.length > 0 && (
-        <ul class="tag-list" aria-label="Tags">
-          {post.data.tags.map((tag) => (
-            <li><span class="tag">{tag}</span></li>
-          ))}
-        </ul>
-      )}
+      <p class="dek">{post.data.description}</p>
+      <div class="byline">
+        <img class="avatar" src={withBase('logo.png')} alt="" width="44" height="44" />
+        <div>
+          <div class="by">By <a href={withBase('about/')}>{SITE_AUTHOR}</a> <span class="handle">@JCredibleTech</span></div>
+          <div class="when">
+            <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+            {post.data.updatedDate && <> · Updated <time datetime={post.data.updatedDate.toISOString()}>{formatDate(post.data.updatedDate)}</time></>}
+            · {minutes}
+          </div>
+        </div>
+        <div class="share">
+          <a href={`https://x.com/intent/post?text=${shareText}&url=${shareUrl}`} rel="noopener" target="_blank" aria-label="Share on X">𝕏</a>
+          <button type="button" class="copy" data-url={canonical} aria-label="Copy link">Copy link</button>
+        </div>
+      </div>
     </header>
-    <div class="post-body">
-      <slot />
+    {img && (
+      <figure class="a-hero container-wide">
+        <img src={img} alt={post.data.imageAlt ?? ''} fetchpriority="high" />
+        {post.data.imageCredit && <figcaption>Image: {post.data.imageCredit}</figcaption>}
+      </figure>
+    )}
+    <div class="a-grid container">
+      <div class="a-body prose"><slot /></div>
+      <aside class="a-rail" aria-label="More stories">
+        <h2 class="rail-h">Most recent</h2>
+        <ol>{more.map((p) => <li><a href={postUrl(p)}>{p.data.title}</a><span>{formatDate(p.data.pubDate, 'short')}</span></li>)}</ol>
+      </aside>
     </div>
-    <p class="back">
-      <a href={withBase("blog/")}>← All posts</a>
-    </p>
+    {post.data.tags.length > 0 && (
+      <div class="container a-tags"><span>Topics</span>{post.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+    )}
   </article>
+  <section class="container" aria-labelledby="related-h">
+    <div class="section-head"><h2 id="related-h">Related stories</h2><a href={withBase('blog/')}>All stories →</a></div>
+    <div class="grid-4">{related.map((p) => <Story post={p} />)}</div>
+  </section>
+  <script is:inline>
+    document.querySelectorAll('.a-body video').forEach(function (v) {
+      v.addEventListener('error', function () { v.remove(); }, true);
+      var s = v.currentSrc || v.getAttribute('src');
+      if (s) fetch(s, { method: 'HEAD' }).then(function (r) { if (!r.ok) v.remove(); }).catch(function () {});
+    });
+    document.querySelector('.copy')?.addEventListener('click', function (e) {
+      var b = e.currentTarget; navigator.clipboard?.writeText(b.dataset.url).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy link'; }, 1500); });
+    });
+  </script>
 </BaseLayout>
-
 <style>
-  .post-header {
-    margin-bottom: var(--space-lg);
-  }
-
-  .lede {
-    margin: 0 0 var(--space-md);
-    font-family: var(--font-sans);
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
-
-  .back {
-    margin-top: var(--space-xl);
-    font-family: var(--font-sans);
-    font-weight: 600;
-  }
-
-  .back a {
-    text-decoration: none;
-  }
+  .article { padding-top: 2rem; }
+  .a-head { max-width: 860px; }
+  .crumbs { display: flex; gap: .5rem; font: 700 .75rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .crumbs a { color: var(--muted); text-decoration: none; } .crumbs .sec { color: var(--sec); }
+  h1 { margin: 1rem 0 0; font: 900 clamp(2rem, 4.6vw, 3.3rem)/1.06 var(--font-sans); letter-spacing: -.035em; text-wrap: balance; }
+  .dek { margin: 1rem 0 0; font: 400 clamp(1.1rem, 2vw, 1.3rem)/1.5 var(--font-sans); color: var(--muted); text-wrap: pretty; }
+  .byline { display: flex; align-items: center; gap: .85rem; margin-top: 1.6rem; padding: 1rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: var(--font-sans); }
+  .avatar { border-radius: 50%; background: var(--ink); }
+  .by { font-weight: 700; font-size: .95rem; } .by a { color: var(--text); text-decoration: none; } .handle { color: var(--muted); font-weight: 500; }
+  .when { color: var(--muted); font-size: .85rem; margin-top: .15rem; }
+  .share { margin-left: auto; display: flex; gap: .5rem; }
+  .share a, .share button { font: 700 .8rem/1 var(--font-sans); border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 999px; padding: .55rem .85rem; text-decoration: none; cursor: pointer; }
+  .share a:hover, .share button:hover { border-color: var(--text); }
+  @media (max-width: 560px) { .share { display: none; } }
+  .container-wide { width: min(1100px, 100% - 2.5rem); margin: 2rem auto 0; }
+  .a-hero img { width: 100%; max-height: 640px; object-fit: cover; border-radius: var(--radius); display: block; }
+  .a-hero figcaption { margin-top: .5rem; font: 500 .78rem/1.4 var(--font-sans); color: var(--muted); }
+  .a-grid { display: grid; grid-template-columns: minmax(0, 680px) 280px; justify-content: center; gap: 4rem; margin-top: 2.2rem; }
+  .a-rail { position: sticky; top: 4.5rem; align-self: start; font-family: var(--font-sans); }
+  .rail-h { font: 900 .8rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .12em; border-top: 3px solid var(--text); padding-top: .7rem; margin: 0 0 .4rem; }
+  .a-rail ol { list-style: none; counter-reset: n; padding: 0; margin: 0; }
+  .a-rail li { counter-increment: n; display: grid; grid-template-columns: 1.8rem 1fr; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+  .a-rail li::before { content: counter(n); grid-row: span 2; font: 900 1.3rem/1 var(--font-sans); color: var(--gold); }
+  .a-rail a { color: var(--text); text-decoration: none; font-weight: 700; font-size: .93rem; line-height: 1.3; } .a-rail a:hover { text-decoration: underline; }
+  .a-rail span { color: var(--muted); font-size: .75rem; margin-top: .35rem; }
+  @media (max-width: 1000px) { .a-grid { grid-template-columns: minmax(0, 680px); } .a-rail { display: none; } }
+  .a-tags { max-width: 860px; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: 2.5rem; font-family: var(--font-sans); }
+  .a-tags > span:first-child { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-right: .3rem; }
+  .tag { font: 600 .8rem/1 var(--font-sans); border: 1px solid var(--line); border-radius: 999px; padding: .45rem .75rem; }
 </style>

@@ -3,6 +3,7 @@ title: "Anthropic Files to Go Public: What Its First Public Numbers Show"
 description: "Claude's maker filed its S-1 with the SEC on October 26. Revenue hit $16.3 billion in the first half of 2026, and an $80.7 billion net loss is mostly a non-cash accounting charge. It plans to list on Nasdaq as ANT, with no price set yet."
 pubDate: 2026-10-26
 tags: ["AI", "Anthropic", "Tech", "News"]
+imageCredit: "Dario Amodei: TechCrunch / CC BY 2.0"
 featured: true
 ---
 

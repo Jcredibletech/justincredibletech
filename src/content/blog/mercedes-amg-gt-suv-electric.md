@@ -3,6 +3,7 @@ title: "Mercedes-AMG's First In-House SUV Is Electric and Tops Out at 1,153 hp"
 description: "The new Mercedes-AMG GT SUV is the first full-size SUV AMG developed entirely in-house in its 59-year history. The top GT 63 has three electric motors, 1,153 hp in U.S. trim, up to 710 kW charging and a simulated V8 soundtrack."
 pubDate: 2026-10-24
 tags: ["Cars", "EV", "Mercedes-AMG", "News"]
+imageCredit: "Mercedes-AMG (press image)"
 featured: true
 ---
 

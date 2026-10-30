@@ -3,6 +3,7 @@ title: "Alphabet Sheds Over $500 Billion in a Day as AI Search Earns Google Less
 description: "Alphabet stock fell more than 12% on October 29 after Q3 results showed slower search ad growth, lower ad revenue from AI Mode searches and negative free cash flow from heavy AI spending. Google's answer: more ads inside AI Overviews and AI Mode."
 pubDate: 2026-10-29
 tags: ["Tech", "AI", "News"]
+imageCredit: "Dietmar Rabich / CC BY-SA 4.0"
 featured: true
 ---
 

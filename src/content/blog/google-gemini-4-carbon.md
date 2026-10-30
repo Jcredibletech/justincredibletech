@@ -3,6 +3,7 @@ title: "Google's Gemini 4 Carbon Tops a Major AI Leaderboard, But You Can't Use 
 description: "Google announced Gemini 4 Carbon, its strongest AI model yet, with record cybersecurity scores. Only a small group of vetted cyber defenders get access first."
 pubDate: 2026-10-28
 tags: ["Tech", "AI", "Google"]
+imageCredit: "Google"
 featured: true
 ---
 

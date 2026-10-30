@@ -1,144 +1,71 @@
 ---
-import { SITE_TITLE, SITE_TAGLINE } from '../consts';
+import { SECTIONS } from '../utils/posts';
 import { withBase } from '../utils/paths';
-
-const base = import.meta.env.BASE_URL;
-const baseNoSlash = base.replace(/\/$/, '') || '/';
-const pathname = Astro.url.pathname.replace(/\/$/, '') || baseNoSlash;
-const links = [
-  { href: withBase(), label: 'Home' },
-  { href: withBase('blog'), label: 'Blog' },
-  { href: withBase('about'), label: 'About' },
-];
-
-function isActive(href: string) {
-  const normalized = href.replace(/\/$/, '') || baseNoSlash;
-  if (normalized === baseNoSlash) return pathname === baseNoSlash;
-  return pathname === normalized || pathname.startsWith(`${normalized}/`);
-}
+import { SITE_X } from '../consts';
+const path = Astro.url.pathname;
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
 ---
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href={withBase()} aria-label={`${SITE_TITLE} home`}>
-      <img src={withBase('logo.png')} width="44" height="44" alt="" class="brand-mark" />
-      <span class="brand-text">
-        <span class="brand-name">{SITE_TITLE}</span>
-        <span class="brand-tagline">{SITE_TAGLINE}</span>
-      </span>
-    </a>
-    <nav aria-label="Primary">
-      <ul class="nav-list">
-        {links.map((link) => (
-          <li>
-            <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-        <li>
-          <a class="nav-rss" href={withBase('rss.xml')}>RSS</a>
-        </li>
-      </ul>
-    </nav>
+<header class="masthead">
+  <div class="topbar">
+    <div class="container topbar-in">
+      <span class="date">{today}</span>
+      <nav class="topbar-links" aria-label="Utility">
+        <a href={withBase('about/')}>About</a>
+        <a href={withBase('rss.xml')}>RSS</a>
+        <a href={SITE_X} rel="noopener">@JCredibleTech</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+        </button>
+      </nav>
+    </div>
   </div>
+  <div class="container brand-row">
+    <a class="wordmark" href={withBase('')} aria-label="JustinCredibleTech home">
+      <span class="wm-badge" aria-hidden="true">JC</span>
+      <span class="wm-text">Justin<span>Credible</span><b>Tech</b></span>
+    </a>
+  </div>
+  <nav class="sections" aria-label="Sections">
+    <div class="container sections-in">
+      <a href={withBase('')} aria-current={path === withBase('') ? 'page' : undefined}>Top Stories</a>
+      <a href={withBase('blog/')} aria-current={path.startsWith(withBase('blog')) && path.length <= withBase('blog/').length ? 'page' : undefined}>Latest</a>
+      {SECTIONS.map((s) => (
+        <a href={withBase(`category/${s.slug}/`)} style={`--sec:${s.color}`} aria-current={path.startsWith(withBase(`category/${s.slug}`)) ? 'page' : undefined}>{s.name}</a>
+      ))}
+    </div>
+  </nav>
 </header>
-
+<script is:inline>
+  document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+    const d = document.documentElement;
+    const next = d.dataset.theme === 'dark' ? 'light' : 'dark';
+    d.dataset.theme = next;
+    try { localStorage.setItem('jct-theme', next); } catch (e) {}
+  });
+</script>
 <style>
-  .site-header {
-    border-bottom: 1px solid var(--color-border);
-    background: rgba(26, 26, 26, 0.92);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-  }
+  .masthead { background: var(--bg); position: relative; z-index: 5; }
+  .topbar { border-bottom: 1px solid var(--line); font: 500 .78rem/1 var(--font-sans); color: var(--muted); }
+  .topbar-in { display: flex; justify-content: space-between; align-items: center; min-height: 2.25rem; gap: 1rem; }
+  .topbar-links { display: flex; gap: 1.1rem; align-items: center; }
+  .topbar-links a { color: var(--muted); text-decoration: none; }
+  .topbar-links a:hover { color: var(--text); }
+  .theme-toggle { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 999px; width: 28px; height: 28px; display: grid; place-items: center; cursor: pointer; }
+  .i-moon { display: none; } :global([data-theme='dark']) .i-moon { display: block; } :global([data-theme='dark']) .i-sun { display: none; }
+  @media (max-width: 560px) { .date { display: none; } .topbar-in { justify-content: flex-end; } }
 
-  .header-inner {
-    width: min(100% - 2rem, var(--max-width-wide));
-    margin-inline: auto;
-    padding-block: 0.85rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.85rem 1.25rem;
-  }
+  .brand-row { display: flex; justify-content: center; padding: 1.4rem 0 1.2rem; }
+  .wordmark { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--text); }
+  .wm-badge { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--ink); color: var(--gold); font: 900 1.05rem/1 var(--font-sans); letter-spacing: -.04em; box-shadow: inset 0 0 0 2px var(--gold); }
+  .wm-text { font: 900 clamp(1.7rem, 5.2vw, 3rem)/1 var(--font-sans); letter-spacing: -.055em; }
+  .wm-text span { font-weight: 300; letter-spacing: -.04em; }
+  .wm-text b { color: var(--gold); font-weight: 900; }
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: inherit;
-    min-width: 0;
-  }
-
-  .brand:hover {
-    color: inherit;
-  }
-
-  .brand-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid var(--color-gold);
-    flex-shrink: 0;
-  }
-
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-
-  .brand-name {
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    font-size: 1.15rem;
-    color: var(--color-text);
-  }
-
-  .brand-tagline {
-    font-size: 0.78rem;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: min(52vw, 28rem);
-  }
-
-  .nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.15rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-list a {
-    display: inline-block;
-    padding: 0.4rem 0.7rem;
-    border-radius: 999px;
-    text-decoration: none;
-    color: var(--color-text-muted);
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
-  .nav-list a:hover,
-  .nav-list a[aria-current='page'] {
-    color: var(--color-gold-soft);
-    background: rgba(201, 162, 39, 0.1);
-  }
-
-  .nav-rss {
-    color: var(--color-gold) !important;
-  }
-
-  @media (max-width: 560px) {
-    .brand-tagline {
-      display: none;
-    }
-  }
+  .sections { border-top: 3px solid var(--text); border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); }
+  .sections-in { display: flex; gap: 1.6rem; overflow-x: auto; scrollbar-width: none; justify-content: center; }
+  .sections-in::-webkit-scrollbar { display: none; }
+  .sections a { flex: none; padding: .85rem 0 .75rem; font: 700 .82rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .06em; color: var(--text); text-decoration: none; border-bottom: 3px solid transparent; }
+  .sections a:hover, .sections a[aria-current='page'] { border-bottom-color: var(--sec, var(--gold)); }
+  @media (max-width: 900px) { .sections-in { justify-content: flex-start; } }
 </style>
