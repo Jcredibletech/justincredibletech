@@ -4,42 +4,48 @@ import { withBase } from '../utils/paths';
 ---
 <BaseLayout
   title="About"
-  description="Meet Justin — JustinCredibleTech is the long-form companion to @JCredibleTech: consumer tech, space, science, Tesla/SpaceX/xAI/Starlink/EV."
+  description="An open letter from Justin to the readers of JustinCredibleTech, the long-form companion to @JCredibleTech: consumer tech, AI, cars and EVs, space and science."
 >
-  <div class="container about"><header class="page-hero"><span class="eyebrow">About</span><h1>About JustinCredibleTech</h1><p>Long-form companion to <strong>@JCredibleTech</strong>, for when a post needs room to breathe.</p></header><article class="prose">
+  <div class="container about"><header class="page-hero"><span class="eyebrow">About</span><h1>An open letter to our readers</h1><p>Why JustinCredibleTech exists, and what you can expect from it.</p></header><article class="prose letter">
+    <p class="salutation">Dear reader,</p>
     <p>
-      Hey — I’m <strong>Justin</strong>. Online you’ll usually see me as
+      Thanks for stopping by. If you found your way here, there’s a good chance you’re the kind of
+      person who sees a headline like “wait, what just shipped?” and wants the rest of the story.
+      Same here. That’s exactly why I built this place.
+    </p>
+    <p>
+      You may already know me as
       <a href="https://x.com/JCredibleTech" rel="noopener noreferrer">@JCredibleTech</a>.
-      Short posts are great for the “wait, what just shipped?” moments. This site is for the
-      follow-up: context, timelines, and the “why should I care?” without the fluff.
+      Short posts are great for breaking news, but some stories need room to breathe: the context,
+      the timeline, and the honest answer to “why should I care?” This site is where I give them
+      that room.
     </p>
-
-    <h2>What you’ll find here</h2>
     <p>
-      JustinCredibleTech covers the beat I already chase in socials — consumer tech drops,
-      spaceflight milestones, and science that actually touches technology. Think new phones and
-      foldables, lunar AI models, Starlink coverage leaps, EV and robotaxi reality checks, and the
-      companies that keep showing up in that orbit: <strong>Tesla, SpaceX, xAI, Starlink</strong>,
-      and the broader EV / space / AI stack.
+      Here’s what I chase every day: consumer tech drops and the specs that actually matter, AI that
+      changes how we work and play, cars and EVs (Tesla and everyone racing it), spaceflight and
+      Starlink, science and medical breakthroughs, and the big non-political news that touches all
+      of it. If it’s new, real, and worth your time, I want to explain it clearly.
     </p>
-    <ul>
-      <li><strong>Consumer tech</strong> — launches, specs that matter, and what “available Friday” really means.</li>
-      <li><strong>Space</strong> — missions, maps, and orbital internet that changes who gets a signal.</li>
-      <li><strong>Science × tech</strong> — open models, ice prospectivity, sensors, and tools researchers can actually download.</li>
-      <li><strong>Mobility &amp; energy</strong> — EVs, autonomy, and the infrastructure that makes the demos stick.</li>
-    </ul>
-
-    <h2>Stay in the loop</h2>
     <p>
-      Short takes land on
+      My promise to you is simple. I’ll keep it accurate, keep it fun, and keep politics out of it.
+      If something is a rumor, I’ll call it a rumor. If a company publishes a date and a price,
+      you’ll get the date and the price, not hype dressed up as news.
+    </p>
+    <p>
+      If you want the quick hits, follow along on
       <a href="https://x.com/JCredibleTech" rel="noopener noreferrer">@JCredibleTech</a>.
-      Longer reads live here. If you want both, follow there and bookmark this site — or start with the
-      <a href={withBase("blog/")}>latest posts</a> and grab the
-      <a href={withBase("rss.xml")}>RSS feed</a> for your own schedule.
+      If you want the full story, start with the <a href={withBase("blog/")}>latest posts</a>,
+      or grab the <a href={withBase("rss.xml")}>RSS feed</a> and read on your own schedule.
     </p>
     <p>
-      Glad you’re here.
+      However you got here, I’m genuinely glad you did. Thanks for reading, and thanks for being
+      curious.
     </p>
+    <p class="signature">-Justin</p>
   </article></div>
 </BaseLayout>
-<style>.about .prose{max-width:700px;margin-top:2rem}</style>
+<style>
+  .about .prose{max-width:700px;margin-top:2rem}
+  .letter .salutation{font-weight:600}
+  .letter .signature{margin-top:2rem;font-size:1.35rem;font-style:italic;font-weight:600}
+</style>
