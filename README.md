@@ -2,7 +2,7 @@
 
 Static tech blog — **tech drops, space, and science — explained clearly.**
 
-Built with [Astro](https://astro.build) (static output + Markdown content collections). Voice: Justin McBroom / [@JCredibleTech](https://x.com/JCredibleTech). No analytics baked in; no politics.
+Built with [Astro](https://astro.build) (static output + Markdown content collections). Voice: Justin / [@JCredibleTech](https://x.com/JCredibleTech). No analytics baked in; no politics.
 
 ## Quick start
 
@@ -59,4 +59,4 @@ Any other static host (GitHub Pages with an Actions build, S3+CloudFront, etc.) 
 
 ## License / content
 
-Site code is yours to deploy. Post content © Justin McBroom / JustinCredibleTech unless noted.
+Site code is yours to deploy. Post content © JustinCredibleTech unless noted.
