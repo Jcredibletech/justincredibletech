@@ -13,7 +13,7 @@ const e = encodeURIComponent;
 const shares = [
   { id: 'x', name: 'X', href: `https://x.com/intent/post?text=${e(title)}&url=${e(withUtm('x'))}`, icon: SOCIAL_ICONS.x },
   { id: 'facebook', name: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${e(withUtm('facebook'))}`, icon: SOCIAL_ICONS.facebook },
-  { id: 'linkedin', name: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${e(withUtm('linkedin'))}`, icon: '' },
+  { id: 'linkedin', name: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${e(withUtm('linkedin'))}`, icon: SOCIAL_ICONS.linkedin },
   { id: 'reddit', name: 'Reddit', href: `https://www.reddit.com/submit?url=${e(withUtm('reddit'))}&title=${e(title)}`, icon: SOCIAL_ICONS.reddit },
   { id: 'whatsapp', name: 'WhatsApp', href: `https://wa.me/?text=${e(`${title} ${withUtm('whatsapp')}`)}`, icon: SOCIAL_ICONS.whatsapp },
 ];
