@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container foot-grid">
     <div>
-      <a class="foot-mark" href={withBase('')}>Justin<span>Credible</span><b>Tech</b></a>
+      <a class="foot-mark" href={withBase('')} aria-label="JustinCredibleTech home"><img src={withBase('brand/jc-header-dark.svg')} alt="JustinCredible Tech" width="490" height="120" loading="lazy" /></a>
       <p class="foot-blurb">{SITE_DESCRIPTION}</p>
     </div>
     <nav aria-label="Sections">
@@ -30,10 +30,11 @@ const year = new Date().getFullYear();
   .site-footer { margin-top: 4rem; background: var(--ink); color: #d8d8dc; padding: 3rem 0 1.5rem; }
   .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
   @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-grid > div:first-child { grid-column: 1 / -1; } }
-  .foot-mark { font: 900 1.6rem/1 var(--font-sans); letter-spacing: -.05em; color: #fff; text-decoration: none; }
-  .foot-mark span { font-weight: 300; } .foot-mark b { color: #c9a227; }
+  .site-footer { background: #0B1426; }
+  .foot-mark { display: inline-block; line-height: 0; }
+  .foot-mark img { height: 48px; width: auto; }
   .foot-blurb { color: #a4a6ad; max-width: 34rem; font-size: .92rem; line-height: 1.55; }
-  h4 { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: #c9a227; margin: 0 0 .9rem; }
+  h4 { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: #D8B03A; margin: 0 0 .9rem; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
   a { color: #d8d8dc; text-decoration: none; font: 500 .92rem/1.2 var(--font-sans); } a:hover { color: #fff; }
   .foot-base { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c2e34; color: #8a8d95; font: 500 .8rem/1.4 var(--font-sans); }

@@ -53,8 +53,9 @@ Any other static host (GitHub Pages with an Actions build, S3+CloudFront, etc.) 
 ## Brand
 
 - **Name:** JustinCredibleTech  
-- **Colors:** charcoal `#1a1a1a` + gold `#c9a227`  
-- **Logo / favicon:** optimized from the JustinCredibleTech profile mark in `public/`
+- **Colors:** Midnight Navy `#0B1426` + Signal Gold `#D8B03A`  
+- **Header logo:** JC badge + stacked JUSTIN / CREDIBLE + TECH tag (`public/brand/jc-header-light.svg`, `jc-header-dark.svg`)  
+- **Favicon / icons:** JC badge (`favicon.svg`, `.ico`, 16/32/48 PNG, apple-touch-icon, android-chrome 192/512); share card `og-default.png` (1200x630)
 
 ## License / content
 

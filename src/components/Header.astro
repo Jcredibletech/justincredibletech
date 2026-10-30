@@ -22,8 +22,8 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   </div>
   <div class="container brand-row">
     <a class="wordmark" href={withBase('')} aria-label="JustinCredibleTech home">
-      <span class="wm-badge" aria-hidden="true">JC</span>
-      <span class="wm-text">Justin<span>Credible</span><b>Tech</b></span>
+      <img class="wm-logo wm-light" src={withBase('brand/jc-header-light.svg')} alt="JustinCredible Tech" width="490" height="120" decoding="async" fetchpriority="high" />
+      <img class="wm-logo wm-dark" src={withBase('brand/jc-header-dark.svg')} alt="" aria-hidden="true" width="490" height="120" decoding="async" />
     </a>
   </div>
   <nav class="sections" aria-label="Sections">
@@ -56,11 +56,12 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   @media (max-width: 560px) { .date { display: none; } .topbar-in { justify-content: flex-end; } }
 
   .brand-row { display: flex; justify-content: center; padding: 1.4rem 0 1.2rem; }
-  .wordmark { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--text); }
-  .wm-badge { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--ink); color: var(--gold); font: 900 1.05rem/1 var(--font-sans); letter-spacing: -.04em; box-shadow: inset 0 0 0 2px var(--gold); }
-  .wm-text { font: 900 clamp(1.7rem, 5.2vw, 3rem)/1 var(--font-sans); letter-spacing: -.055em; }
-  .wm-text span { font-weight: 300; letter-spacing: -.04em; }
-  .wm-text b { color: var(--gold); font-weight: 900; }
+  .wordmark { display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
+  .wm-logo { display: block; height: 56px; width: auto; }
+  .wm-dark { display: none; }
+  :global([data-theme='dark']) .wm-light { display: none; }
+  :global([data-theme='dark']) .wm-dark { display: block; }
+  @media (max-width: 560px) { .brand-row { padding: 1.1rem 0 1rem; } .wm-logo { height: 46px; } }
 
   .sections { border-top: 3px solid var(--text); border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); }
   .sections-in { display: flex; gap: 1.6rem; overflow-x: auto; scrollbar-width: none; justify-content: center; }
