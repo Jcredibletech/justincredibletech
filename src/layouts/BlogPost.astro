@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Story from '../components/Story.astro';
+import PlugLifeFeature from '../components/PlugLifeFeature.astro';
 import { readingTime } from '../utils/readingTime';
 import { withBase } from '../utils/paths';
 import { getPosts, sectionFor, imageFor, formatDate, relatedPosts, postUrl, type Post } from '../utils/posts';
@@ -11,6 +12,9 @@ const { post } = Astro.props;
 const all = await getPosts();
 const sec = sectionFor(post);
 const img = imageFor(post);
+const EV_TAGS = ['tesla', 'ev', 'evs', 'cybertruck', 'supercharger', 'supercharging', 'charging'];
+const PLUGLIFE_EXCLUDE = ['tesla-spacex-merger-talks'];
+const showPlugLife = !PLUGLIFE_EXCLUDE.includes(post.id) && (sec.slug === 'cars' || post.data.tags.some((t) => EV_TAGS.includes(t.toLowerCase())));
 const minutes = readingTime(post.body ?? '');
 let related = relatedPosts(post, all, 4);
 if (related.length < 4) related = [...related, ...all.filter((p) => p.id !== post.id && !related.includes(p))].slice(0, 4);
@@ -57,7 +61,7 @@ const shareUrl = encodeURIComponent(canonical);
       </figure>
     )}
     <div class="a-grid container">
-      <div class="a-body prose"><slot /></div>
+      <div class="a-body"><div class="prose"><slot /></div>{showPlugLife && <PlugLifeFeature variant="box" />}</div>
       <aside class="a-rail" aria-label="More stories">
         <h2 class="rail-h">Most recent</h2>
         <ol>{more.map((p) => <li><a href={postUrl(p)}>{p.data.title}</a><span>{formatDate(p.data.pubDate, 'short')}</span></li>)}</ol>

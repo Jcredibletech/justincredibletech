@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Story from '../components/Story.astro';
+import PlugLifeFeature from '../components/PlugLifeFeature.astro';
 import { getPosts, SECTIONS, postsInSection, postUrl, sectionFor, formatDate } from '../utils/posts';
 import { withBase } from '../utils/paths';
 import { SITE_TITLE, SITE_DESCRIPTION, CANONICAL_ORIGIN } from '../consts';
@@ -32,6 +33,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
         <div class="top-lead"><Story post={lead} variant="lead" eager /></div>
         <div class="top-side">
           {side.map((p, i) => <Story post={p} variant={i < 2 ? 'card' : 'compact'} />)}
+          <PlugLifeFeature variant="card" />
         </div>
       </section>
     ) : (

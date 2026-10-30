@@ -1,0 +1,59 @@
+---
+/**
+ * Featured third-party app: PlugLife (pluglifeapp.com).
+ * PlugLife is a separate, independent brand. It is featured/recommended here,
+ * not owned or built by JustinCredibleTech. Keep copy framed as a recommendation.
+ */
+import { withBase } from '../utils/paths';
+interface Props { variant?: 'card' | 'box'; }
+const { variant = 'card' } = Astro.props;
+const URL_APP = 'https://pluglifeapp.com/?utm_source=justincredibletech&utm_medium=referral&utm_campaign=featured_' + variant;
+const URL_BETA = 'https://groups.google.com/g/pluglife-testers';
+---
+{variant === 'card' ? (
+  <aside class="pl pl--card" aria-label="Recommended app: PlugLife">
+    <p class="pl-eyebrow">Recommended for EV drivers</p>
+    <img class="pl-logo" src={withBase('featured/pluglife/pluglife-horizontal-dark.svg')} alt="PlugLife" width="150" height="58" loading="lazy" />
+    <p class="pl-pitch">Beyond the charge. Tesla drivers rate Supercharger stops on restrooms, food, cleanliness and safety.</p>
+    <a class="pl-btn" href={URL_APP} target="_blank" rel="noopener">Try PlugLife <span aria-hidden="true">→</span></a>
+    <p class="pl-fine">Featured app · Free on the web</p>
+  </aside>
+) : (
+  <aside class="pl pl--box" aria-label="Recommended app: PlugLife">
+    <div class="pl-box-in">
+      <img class="pl-mark" src={withBase('featured/pluglife/pluglife-mark-dark.svg')} alt="" width="64" height="80" loading="lazy" />
+      <div class="pl-box-body">
+        <p class="pl-eyebrow">Recommended for EV drivers</p>
+        <h2 class="pl-h">PlugLife: Beyond the charge</h2>
+        <p class="pl-pitch">See what's at a Supercharger before you pull in. Drivers rate the restrooms, food, cleanliness and safety at each stop, and flag broken or slow stalls.</p>
+        <div class="pl-actions">
+          <a class="pl-btn" href={URL_APP} target="_blank" rel="noopener">Try PlugLife <span aria-hidden="true">→</span></a>
+          <a class="pl-link" href={URL_BETA} target="_blank" rel="noopener">Join the Android beta</a>
+        </div>
+        <p class="pl-fine">Featured app. PlugLife is independent and not affiliated with or endorsed by Tesla, Inc.</p>
+      </div>
+    </div>
+  </aside>
+)}
+<style>
+  .pl { --pl-navy: #0B1426; --pl-gold: #D8B03A; --pl-teal: #14B8A6; --pl-teal-d: #0F766E; --pl-teal-l: #2DD4BF;
+    background: var(--pl-navy); color: #e9edf3; border-radius: var(--radius, 6px); font-family: var(--font-sans); position: relative; overflow: hidden; }
+  .pl::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--pl-gold); }
+  .pl-eyebrow { margin: 0; font: 800 .68rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: var(--pl-gold); }
+  .pl-pitch { margin: 0; font-size: .92rem; line-height: 1.45; color: #c9d1dc; }
+  .pl-btn { display: inline-flex; align-items: center; gap: .4rem; background: var(--pl-teal-d); color: #fff; font: 700 .88rem/1 var(--font-sans);
+    padding: .7rem 1rem; border-radius: 999px; text-decoration: none; transition: background .15s; }
+  .pl-btn:hover { background: var(--pl-teal); color: #06231f; }
+  .pl-fine { margin: 0; font-size: .72rem; color: #8592a3; }
+  .pl--card { display: grid; gap: .75rem; padding: 1.2rem 1.2rem 1.1rem; justify-items: start; }
+  .pl--card .pl-logo { height: 46px; width: auto; display: block; margin: .1rem 0 -.1rem -.35rem; }
+  .pl--box { margin: 2.5rem 0 0; }
+  .pl-box-in { display: grid; grid-template-columns: auto 1fr; gap: 1.3rem; padding: 1.5rem 1.5rem 1.3rem; align-items: start; }
+  .pl-mark { width: 56px; height: auto; display: block; margin-top: .2rem; }
+  .pl-box-body { display: grid; gap: .65rem; }
+  .pl-h { margin: 0; font: 900 1.3rem/1.2 var(--font-sans); letter-spacing: -.02em; color: #fff; }
+  .pl-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: .25rem; }
+  .pl-link { color: var(--pl-teal-l); font: 600 .85rem/1 var(--font-sans); text-decoration: underline; text-underline-offset: 3px; }
+  .pl-link:hover { color: #fff; }
+  @media (max-width: 560px) { .pl-box-in { grid-template-columns: 1fr; gap: .8rem; padding: 1.3rem 1.1rem 1.1rem; } .pl-mark { width: 44px; } }
+</style>
