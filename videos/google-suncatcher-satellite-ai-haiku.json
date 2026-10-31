@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/google-suncatcher-satellite-ai-haiku.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 50.03,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 48.27,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 9.49,
+      "idx": 0,
+      "vis_end": 9.77,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 9.77,
+      "end": 20.99,
+      "idx": 1,
+      "vis_end": 21.27,
+      "start_vis": 9.77
+    },
+    {
+      "kind": "beat",
+      "start": 21.27,
+      "end": 31.04,
+      "idx": 2,
+      "vis_end": 31.32,
+      "start_vis": 21.27
+    },
+    {
+      "kind": "beat",
+      "start": 31.32,
+      "end": 41.29,
+      "idx": 3,
+      "vis_end": 41.57,
+      "start_vis": 31.32
+    },
+    {
+      "kind": "outro",
+      "start": 41.57,
+      "end": 47.67,
+      "idx": 4,
+      "vis_end": 48.27,
+      "start_vis": 41.57
+    }
+  ]
+}
