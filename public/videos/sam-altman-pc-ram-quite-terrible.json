@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/sam-altman-pc-ram-quite-terrible.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 45.35,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 43.62,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 9.02,
+      "idx": 0,
+      "vis_end": 9.3,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 9.3,
+      "end": 15.62,
+      "idx": 1,
+      "vis_end": 15.9,
+      "start_vis": 9.3
+    },
+    {
+      "kind": "beat",
+      "start": 15.9,
+      "end": 22.6,
+      "idx": 2,
+      "vis_end": 22.88,
+      "start_vis": 15.9
+    },
+    {
+      "kind": "beat",
+      "start": 22.88,
+      "end": 36.31,
+      "idx": 3,
+      "vis_end": 36.59,
+      "start_vis": 22.88
+    },
+    {
+      "kind": "outro",
+      "start": 36.59,
+      "end": 43.02,
+      "idx": 4,
+      "vis_end": 43.62,
+      "start_vis": 36.59
+    }
+  ]
+}
