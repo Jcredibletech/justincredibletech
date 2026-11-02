@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/learjet-60-crash-greenacres-florida.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 53.82,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 52.11,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.48,
+      "idx": 0,
+      "vis_end": 8.76,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 8.76,
+      "end": 18.22,
+      "idx": 1,
+      "vis_end": 18.5,
+      "start_vis": 8.76
+    },
+    {
+      "kind": "beat",
+      "start": 18.5,
+      "end": 28.31,
+      "idx": 2,
+      "vis_end": 28.59,
+      "start_vis": 18.5
+    },
+    {
+      "kind": "beat",
+      "start": 28.59,
+      "end": 42.66,
+      "idx": 3,
+      "vis_end": 42.94,
+      "start_vis": 28.59
+    },
+    {
+      "kind": "outro",
+      "start": 42.94,
+      "end": 51.51,
+      "idx": 4,
+      "vis_end": 52.11,
+      "start_vis": 42.94
+    }
+  ]
+}
