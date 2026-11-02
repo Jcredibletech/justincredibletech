@@ -1,0 +1,67 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/spacex-boost-mobile-talks.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 47.67,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 45.94,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 6.02,
+      "idx": 0,
+      "vis_end": 6.3,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.3,
+      "end": 14.61,
+      "idx": 1,
+      "vis_end": 14.89,
+      "start_vis": 6.3
+    },
+    {
+      "kind": "beat",
+      "start": 14.89,
+      "end": 22.1,
+      "idx": 2,
+      "vis_end": 22.38,
+      "start_vis": 14.89
+    },
+    {
+      "kind": "beat",
+      "start": 22.38,
+      "end": 29.4,
+      "idx": 3,
+      "vis_end": 29.68,
+      "start_vis": 22.38
+    },
+    {
+      "kind": "beat",
+      "start": 29.68,
+      "end": 35.87,
+      "idx": 4,
+      "vis_end": 36.15,
+      "start_vis": 29.68
+    },
+    {
+      "kind": "outro",
+      "start": 36.15,
+      "end": 45.34,
+      "idx": 5,
+      "vis_end": 45.94,
+      "start_vis": 36.15
+    }
+  ]
+}
