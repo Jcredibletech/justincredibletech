@@ -1,0 +1,62 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/apple-touchscreen-macbook-pro-proled.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 45.89,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.27,
+      "idx": 0,
+      "vis_end": 5.55,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.55,
+      "end": 13.36,
+      "idx": 1,
+      "vis_end": 13.64,
+      "start_vis": 5.55
+    },
+    {
+      "kind": "beat",
+      "start": 13.64,
+      "end": 21.84,
+      "idx": 2,
+      "vis_end": 22.12,
+      "start_vis": 13.64
+    },
+    {
+      "kind": "beat",
+      "start": 22.12,
+      "end": 28.4,
+      "idx": 3,
+      "vis_end": 28.68,
+      "start_vis": 22.12
+    },
+    {
+      "kind": "beat",
+      "start": 28.68,
+      "end": 38.92,
+      "idx": 4,
+      "vis_end": 39.2,
+      "start_vis": 28.68
+    },
+    {
+      "kind": "outro",
+      "start": 39.2,
+      "end": 44.7,
+      "idx": 5,
+      "vis_end": 45.9,
+      "start_vis": 39.2
+    }
+  ]
+}

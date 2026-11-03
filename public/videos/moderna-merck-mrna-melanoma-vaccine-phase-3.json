@@ -1,0 +1,54 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/moderna-merck-mrna-melanoma-vaccine-phase-3.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 50.46,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.34,
+      "idx": 0,
+      "vis_end": 8.62,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 8.62,
+      "end": 20.7,
+      "idx": 1,
+      "vis_end": 20.98,
+      "start_vis": 8.62
+    },
+    {
+      "kind": "beat",
+      "start": 20.98,
+      "end": 33.76,
+      "idx": 2,
+      "vis_end": 34.04,
+      "start_vis": 20.98
+    },
+    {
+      "kind": "beat",
+      "start": 34.04,
+      "end": 44.28,
+      "idx": 3,
+      "vis_end": 44.56,
+      "start_vis": 34.04
+    },
+    {
+      "kind": "outro",
+      "start": 44.56,
+      "end": 49.28,
+      "idx": 4,
+      "vis_end": 50.48,
+      "start_vis": 44.56
+    }
+  ]
+}
