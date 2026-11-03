@@ -1,0 +1,67 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/lego-ideas-godzilla-5363-pieces.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": false,
+  "duration": 49.94,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 48.17,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.1,
+      "idx": 0,
+      "vis_end": 8.38,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 8.38,
+      "end": 15.3,
+      "idx": 1,
+      "vis_end": 15.58,
+      "start_vis": 8.38
+    },
+    {
+      "kind": "beat",
+      "start": 15.58,
+      "end": 24.09,
+      "idx": 2,
+      "vis_end": 24.37,
+      "start_vis": 15.58
+    },
+    {
+      "kind": "beat",
+      "start": 24.37,
+      "end": 32.56,
+      "idx": 3,
+      "vis_end": 32.84,
+      "start_vis": 24.37
+    },
+    {
+      "kind": "beat",
+      "start": 32.84,
+      "end": 37.15,
+      "idx": 4,
+      "vis_end": 37.43,
+      "start_vis": 32.84
+    },
+    {
+      "kind": "outro",
+      "start": 37.43,
+      "end": 47.57,
+      "idx": 5,
+      "vis_end": 48.17,
+      "start_vis": 37.43
+    }
+  ]
+}
