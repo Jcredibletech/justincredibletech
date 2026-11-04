@@ -1,0 +1,67 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/spacex-qualcomm-starlink-mobile-5g.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 49.17,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 47.38,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.57,
+      "idx": 0,
+      "vis_end": 4.85,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.85,
+      "end": 13.27,
+      "idx": 1,
+      "vis_end": 13.55,
+      "start_vis": 4.85
+    },
+    {
+      "kind": "beat",
+      "start": 13.55,
+      "end": 22.1,
+      "idx": 2,
+      "vis_end": 22.38,
+      "start_vis": 13.55
+    },
+    {
+      "kind": "beat",
+      "start": 22.38,
+      "end": 31.58,
+      "idx": 3,
+      "vis_end": 31.86,
+      "start_vis": 22.38
+    },
+    {
+      "kind": "beat",
+      "start": 31.86,
+      "end": 36.37,
+      "idx": 4,
+      "vis_end": 36.65,
+      "start_vis": 31.86
+    },
+    {
+      "kind": "outro",
+      "start": 36.65,
+      "end": 46.78,
+      "idx": 5,
+      "vis_end": 47.38,
+      "start_vis": 36.65
+    }
+  ]
+}
