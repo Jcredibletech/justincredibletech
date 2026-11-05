@@ -1,0 +1,67 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/openai-images-2-6-chatgpt-gifs.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 49.68,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 47.94,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.67,
+      "idx": 0,
+      "vis_end": 4.95,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.95,
+      "end": 14.7,
+      "idx": 1,
+      "vis_end": 14.98,
+      "start_vis": 4.95
+    },
+    {
+      "kind": "beat",
+      "start": 14.98,
+      "end": 23.15,
+      "idx": 2,
+      "vis_end": 23.43,
+      "start_vis": 14.98
+    },
+    {
+      "kind": "beat",
+      "start": 23.43,
+      "end": 32.35,
+      "idx": 3,
+      "vis_end": 32.63,
+      "start_vis": 23.43
+    },
+    {
+      "kind": "beat",
+      "start": 32.63,
+      "end": 37.68,
+      "idx": 4,
+      "vis_end": 37.96,
+      "start_vis": 32.63
+    },
+    {
+      "kind": "outro",
+      "start": 37.96,
+      "end": 47.34,
+      "idx": 5,
+      "vis_end": 47.94,
+      "start_vis": 37.96
+    }
+  ]
+}
