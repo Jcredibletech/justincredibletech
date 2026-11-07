@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/openai-11b-funding-1-25t.mp4",
+  "voice": "elevenlabs:Noah - Engaging American Ads & News Pro",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": false,
+  "duration": 34.25,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 32.48,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.14,
+      "idx": 0,
+      "vis_end": 3.42,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 3.42,
+      "end": 10.74,
+      "idx": 1,
+      "vis_end": 11.02,
+      "start_vis": 3.42
+    },
+    {
+      "kind": "beat",
+      "start": 11.02,
+      "end": 17.41,
+      "idx": 2,
+      "vis_end": 17.69,
+      "start_vis": 11.02
+    },
+    {
+      "kind": "beat",
+      "start": 17.69,
+      "end": 26.2,
+      "idx": 3,
+      "vis_end": 26.48,
+      "start_vis": 17.69
+    },
+    {
+      "kind": "outro",
+      "start": 26.48,
+      "end": 31.88,
+      "idx": 4,
+      "vis_end": 32.48,
+      "start_vis": 26.48
+    }
+  ]
+}
