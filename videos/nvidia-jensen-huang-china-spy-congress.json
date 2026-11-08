@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nvidia-jensen-huang-china-spy-congress.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 34.58,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 32.79,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.96,
+      "idx": 0,
+      "vis_end": 4.24,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.24,
+      "end": 11.62,
+      "idx": 1,
+      "vis_end": 11.9,
+      "start_vis": 4.24
+    },
+    {
+      "kind": "beat",
+      "start": 11.9,
+      "end": 18.19,
+      "idx": 2,
+      "vis_end": 18.47,
+      "start_vis": 11.9
+    },
+    {
+      "kind": "beat",
+      "start": 18.47,
+      "end": 24.87,
+      "idx": 3,
+      "vis_end": 25.15,
+      "start_vis": 18.47
+    },
+    {
+      "kind": "outro",
+      "start": 25.15,
+      "end": 32.19,
+      "idx": 4,
+      "vis_end": 32.79,
+      "start_vis": 25.15
+    }
+  ]
+}
