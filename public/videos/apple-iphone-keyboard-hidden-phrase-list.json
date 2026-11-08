@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/apple-iphone-keyboard-hidden-phrase-list.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 31.55,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 29.78,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.52,
+      "idx": 0,
+      "vis_end": 4.8,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.8,
+      "end": 9.05,
+      "idx": 1,
+      "vis_end": 9.33,
+      "start_vis": 4.8
+    },
+    {
+      "kind": "beat",
+      "start": 9.33,
+      "end": 18.36,
+      "idx": 2,
+      "vis_end": 18.64,
+      "start_vis": 9.33
+    },
+    {
+      "kind": "beat",
+      "start": 18.64,
+      "end": 22.74,
+      "idx": 3,
+      "vis_end": 23.02,
+      "start_vis": 18.64
+    },
+    {
+      "kind": "outro",
+      "start": 23.02,
+      "end": 29.18,
+      "idx": 4,
+      "vis_end": 29.78,
+      "start_vis": 23.02
+    }
+  ]
+}
