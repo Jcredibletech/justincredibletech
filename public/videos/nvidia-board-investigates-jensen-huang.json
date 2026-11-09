@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nvidia-board-investigates-jensen-huang.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": false,
+  "duration": 34.57,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 32.83,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.97,
+      "idx": 0,
+      "vis_end": 6.25,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.25,
+      "end": 13.07,
+      "idx": 1,
+      "vis_end": 13.35,
+      "start_vis": 6.25
+    },
+    {
+      "kind": "beat",
+      "start": 13.35,
+      "end": 19.85,
+      "idx": 2,
+      "vis_end": 20.13,
+      "start_vis": 13.35
+    },
+    {
+      "kind": "beat",
+      "start": 20.13,
+      "end": 25.38,
+      "idx": 3,
+      "vis_end": 25.66,
+      "start_vis": 20.13
+    },
+    {
+      "kind": "outro",
+      "start": 25.66,
+      "end": 32.23,
+      "idx": 4,
+      "vis_end": 32.83,
+      "start_vis": 25.66
+    }
+  ]
+}
