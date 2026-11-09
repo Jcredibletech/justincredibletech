@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nvidia-stock-drops-huang-probe.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": false,
+  "duration": 34.69,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 32.9,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 6.67,
+      "idx": 0,
+      "vis_end": 6.95,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.95,
+      "end": 13.35,
+      "idx": 1,
+      "vis_end": 13.63,
+      "start_vis": 6.95
+    },
+    {
+      "kind": "beat",
+      "start": 13.63,
+      "end": 20.55,
+      "idx": 2,
+      "vis_end": 20.83,
+      "start_vis": 13.63
+    },
+    {
+      "kind": "beat",
+      "start": 20.83,
+      "end": 25.75,
+      "idx": 3,
+      "vis_end": 26.03,
+      "start_vis": 20.83
+    },
+    {
+      "kind": "outro",
+      "start": 26.03,
+      "end": 32.3,
+      "idx": 4,
+      "vis_end": 32.9,
+      "start_vis": 26.03
+    }
+  ]
+}
