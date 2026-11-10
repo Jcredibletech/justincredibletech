@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/claude-fable-5-2-freelance-jobs-test.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": false,
+  "duration": 34.9,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 33.15,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.81,
+      "idx": 0,
+      "vis_end": 9.09,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 9.09,
+      "end": 14.14,
+      "idx": 1,
+      "vis_end": 14.42,
+      "start_vis": 9.09
+    },
+    {
+      "kind": "beat",
+      "start": 14.42,
+      "end": 19.98,
+      "idx": 2,
+      "vis_end": 20.26,
+      "start_vis": 14.42
+    },
+    {
+      "kind": "beat",
+      "start": 20.26,
+      "end": 26.86,
+      "idx": 3,
+      "vis_end": 27.14,
+      "start_vis": 20.26
+    },
+    {
+      "kind": "outro",
+      "start": 27.14,
+      "end": 32.55,
+      "idx": 4,
+      "vis_end": 33.15,
+      "start_vis": 27.14
+    }
+  ]
+}
