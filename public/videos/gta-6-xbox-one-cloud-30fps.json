@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/gta-6-xbox-one-cloud-30fps.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 32.64,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 30.87,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.28,
+      "idx": 0,
+      "vis_end": 4.56,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.56,
+      "end": 10.64,
+      "idx": 1,
+      "vis_end": 10.92,
+      "start_vis": 4.56
+    },
+    {
+      "kind": "beat",
+      "start": 10.92,
+      "end": 18.61,
+      "idx": 2,
+      "vis_end": 18.89,
+      "start_vis": 10.92
+    },
+    {
+      "kind": "beat",
+      "start": 18.89,
+      "end": 23.66,
+      "idx": 3,
+      "vis_end": 23.94,
+      "start_vis": 18.89
+    },
+    {
+      "kind": "outro",
+      "start": 23.94,
+      "end": 30.27,
+      "idx": 4,
+      "vis_end": 30.87,
+      "start_vis": 23.94
+    }
+  ]
+}
