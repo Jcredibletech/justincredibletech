@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/ai-agents-maya-pyramid-already-mapped.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 35.27,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 33.54,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 7.14,
+      "idx": 0,
+      "vis_end": 7.42,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 7.42,
+      "end": 14.39,
+      "idx": 1,
+      "vis_end": 14.67,
+      "start_vis": 7.42
+    },
+    {
+      "kind": "beat",
+      "start": 14.67,
+      "end": 20.77,
+      "idx": 2,
+      "vis_end": 21.05,
+      "start_vis": 14.67
+    },
+    {
+      "kind": "beat",
+      "start": 21.05,
+      "end": 27.2,
+      "idx": 3,
+      "vis_end": 27.48,
+      "start_vis": 21.05
+    },
+    {
+      "kind": "outro",
+      "start": 27.48,
+      "end": 32.94,
+      "idx": 4,
+      "vis_end": 33.54,
+      "start_vis": 27.48
+    }
+  ]
+}
