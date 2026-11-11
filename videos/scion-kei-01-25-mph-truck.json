@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/scion-kei-01-25-mph-truck.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": true,
+  "duration": 31.01,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 29.3,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.41,
+      "idx": 0,
+      "vis_end": 4.69,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.69,
+      "end": 12.77,
+      "idx": 1,
+      "vis_end": 13.05,
+      "start_vis": 4.69
+    },
+    {
+      "kind": "beat",
+      "start": 13.05,
+      "end": 18.57,
+      "idx": 2,
+      "vis_end": 18.85,
+      "start_vis": 13.05
+    },
+    {
+      "kind": "beat",
+      "start": 18.85,
+      "end": 23.55,
+      "idx": 3,
+      "vis_end": 23.83,
+      "start_vis": 18.85
+    },
+    {
+      "kind": "outro",
+      "start": 23.83,
+      "end": 28.7,
+      "idx": 4,
+      "vis_end": 29.3,
+      "start_vis": 23.83
+    }
+  ]
+}
