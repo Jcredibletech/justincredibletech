@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/microsoft-365-outlook-outage.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": true,
+  "duration": 32.69,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 30.89,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.74,
+      "idx": 0,
+      "vis_end": 6.02,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.02,
+      "end": 12.19,
+      "idx": 1,
+      "vis_end": 12.47,
+      "start_vis": 6.02
+    },
+    {
+      "kind": "beat",
+      "start": 12.47,
+      "end": 16.55,
+      "idx": 2,
+      "vis_end": 16.83,
+      "start_vis": 12.47
+    },
+    {
+      "kind": "beat",
+      "start": 16.83,
+      "end": 22.98,
+      "idx": 3,
+      "vis_end": 23.26,
+      "start_vis": 16.83
+    },
+    {
+      "kind": "outro",
+      "start": 23.26,
+      "end": 30.29,
+      "idx": 4,
+      "vis_end": 30.89,
+      "start_vis": 23.26
+    }
+  ]
+}
