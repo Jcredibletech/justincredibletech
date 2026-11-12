@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/jensen-huang-resigns-nvidia-ceo.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 37.22,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 35.46,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 8.52,
+      "idx": 0,
+      "vis_end": 8.8,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 8.8,
+      "end": 15.69,
+      "idx": 1,
+      "vis_end": 15.97,
+      "start_vis": 8.8
+    },
+    {
+      "kind": "beat",
+      "start": 15.97,
+      "end": 23.86,
+      "idx": 2,
+      "vis_end": 24.14,
+      "start_vis": 15.97
+    },
+    {
+      "kind": "beat",
+      "start": 24.14,
+      "end": 28.06,
+      "idx": 3,
+      "vis_end": 28.34,
+      "start_vis": 24.14
+    },
+    {
+      "kind": "outro",
+      "start": 28.34,
+      "end": 34.86,
+      "idx": 4,
+      "vis_end": 35.46,
+      "start_vis": 28.34
+    }
+  ]
+}

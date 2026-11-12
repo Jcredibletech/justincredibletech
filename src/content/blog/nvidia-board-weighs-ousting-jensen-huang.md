@@ -29,4 +29,4 @@ Nvidia makes the chips behind almost every big AI product you use, from chatbots
 
 Nobody's above the rules, and a CEO in a relationship with someone who reports to him is a real governance problem at any company, let alone the most important chipmaker in America. The national security questions around the first affair make it worse. At the same time, the board should finish its investigation and have a solid plan before it acts, because a panicked handoff would hurt the workers and everyday shareholders who did nothing wrong. Remember too that these are reports from unnamed sources, and Nvidia hasn't announced anything yet. That's my opinion; the facts above come from the outlets linked and cited.
 
-*This is a developing story. I'll update it if Nvidia's board announces a decision.*
+*Update, November 12, 2026: Huang resigned as Nvidia's CEO, effective immediately, and CFO Colette Kress is interim CEO. [Read the follow-up](/blog/jensen-huang-resigns-nvidia-ceo/).*
