@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nvidia-board-weighs-ousting-jensen-huang.mp4",
+  "voice": "elevenlabs:Madeline Brousseaux - Southern alto",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 30.2,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 28.4,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.24,
+      "idx": 0,
+      "vis_end": 5.52,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.52,
+      "end": 13.14,
+      "idx": 1,
+      "vis_end": 13.42,
+      "start_vis": 5.52
+    },
+    {
+      "kind": "beat",
+      "start": 13.42,
+      "end": 18.76,
+      "idx": 2,
+      "vis_end": 19.04,
+      "start_vis": 13.42
+    },
+    {
+      "kind": "beat",
+      "start": 19.04,
+      "end": 22.08,
+      "idx": 3,
+      "vis_end": 22.36,
+      "start_vis": 19.04
+    },
+    {
+      "kind": "outro",
+      "start": 22.36,
+      "end": 27.47,
+      "idx": 4,
+      "vis_end": 28.4,
+      "start_vis": 22.36
+    }
+  ]
+}
