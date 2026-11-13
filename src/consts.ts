@@ -5,7 +5,9 @@ export const SITE_DESCRIPTION =
 export const SITE_AUTHOR = 'Justin';
 export const SITE_HANDLE = '@JCredibleTech';
 export const SITE_X = 'https://x.com/JCredibleTech';
+/** TikTok profile. Handle is spelled @Officaljustincredible (missing an i). Expected to change ~Nov 22, 2026 — keep every TikTok profile link on this constant. */
 export const SITE_TIKTOK = 'https://www.tiktok.com/@officaljustincredible';
+export const SITE_INSTAGRAM = 'https://www.instagram.com/justincredibletech.tech';
 /** Official home of the site. Canonical URLs always point here. */
 export const CANONICAL_ORIGIN = 'https://justincredibletech.com';
 
@@ -14,6 +16,7 @@ export const CANONICAL_ORIGIN = 'https://justincredibletech.com';
 export const SOCIALS: { name: string; label: string; url: string; icon: string }[] = [
   { name: 'X', label: '@JCredibleTech', url: SITE_X, icon: 'x' },
   { name: 'TikTok', label: 'TikTok', url: SITE_TIKTOK, icon: 'tiktok' },
+  { name: 'Instagram', label: '@justincredibletech.tech', url: SITE_INSTAGRAM, icon: 'instagram' },
 ];
 
 // Post reactions backend (Supabase project "justincredibletech-reactions"). Public publishable key only:

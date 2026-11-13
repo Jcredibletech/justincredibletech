@@ -1,0 +1,279 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import SectionLockup from '../components/SectionLockup.astro';
+import SectionSwitcher from '../components/SectionSwitcher.astro';
+import { SECTIONS } from '../utils/posts';
+import { withBase } from '../utils/paths';
+import { SOCIALS, SITE_X, SITE_TIKTOK, SITE_INSTAGRAM, SITE_TAGLINE, SITE_DESCRIPTION } from '../consts';
+import { SOCIAL_ICONS as ICONS } from '../utils/socialIcons';
+import '@fontsource-variable/inter';
+import '@fontsource/saira/900-italic.css';
+import '../styles/global.css';
+
+const year = new Date().getFullYear();
+
+const links = [
+  {
+    name: 'Latest stories',
+    href: withBase(''),
+    external: false,
+    icon: 'site' as const,
+    primary: true,
+  },
+  { name: 'X', href: SITE_X, external: true, icon: 'x' as const, primary: false },
+  { name: 'TikTok', href: SITE_TIKTOK, external: true, icon: 'tiktok' as const, primary: false },
+  { name: 'Instagram', href: SITE_INSTAGRAM, external: true, icon: 'instagram' as const, primary: false },
+];
+
+const globe =
+  'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Follow JustinCredible" description={SITE_DESCRIPTION} />
+  </head>
+  <body class="follow-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="follow-top">
+      <a class="follow-about" href={withBase('about/')}>About</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+      </button>
+    </header>
+    <main id="main" class="follow-main">
+      <div class="brand-lockup">
+        <a class="wordmark" href={withBase('')} aria-label="JustinCredibleTech home">
+          <SectionLockup reserveTag tagLabel="TECH" />
+        </a>
+        <SectionSwitcher />
+      </div>
+      <div class="network-bar" aria-hidden="true">{SECTIONS.map((s) => <span style={`background:${s.colorTag}`}></span>)}</div>
+      <h1 class="visually-hidden">Follow JustinCredible</h1>
+      <p class="follow-tag">{SITE_TAGLINE}</p>
+      <ul class="follow-links">
+        {links.map((l) => (
+          <li>
+            <a
+              class:list={['follow-btn', l.primary && 'follow-btn--site']}
+              href={l.href}
+              {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}
+            >
+              <span class="follow-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path d={l.icon === 'site' ? globe : ICONS[l.icon]} fill="currentColor" />
+                </svg>
+              </span>
+              <span class="follow-name">{l.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <footer class="follow-foot">
+      <ul class="follow-social">
+        {SOCIALS.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener" target="_blank" aria-label={`Follow on ${s.name}`} title={`${s.name} · ${s.label}`}>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d={ICONS[s.icon]} fill="currentColor" /></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="follow-copy">© {year} JustinCredibleTech</p>
+    </footer>
+    <script is:inline>
+      document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+        const d = document.documentElement;
+        const next = d.dataset.theme === 'dark' ? 'light' : 'dark';
+        d.dataset.theme = next;
+        try { localStorage.setItem('jct-theme', next); } catch (e) {}
+      });
+      (function () {
+        var root = document.querySelector('.sec-switcher');
+        if (!root) return;
+        var sum = root.querySelector('summary');
+        var links = Array.prototype.slice.call(root.querySelectorAll('.sec-menu a'));
+        function placeMenu() {
+          var menu = root.querySelector('.sec-menu');
+          if (!menu) return;
+          menu.style.marginLeft = '0px';
+          if (!root.open) return;
+          var r = menu.getBoundingClientRect();
+          var pad = 8;
+          var dx = 0;
+          if (r.right > window.innerWidth - pad) dx = window.innerWidth - pad - r.right;
+          if (r.left + dx < pad) dx = pad - r.left;
+          if (dx) menu.style.marginLeft = Math.round(dx) + 'px';
+        }
+        function sync() {
+          sum.setAttribute('aria-expanded', root.open ? 'true' : 'false');
+          placeMenu();
+        }
+        root.addEventListener('toggle', sync);
+        sync();
+        document.addEventListener('pointerdown', function (e) {
+          if (root.open && !root.contains(e.target)) root.open = false;
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && root.open) {
+            root.open = false;
+            sum.focus();
+            e.preventDefault();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+<style>
+  .follow-page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .follow-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: .85rem 1.25rem 0;
+    max-width: 40rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .follow-about {
+    color: var(--muted);
+    text-decoration: none;
+    font: 500 .85rem/1 var(--font-sans);
+  }
+  .follow-about:hover { color: var(--text); }
+  .theme-toggle {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    border-radius: 999px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .i-moon { display: none; }
+  :global([data-theme='dark']) .i-moon { display: block; }
+  :global([data-theme='dark']) .i-sun { display: none; }
+
+  .follow-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.25rem 2rem;
+    width: min(40rem, 100%);
+    margin: 0 auto;
+  }
+  .brand-lockup { position: relative; display: inline-block; --lockup-h: 56px; line-height: 0; }
+  .wordmark { display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
+  @media (max-width: 560px) { .brand-lockup { --lockup-h: 46px; } }
+
+  .network-bar {
+    display: flex;
+    height: 4px;
+    width: min(22.5rem, 100%);
+    margin: 1.15rem 0 1.25rem;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .network-bar span { flex: 1; min-width: 0; }
+
+  .follow-tag {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font: 500 .95rem/1.45 var(--font-sans);
+  }
+
+  .follow-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: min(22.5rem, 100%);
+    display: grid;
+    gap: .75rem;
+  }
+  .follow-btn {
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    min-height: 56px;
+    padding: 0 1.15rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font: 700 1.05rem/1 var(--font-sans);
+    letter-spacing: -.01em;
+    color: #fff;
+    background: var(--brand-navy);
+    border: 1px solid transparent;
+    box-shadow: 0 1px 2px color-mix(in srgb, #0B1426 10%, transparent);
+    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .follow-btn--site {
+    background: #e0b020;
+    color: #0B1426;
+  }
+  :global([data-theme='dark']) .follow-btn:not(.follow-btn--site) {
+    background: #1c1e24;
+    border-color: var(--line);
+    box-shadow: 0 1px 2px color-mix(in srgb, #000 40%, transparent);
+  }
+  .follow-btn:hover,
+  .follow-btn:focus-visible {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    box-shadow: 0 6px 16px color-mix(in srgb, #0B1426 16%, transparent);
+  }
+  .follow-ico {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 22px;
+    height: 22px;
+  }
+  .follow-name { flex: 1; text-align: center; padding-right: 22px; }
+
+  .follow-foot {
+    padding: 0 1.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .85rem;
+  }
+  .follow-social {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: .65rem;
+  }
+  .follow-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--text);
+    background: var(--surface-2);
+    text-decoration: none;
+    transition: background .15s, color .15s;
+  }
+  .follow-social a:hover { background: var(--line); color: var(--text); }
+  .follow-copy {
+    margin: 0;
+    color: var(--muted);
+    font: 500 .8rem/1.4 var(--font-sans);
+  }
+</style>
