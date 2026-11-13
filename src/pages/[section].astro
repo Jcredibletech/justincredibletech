@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Story from '../components/Story.astro';
-import SectionBadge from '../components/SectionBadge.astro';
 import { getPosts, SECTIONS, postsInSection, type Section, type Post } from '../utils/posts';
 import { withBase } from '../utils/paths';
 import { CANONICAL_ORIGIN } from '../consts';
@@ -17,7 +16,6 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'CollectionPage', na
 <BaseLayout title={s.name} description={`${s.name}: ${s.blurb}`} sectionSlug={s.slug} jsonLd={jsonLd} noindex={items.length === 0}>
   <div class="sec-hero">
     <div class="container sec-hero-in">
-      <SectionBadge slug={s.slug} size="lg" link={false} />
       <div>
         <h1>{s.name}</h1>
         <p>{s.blurb}</p>

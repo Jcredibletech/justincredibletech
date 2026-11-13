@@ -2,7 +2,7 @@
 title: "OpenAI Says Its AI Disproved a Major Computer Science Hypothesis. Experts Are Now Checking"
 description: "OpenAI claims its model refuted the Exponential Time Hypothesis and produced two more big math and physics proofs. None of it is independently verified yet. Here's what was actually announced."
 pubDate: 2026-10-26
-section: "science"
+section: "ai"
 tags: ["Science", "AI", "OpenAI", "Math", "News"]
 imageCredit: "UC San Diego Geisel Library: Jami (Wiki Ed) / CC BY-SA 4.0"
 featured: true

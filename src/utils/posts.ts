@@ -5,14 +5,14 @@ import { withBase } from './paths';
 
 export type Post = CollectionEntry<'blog'>;
 
-export const SECTION_SLUGS = ['tech', 'auto', 'space', 'ev', 'science', 'politics'] as const;
+export const SECTION_SLUGS = ['tech', 'ai', 'auto', 'space', 'ev', 'science', 'health', 'politics'] as const;
 export type SectionSlug = (typeof SECTION_SLUGS)[number];
 
 export interface Section {
   slug: SectionSlug;
-  /** Full network brand name, e.g. "JC EV". */
+  /** Full network brand name, e.g. "JustinCredible EV". */
   name: string;
-  /** Short label used after the JC chip in badges and the nav, e.g. "EV". */
+  /** Short label used in nav chips and badges, e.g. "EV". Never prefix with "JC". */
   short: string;
   blurb: string;
   /** Accent for light backgrounds (also used in inline/OG contexts). Theme-aware value is var(--sec) via the .sec-<slug> class. */
@@ -27,23 +27,27 @@ export interface Section {
  */
 export const SECTIONS: Section[] = [
   { slug: 'tech', name: 'JustinCredible Tech', short: 'Tech', color: '#8a6a0c', colorDark: '#d8b03a',
-    blurb: 'Phones, computers, AI, apps and the companies behind them.' },
-  { slug: 'auto', name: 'JC Auto', short: 'Auto', color: '#c8102e', colorDark: '#ff5c63',
+    blurb: 'Phones, computers, apps, gadgets and the companies behind them.' },
+  { slug: 'ai', name: 'JustinCredible AI', short: 'AI', color: '#1d4ed8', colorDark: '#60a5fa',
+    blurb: 'AI models, tools, companies, policy and research.' },
+  { slug: 'auto', name: 'JustinCredible Auto', short: 'Auto', color: '#c8102e', colorDark: '#ff5c63',
     blurb: 'Cars, trucks, motorsport and the wider world of transportation.' },
-  { slug: 'space', name: 'JC Space', short: 'Space', color: '#4338ca', colorDark: '#9b9cff',
+  { slug: 'space', name: 'JustinCredible Space', short: 'Space', color: '#4338ca', colorDark: '#9b9cff',
     blurb: 'Rockets, launches, satellites and missions beyond Earth.' },
-  { slug: 'ev', name: 'JC EV', short: 'EV', color: '#0e7490', colorDark: '#22d3ee',
+  { slug: 'ev', name: 'JustinCredible EV', short: 'EV', color: '#0e7490', colorDark: '#22d3ee',
     blurb: 'Electric vehicles, charging, batteries and self-driving tech.' },
-  { slug: 'science', name: 'JC Science', short: 'Science', color: '#15803d', colorDark: '#4ade80',
-    blurb: 'Discoveries, health and research, explained without the jargon.' },
-  { slug: 'politics', name: 'JC Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0',
-    blurb: 'Policy, government and elections, reported factually and without taking sides.' },
+  { slug: 'science', name: 'JustinCredible Science', short: 'Science', color: '#15803d', colorDark: '#4ade80',
+    blurb: 'Discoveries, research and the natural world, explained without the jargon.' },
+  { slug: 'health', name: 'JustinCredible Health', short: 'Health', color: '#be185d', colorDark: '#fb7185',
+    blurb: 'Medicine, drug approvals, nutrition and the research that affects how we live.' },
+  { slug: 'politics', name: 'JustinCredible Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0',
+    blurb: 'Policy, government and elections, reported factually and straightforwardly.' },
 ];
 
 /** Pre-network `category:` values (and old /category/<slug>/ URLs) mapped to network sections. */
 export const LEGACY_SECTION: Record<string, SectionSlug> = {
-  tech: 'tech', ai: 'tech', news: 'tech', cars: 'auto', auto: 'auto', ev: 'ev', evs: 'ev',
-  space: 'space', science: 'science', health: 'science', politics: 'politics',
+  tech: 'tech', ai: 'ai', news: 'tech', cars: 'auto', auto: 'auto', ev: 'ev', evs: 'ev',
+  space: 'space', science: 'science', health: 'health', politics: 'politics',
 };
 
 export function getSection(slug: string): Section {

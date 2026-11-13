@@ -2,7 +2,7 @@
 title: "ChatGPT Can Now Make Animated GIFs With OpenAI's Images 2.6"
 description: "OpenAI's Images 2.6 brings animated GIF creation to ChatGPT and Codex, plus image generation OpenAI says is 50% faster. It's rolling out today on web, desktop and mobile."
 pubDate: 2026-11-04
-section: "tech"
+section: "ai"
 tags: ["OpenAI", "ChatGPT", "AI", "Image Generation"]
 imageAlt: "A hand holding a black smartphone sideways with the word ChatGPT in white on its screen, against a light gray background"
 imageCredit: "Jernej Furman via Wikimedia Commons (CC BY 2.0)"

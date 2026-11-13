@@ -1,5 +1,6 @@
 ---
-import { SECTIONS, sectionUrl } from '../utils/posts';
+import { SECTIONS, getSection, sectionUrl } from '../utils/posts';
+import SectionLockup from './SectionLockup.astro';
 interface Props { sectionSlug?: string; }
 const { sectionSlug } = Astro.props;
 import { withBase } from '../utils/paths';
@@ -7,7 +8,7 @@ import { SITE_X } from '../consts';
 const path = Astro.url.pathname;
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
 ---
-<header class="masthead">
+<header class="masthead" style={`--lockup:${getSection(sectionSlug ?? 'tech').colorDark}`}>
   <div class="topbar">
     <div class="container topbar-in">
       <span class="date">{today}</span>
@@ -24,17 +25,21 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   </div>
   <div class="container brand-row">
     <a class="wordmark" href={withBase('')} aria-label="JustinCredibleTech home">
-      <img class="wm-logo wm-light" src={withBase('brand/jc-header-light.svg')} alt="JustinCredible Tech" width="490" height="120" decoding="async" fetchpriority="high" />
-      <img class="wm-logo wm-dark" src={withBase('brand/jc-header-dark.svg')} alt="" aria-hidden="true" width="490" height="120" decoding="async" />
+      <SectionLockup slug={sectionSlug ?? 'tech'} />
     </a>
   </div>
+  <div class="lockup-rule" aria-hidden="true"></div>
   <nav class="sections" aria-label="Sections">
     <div class="container sections-in">
-      <a href={withBase('')} aria-current={path === withBase('') ? 'page' : undefined}>Top Stories</a>
-      <a href={withBase('blog/')} aria-current={path.startsWith(withBase('blog')) && path.length <= withBase('blog/').length ? 'page' : undefined}>Latest</a>
-      {SECTIONS.map((s) => (
-        <a class={`sec-${s.slug} sec-link`} href={sectionUrl(s.slug)} aria-current={path.replace(/\/$/, '') === sectionUrl(s.slug).replace(/\/$/, '') ? 'page' : (sectionSlug === s.slug ? 'true' : undefined)}><i aria-hidden="true"></i>{s.name}</a>
-      ))}
+      <div class="nav-core">
+        <a href={withBase('')} aria-current={path === withBase('') ? 'page' : undefined}>Top Stories</a>
+        <a href={withBase('blog/')} aria-current={path.startsWith(withBase('blog')) && path.length <= withBase('blog/').length ? 'page' : undefined}>Latest</a>
+      </div>
+      <div class="nav-secs">
+        {SECTIONS.map((s) => (
+          <a class={`sec-${s.slug} sec-link`} href={sectionUrl(s.slug)} aria-current={path.replace(/\/$/, '') === sectionUrl(s.slug).replace(/\/$/, '') ? 'page' : (sectionSlug === s.slug ? 'true' : undefined)} aria-label={s.name}><i aria-hidden="true"></i>{s.short}</a>
+        ))}
+      </div>
     </div>
   </nav>
 </header>
@@ -47,7 +52,7 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   });
   (function () {
     var cur = document.querySelector('.sections a.sec-link[aria-current]');
-    var bar = document.querySelector('.sections-in');
+    var bar = document.querySelector('.nav-secs') || document.querySelector('.sections-in');
     if (cur && bar && bar.scrollWidth > bar.clientWidth) bar.scrollLeft = cur.offsetLeft - (bar.clientWidth - cur.offsetWidth) / 2;
   })();
 </script>
@@ -63,20 +68,65 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   @media (max-width: 560px) { .date { display: none; } .topbar-in { justify-content: flex-end; } }
 
   .brand-row { display: flex; justify-content: center; padding: 1.4rem 0 1.2rem; }
+  .lockup-rule { height: 3px; background: var(--lockup, var(--brand-gold)); }
   .wordmark { display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
-  .wm-logo { display: block; height: 56px; width: auto; }
-  .wm-dark { display: none; }
-  :global([data-theme='dark']) .wm-light { display: none; }
-  :global([data-theme='dark']) .wm-dark { display: block; }
-  @media (max-width: 560px) { .brand-row { padding: 1.1rem 0 1rem; } .wm-logo { height: 46px; } }
+  @media (max-width: 560px) { .brand-row { padding: 1.1rem 0 1rem; } }
 
-  .sections { border-top: 3px solid var(--sec, var(--text)); border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); }
-  .sections-in { display: flex; gap: 1.6rem; overflow-x: auto; scrollbar-width: none; justify-content: center; }
-  .sections-in::-webkit-scrollbar { display: none; }
+  .sections { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); }
+  .sections-in { display: flex; align-items: stretch; gap: 1.15rem; justify-content: center; }
+  .nav-core, .nav-secs { display: contents; }
   .sections a { flex: none; padding: .85rem 0 .75rem; font: 700 .82rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .06em; color: var(--text); text-decoration: none; border-bottom: 3px solid transparent; }
   .sections a:hover, .sections a[aria-current] { border-bottom-color: var(--sec, var(--gold)); }
   .sec-link i { display: inline-block; width: .5rem; height: .5rem; border-radius: 2px; background: var(--sec); margin-right: .4rem; vertical-align: .05em; }
   .sections a.sec-link[aria-current] { color: var(--sec); }
-  .sections-in { gap: 1.4rem; }
-  @media (max-width: 900px) { .sections-in { justify-content: flex-start; } }
+  /* Short section labels (Tech, AI, Auto…) so eight items fit on one desktop row. */
+  @media (max-width: 1320px) { .sections-in { gap: 1.05rem; } }
+
+  /* Phones and narrow tablets: wrapping 4x2 color-coded chips, no sideways scroll. */
+  @media (max-width: 900px) {
+    .sections-in {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: .4rem;
+      padding: .45rem 0 .55rem;
+      overflow: visible;
+    }
+    .nav-core {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .nav-core a { padding: .4rem 0 .25rem; border-bottom-width: 2px; }
+    .nav-secs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .35rem;
+    }
+    .nav-secs a.sec-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .28rem;
+      margin: 0;
+      padding: .48rem .15rem;
+      border: 1px solid color-mix(in srgb, var(--sec) 42%, var(--line));
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--sec) 11%, var(--bg));
+      color: var(--sec);
+      font-size: .68rem;
+      letter-spacing: .04em;
+      line-height: 1;
+    }
+    .nav-secs a.sec-link i { width: .42rem; height: .42rem; margin: 0; border-radius: 2px; }
+    .nav-secs a.sec-link:hover,
+    .nav-secs a.sec-link[aria-current] {
+      background: var(--sec);
+      color: var(--sec-ink);
+      border-color: var(--sec);
+      border-bottom-color: var(--sec);
+    }
+    .nav-secs a.sec-link[aria-current] i,
+    .nav-secs a.sec-link:hover i { background: var(--sec-ink); }
+  }
 </style>

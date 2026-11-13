@@ -17,12 +17,12 @@
     },
     {
       "source": "/category/health",
-      "destination": "/science/",
+      "destination": "/health/",
       "permanent": true
     },
     {
       "source": "/category/health/",
-      "destination": "/science/",
+      "destination": "/health/",
       "permanent": true
     },
     {
@@ -57,12 +57,12 @@
     },
     {
       "source": "/category/ai",
-      "destination": "/tech/",
+      "destination": "/ai/",
       "permanent": true
     },
     {
       "source": "/category/ai/",
-      "destination": "/tech/",
+      "destination": "/ai/",
       "permanent": true
     },
     {

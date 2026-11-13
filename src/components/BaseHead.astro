@@ -23,7 +23,7 @@ const isMirror = !CANONICAL_ORIGIN.startsWith(String(Astro.site).replace(/\/$/, 
 const imgPath = image ?? '/og-default.png';
 const imgRel = imgPath.startsWith(base) && base ? imgPath.slice(base.length) : imgPath;
 const ogImage = /^https?:/.test(imgPath) ? imgPath : new URL(imgRel, CANONICAL_ORIGIN).href;
-const pageTitle = title ? `${title} | ${SITE_TITLE}` : `${SITE_TITLE}: Tech, Auto, Space, EV, Science & Politics News`;
+const pageTitle = title ? `${title} | ${SITE_TITLE}` : `${SITE_TITLE}: Tech, AI, Auto, Space, EV, Science, Health & Politics News`;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -15,7 +15,7 @@ const blog = defineCollection({
     // Optional extras (all backward compatible):
     // section: which JustinCredible network section the article belongs to (see NETWORK.md).
     // Omitted = Tech (or the legacy `category` mapping below), so older posts never break.
-    section: z.enum(['tech', 'auto', 'space', 'ev', 'science', 'politics']).optional(),
+    section: z.enum(['tech', 'ai', 'auto', 'space', 'ev', 'science', 'health', 'politics']).optional(),
     // Deprecated pre-network field; still read as a fallback when `section` is missing.
     category: z.string().optional(),
     // image: site-relative path, e.g. "/images/my-slug.jpg". If omitted, public/images/<slug>.jpg is used when present.

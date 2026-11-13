@@ -14,10 +14,12 @@
   --max: 1240px;
   /* JustinCredible network section accents (light theme; >= 5:1 on #fff). Mirror of SECTIONS in src/utils/posts.ts. */
   --c-tech: #8a6a0c;
+  --c-ai: #1d4ed8;
   --c-auto: #c8102e;
   --c-space: #4338ca;
   --c-ev: #0e7490;
   --c-science: #15803d;
+  --c-health: #be185d;
   --c-politics: #7a3e8e;
   --sec-ink: #ffffff; /* text on a solid section-color fill */
   --brand-navy: #0B1426;
@@ -35,10 +37,12 @@
   --link: #e3bf55;
   /* Dark theme accents (>= 6:1 on #0f1013). */
   --c-tech: #d8b03a;
+  --c-ai: #60a5fa;
   --c-auto: #ff5c63;
   --c-space: #9b9cff;
   --c-ev: #22d3ee;
   --c-science: #4ade80;
+  --c-health: #fb7185;
   --c-politics: #c99ae0;
   --sec-ink: #0f1013;
   color-scheme: dark;
@@ -90,15 +94,18 @@ a { color: var(--link); }
 
 /* ---- JustinCredible network sections ---- */
 .sec-tech { --sec: var(--c-tech); }
+.sec-ai { --sec: var(--c-ai); }
 .sec-auto { --sec: var(--c-auto); }
 .sec-space { --sec: var(--c-space); }
 .sec-ev { --sec: var(--c-ev); }
 .sec-science { --sec: var(--c-science); }
+.sec-health { --sec: var(--c-health); }
 .sec-politics { --sec: var(--c-politics); }
 /* A whole page scoped to a section: links, focus rings and quotes pick up its accent. */
 .sec-scope { --link: var(--sec); --gold: var(--sec); }
 .sec-badge { display: inline-flex; align-items: stretch; border-radius: 4px; overflow: hidden; font: 900 .72rem/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; vertical-align: middle; box-shadow: 0 0 0 1px color-mix(in srgb, var(--sec) 60%, transparent); }
-.sec-badge .jc { background: var(--brand-navy); color: var(--brand-gold); padding: .38rem .45rem; font-style: italic; letter-spacing: .02em; }
+.sec-badge .jc { background: var(--brand-navy); color: var(--brand-gold); padding: .3rem .38rem; display: inline-flex; align-items: center; justify-content: center; }
+.sec-badge .mini-mark { display: block; width: 1.05em; height: 1.05em; }
 .sec-badge .nm { background: var(--sec); color: var(--sec-ink); padding: .38rem .55rem; }
 .sec-badge--lg { font-size: .9rem; }
 .sec-badge--lg .jc, .sec-badge--lg .nm { padding: .5rem .65rem; }

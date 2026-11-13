@@ -2,7 +2,7 @@
 title: "Sam Altman Says Scarce RAM Sitting in Home PCs Is \"Quite Terrible\" for AI, and PC Fans Are Pushing Back"
 description: "On the Cheeky Pint podcast, OpenAI's CEO argued that the world's limited supply of memory gets more use in cloud data centers than in personal computers. Critics say he's ignoring privacy, everything else RAM does, and AI's own role in the memory crunch."
 pubDate: 2026-10-30
-section: "tech"
+section: "ai"
 tags: ["Tech", "AI", "Hardware", "News"]
 imageAlt: "OpenAI CEO Sam Altman speaking at an event"
 imageCredit: "Village Global / CC BY 2.0"

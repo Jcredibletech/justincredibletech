@@ -1,5 +1,6 @@
 ---
 import { SECTIONS, sectionUrl } from '../utils/posts';
+import SectionLockup from './SectionLockup.astro';
 import { withBase } from '../utils/paths';
 import { SOCIALS, SITE_DESCRIPTION } from '../consts';
 import { SOCIAL_ICONS } from '../utils/socialIcons';
@@ -8,7 +9,7 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container foot-grid">
     <div>
-      <a class="foot-mark" href={withBase('')} aria-label="JustinCredibleTech home"><img src={withBase('brand/jc-header-dark.svg')} alt="JustinCredible Tech" width="490" height="120" loading="lazy" /></a>
+      <a class="foot-mark" href={withBase('')} aria-label="JustinCredibleTech home"><SectionLockup slug="tech" onDark /></a>
       <p class="foot-blurb">{SITE_DESCRIPTION}</p>
     </div>
     <nav aria-label="Sections">
@@ -26,7 +27,7 @@ const year = new Date().getFullYear();
       <ul class="follow-more"><li><a href={withBase('about/')}>About</a></li></ul>
     </nav>
   </div>
-  <div class="container foot-base">© {year} JustinCredibleTech. Independent, factual, nonpartisan coverage.</div>
+  <div class="container foot-base">© {year} JustinCredibleTech. Independent, factual, straightforward coverage.</div>
 </footer>
 <style>
   .site-footer { margin-top: 4rem; background: var(--ink); color: #d8d8dc; padding: 3rem 0 1.5rem; }
@@ -34,7 +35,7 @@ const year = new Date().getFullYear();
   @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-grid > div:first-child { grid-column: 1 / -1; } }
   .site-footer { background: #0B1426; }
   .foot-mark { display: inline-block; line-height: 0; }
-  .foot-mark img { height: 48px; width: auto; }
+  .foot-mark :global(.sec-lockup) { height: 48px; width: auto; }
   .foot-blurb { color: #a4a6ad; max-width: 34rem; font-size: .92rem; line-height: 1.55; }
   h4 { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: #D8B03A; margin: 0 0 .9rem; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }

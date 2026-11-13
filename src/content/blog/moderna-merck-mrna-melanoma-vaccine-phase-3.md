@@ -2,7 +2,7 @@
 title: "Personalized mRNA Vaccine Cut Melanoma Recurrence-or-Death Risk by 42% in a Phase 3 Trial"
 description: "Merck and Moderna's investigational mRNA shot intismeran, added to Keytruda after melanoma surgery, lowered the risk of the cancer returning or death by 42% versus Keytruda alone in the phase 3 INTerpath-001 trial. It is not approved yet, and survival data are still coming."
 pubDate: 2026-10-23
-section: "science"
+section: "health"
 tags: ["Health", "Science", "Medical Breakthroughs", "mRNA", "Cancer", "Moderna"]
 imageCredit: "Moderna HQ: ajay_suresh / CC BY 4.0"
 featured: true
