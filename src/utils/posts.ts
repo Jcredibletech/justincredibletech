@@ -12,7 +12,7 @@ export interface Section {
   slug: SectionSlug;
   /** Full network brand name, e.g. "JustinCredible EV". */
   name: string;
-  /** Short label used in nav chips and badges, e.g. "EV". Never prefix with "JC". */
+  /** Short label used in the lockup tag and badges, e.g. "EV". Never prefix with "JC". */
   short: string;
   blurb: string;
   /** Accent for light backgrounds (also used in inline/OG contexts). Theme-aware value is var(--sec) via the .sec-<slug> class. */
