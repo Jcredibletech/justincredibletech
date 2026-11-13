@@ -2,6 +2,7 @@
 title: "Anthropic Says Claude Fable 5.2 Completed 41% of Real Freelance Projects in a Benchmark"
 description: "Anthropic released Claude Fable 5.2 and Mythos 5.2 on November 9, 2026. Fable 5.2 scored 41.3% on the Remote Labor Index, a test built from real freelance projects, up from 17.9% for Fable 5.1, and its API price dropped 20%."
 pubDate: 2026-11-09
+section: "tech"
 tags: ["AI", "Anthropic", "Jobs", "Claude"]
 imageAlt: "Anthropic CEO Dario Amodei speaking on stage at TechCrunch Disrupt 2023"
 imageCredit: "TechCrunch via Wikimedia Commons (CC BY 2.0)"

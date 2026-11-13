@@ -2,6 +2,7 @@
 title: "OpenAI Closes About $11 Billion at a $1.25 Trillion Valuation"
 description: "Bloomberg reports OpenAI has closed roughly $11 billion in new funding at a $1.25 trillion valuation — the first slice of a round that could grow to about $20 billion, well under a prior $30 billion target."
 pubDate: 2026-11-06
+section: "tech"
 tags: ["OpenAI", "AI", "Funding", "ChatGPT"]
 imageAlt: "Nasdaq MarketSite in Times Square, New York"
 imageCredit: "ajay_suresh via Wikimedia Commons (CC BY 2.0)"

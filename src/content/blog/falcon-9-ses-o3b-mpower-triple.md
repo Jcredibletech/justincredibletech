@@ -2,6 +2,7 @@
 title: "Sunday Rocket Matinee: Falcon 9 Hauls Three SES O3b mPOWER Sats"
 description: "SpaceX is targeting Sunday Sep 13 for a Falcon 9 launch of three SES O3b mPOWER satellites from Cape Canaveral — the first triple mPOWER stack — window open 2:49 p.m. ET. A consumer guide to the afternoon broadband rocket."
 pubDate: 2026-09-13
+section: "space"
 tags: ["SpaceX", "Falcon 9", "SES", "O3b mPOWER", "Broadband", "Space"]
 featured: true
 ---

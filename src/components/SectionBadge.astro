@@ -1,0 +1,8 @@
+---
+import { getSection, sectionUrl } from '../utils/posts';
+interface Props { slug: string; size?: 'sm' | 'lg'; link?: boolean; }
+const { slug, size = 'sm', link = true } = Astro.props;
+const s = getSection(slug);
+const Tag = link ? 'a' : 'span';
+---
+<Tag class={`sec-badge sec-${s.slug}${size === 'lg' ? ' sec-badge--lg' : ''}`} href={link ? sectionUrl(s.slug) : undefined} aria-label={s.name}><span class="jc" aria-hidden="true">JC</span><span class="nm" aria-hidden="true">{s.short}</span></Tag>

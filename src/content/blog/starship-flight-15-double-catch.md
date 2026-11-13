@@ -2,6 +2,7 @@
 title: "SpaceX Will Try to Catch the WHOLE Starship on Flight 15"
 description: "On its Oct 20 earnings call, SpaceX said Starship Flight 15 (targeting November) will try to catch both the Super Heavy booster and the Starship upper stage with the tower's chopsticks. FAA license still pending."
 pubDate: 2026-10-22
+section: "space"
 tags: ["SpaceX", "Starship", "Flight 15", "Super Heavy", "Starbase", "Space"]
 featured: true
 ---

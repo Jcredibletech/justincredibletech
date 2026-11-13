@@ -2,6 +2,7 @@
 title: "9 Killed as Business Jet Crashes Near Greenacres, Florida Homes"
 description: "A Learjet 60 flying from Austin, Texas, to the Bahamas crashed in a residential area of Palm Beach County, Florida, on November 1. The U.S. transportation secretary says all nine people on board were killed. The NTSB is investigating."
 pubDate: 2026-11-01
+section: "auto"
 tags: ["News", "Breaking News", "Aviation", "Florida"]
 imageAlt: "Fire trucks with emergency lights on along a road near the crash site in Palm Beach County, Florida, under a gray sky"
 imageCredit: "Palm Beach County Fire Rescue (official release on X)"

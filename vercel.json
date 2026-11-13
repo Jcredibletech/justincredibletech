@@ -14,6 +14,76 @@
       "source": "/justincredibletech/(.*)",
       "destination": "/$1",
       "permanent": true
+    },
+    {
+      "source": "/category/health",
+      "destination": "/science/",
+      "permanent": true
+    },
+    {
+      "source": "/category/health/",
+      "destination": "/science/",
+      "permanent": true
+    },
+    {
+      "source": "/category/cars",
+      "destination": "/auto/",
+      "permanent": true
+    },
+    {
+      "source": "/category/cars/",
+      "destination": "/auto/",
+      "permanent": true
+    },
+    {
+      "source": "/category/space",
+      "destination": "/space/",
+      "permanent": true
+    },
+    {
+      "source": "/category/space/",
+      "destination": "/space/",
+      "permanent": true
+    },
+    {
+      "source": "/category/science",
+      "destination": "/science/",
+      "permanent": true
+    },
+    {
+      "source": "/category/science/",
+      "destination": "/science/",
+      "permanent": true
+    },
+    {
+      "source": "/category/ai",
+      "destination": "/tech/",
+      "permanent": true
+    },
+    {
+      "source": "/category/ai/",
+      "destination": "/tech/",
+      "permanent": true
+    },
+    {
+      "source": "/category/tech",
+      "destination": "/tech/",
+      "permanent": true
+    },
+    {
+      "source": "/category/tech/",
+      "destination": "/tech/",
+      "permanent": true
+    },
+    {
+      "source": "/category/news",
+      "destination": "/tech/",
+      "permanent": true
+    },
+    {
+      "source": "/category/news/",
+      "destination": "/tech/",
+      "permanent": true
     }
   ],
   "headers": [

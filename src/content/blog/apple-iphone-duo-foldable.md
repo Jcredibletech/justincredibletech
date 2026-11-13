@@ -2,6 +2,7 @@
 title: "Apple’s iPhone Duo is real — foldable, $1,999, ships October 23"
 description: "Apple unveiled its first foldable iPhone on September 9, 2026. Here’s the price, ship date, and how it sits next to iPhone 18 Pro."
 pubDate: 2026-09-09
+section: "tech"
 tags: ["Apple", "iPhone", "foldable", "consumer tech"]
 featured: true
 ---

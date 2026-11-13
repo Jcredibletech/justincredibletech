@@ -2,6 +2,7 @@
 title: "Nvidia Stock Falls as Much as 8% After the Board Opens a Probe Tied to Jensen Huang's Affair"
 description: "Nvidia shares slid as much as 8% at Monday's open, erasing more than $280 billion in value, after the board opened an independent investigation tied to CEO Jensen Huang's affair with a suspected Chinese spy. The New York Times also reports a Commerce Department probe of her company, Megaspeed, was moved to the Justice Department after Nvidia's general counsel reached out."
 pubDate: 2026-11-09
+section: "tech"
 tags: ["Nvidia", "AI Chips", "Stocks", "China"]
 imageAlt: "The Nasdaq MarketSite video wall in Times Square, New York"
 imageCredit: "Luca Marfè via Wikimedia Commons (CC BY 2.0)"

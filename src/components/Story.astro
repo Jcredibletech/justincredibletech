@@ -1,18 +1,17 @@
 ---
 import Cover from './Cover.astro';
-import { sectionFor, postUrl, formatDate, type Post } from '../utils/posts';
-import { withBase } from '../utils/paths';
+import { sectionFor, sectionUrl, postUrl, formatDate, type Post } from '../utils/posts';
 interface Props { post: Post; variant?: 'lead' | 'card' | 'row' | 'compact'; eager?: boolean; showDek?: boolean; }
 const { post, variant = 'card', eager = false, showDek } = Astro.props;
 const sec = sectionFor(post);
 const dek = showDek ?? (variant === 'lead' || variant === 'row');
 ---
-<article class={`story story--${variant}`} style={`--sec:${sec.color}`}>
+<article class={`story story--${variant} sec-${sec.slug}`}>
   {variant !== 'compact' && (
     <a class="story-media" href={postUrl(post)} tabindex="-1" aria-hidden="true"><Cover post={post} eager={eager} /></a>
   )}
   <div class="story-body">
-    <a class="kicker" href={withBase(`category/${sec.slug}/`)}>{sec.name}</a>
+    <a class="kicker" href={sectionUrl(sec.slug)}>{sec.name}</a>
     <h3 class="story-title"><a href={postUrl(post)}>{post.data.title}</a></h3>
     {dek && <p class="story-dek">{post.data.description}</p>}
     <p class="story-meta"><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, 'short')}</time></p>

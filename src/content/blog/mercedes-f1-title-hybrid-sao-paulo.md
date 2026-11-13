@@ -2,6 +2,7 @@
 title: "Mercedes Clinches the 2026 F1 Constructors' Title in Brazil, and Half Its Power Is Electric"
 description: "Lando Norris won a wet São Paulo Grand Prix, but the bigger result was Mercedes locking up the 2026 constructors' championship with three rounds left, in the first year of F1's roughly 50/50 hybrid rules. Here's what happened and why the tech matters for the car in your driveway."
 pubDate: 2026-11-08
+section: "auto"
 tags: ["F1", "Mercedes", "Hybrid", "Cars", "Motorsport", "EV"]
 imageAlt: "Mercedes-AMG F1 W17 race car on display at the 2026 Chinese Grand Prix"
 imageCredit: "Liauzh via Wikimedia Commons (CC BY 4.0)"

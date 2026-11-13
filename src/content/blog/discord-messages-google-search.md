@@ -2,6 +2,7 @@
 title: "Some Public Discord Server Messages May Soon Show Up in Google Search"
 description: "Starting in mid-December, messages from public channels in Discord's Discoverable Servers can appear in web search if server admins allow it. DMs, group chats and private servers aren't included, and you can opt out."
 pubDate: 2026-10-27
+section: "tech"
 tags: ["Discord", "Privacy", "Google", "Search", "Tech"]
 imageCredit: "Discord"
 featured: true

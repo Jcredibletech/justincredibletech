@@ -4,17 +4,17 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '@fontsource-variable/inter';
 import '../styles/global.css';
-type Props = import('../components/BaseHead.astro').Props;
-const props = Astro.props;
+type Props = import('../components/BaseHead.astro').Props & { sectionSlug?: string };
+const { sectionSlug, ...props } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead {...props} />
   </head>
-  <body>
+  <body class={sectionSlug ? `sec-scope sec-${sectionSlug}` : undefined}>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
+    <Header sectionSlug={sectionSlug} />
     <main id="main">
       <slot />
     </main>

@@ -2,6 +2,7 @@
 title: "Your iPhone Keyboard Has a Hidden List of About 100,000 Phrases It Won't Suggest"
 description: "A researcher found an undisclosed list inside iOS of roughly 100,000 words and phrases that the iPhone keyboard won't autocomplete or, in most cases, swipe-type. Most are slurs, sex and drug terms, but political phrases from both sides are on it too. You can still type all of them letter by letter."
 pubDate: 2026-11-07
+section: "tech"
 tags: ["Apple", "iPhone", "Big Tech", "Free Speech", "politics"]
 imageAlt: "Apple iPhone 15 Pro and iPhone 15 Pro Max side by side"
 imageCredit: "IPHONE 15 via Wikimedia Commons (CC BY-SA 4.0)"

@@ -2,6 +2,7 @@
 title: "US Intel Says China's Spy Agency Targeted Nvidia CEO Jensen Huang — House GOP Wants a Briefing"
 description: "The New York Times reports US intelligence believes China's Ministry of State Security recruited a Megaspeed executive to get close to Nvidia CEO Jensen Huang. The FT says officials believe the relationship was romantic. Three House Republican chairs want Huang at a closed-door briefing on November 18."
 pubDate: 2026-11-07
+section: "politics"
 tags: ["Nvidia", "AI Chips", "China", "National Security"]
 imageAlt: "Nvidia CEO Jensen Huang speaking at Stanford in April 2026"
 imageCredit: "Anderseidesvik via Wikimedia Commons (CC BY-SA 4.0)"

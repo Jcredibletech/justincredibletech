@@ -2,6 +2,7 @@
 title: "SpaceX Is Reportedly in Talks to Buy Boost Mobile"
 description: "The Washington Post reports SpaceX has been talking with EchoStar about buying Boost Mobile or getting access to its network, a possible shortcut into the US wireless market for Starlink Mobile. No deal has been announced."
 pubDate: 2026-11-02
+section: "space"
 tags: ["SpaceX", "Starlink", "Wireless", "Phones"]
 imageAlt: "A Boost Mobile storefront with an orange inflatable tube man out front on a city sidewalk"
 imageCredit: "Tony Webster via Wikimedia Commons (CC BY-SA 2.0)"

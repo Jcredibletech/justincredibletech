@@ -2,6 +2,7 @@
 title: "Cybertruck + Powerwall 3: Tesla Just Made Multi-Day Home Backup a Team Sport"
 description: "Tesla’s Cybertruck Powershare can now back up a home together with Powerwall 3—extending outage runtime by more than three days. Here’s what changed and why it matters."
 pubDate: 2026-09-10
+section: "ev"
 tags: ["Tesla", "Cybertruck", "Powerwall", "Powershare", "Home Energy", "EV"]
 featured: true
 ---

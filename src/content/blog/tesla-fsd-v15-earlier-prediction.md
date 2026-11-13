@@ -2,6 +2,7 @@
 title: "FSD v14 Just Got ACE — Ashok Says v15 Is the Real Leap"
 description: "Hours after FSD v14.3.9’s Automatic Collision Evasion rollout chatter, Tesla AI lead Ashok Elluswamy previewed v15: earlier hazard prediction, faster reactions, and better collision avoidance. Here’s the light, hopeful consumer take."
 pubDate: 2026-09-12
+section: "ev"
 tags: ["Tesla", "FSD", "Autopilot", "EV", "Software", "AI"]
 featured: true
 ---

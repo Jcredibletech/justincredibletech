@@ -2,6 +2,7 @@
 title: "LEGO's First Official Godzilla Set Has 5,363 Pieces and Stands 27.5 Inches Tall"
 description: "LEGO revealed LEGO Ideas Godzilla (21375) on Godzilla Day: a fan-designed, 5,363-piece build that's the biggest LEGO Ideas set ever. It goes on sale November 27, 2026, for $449.99."
 pubDate: 2026-11-03
+section: "tech"
 tags: ["LEGO", "Godzilla", "Toys", "Pop Culture"]
 imageAlt: "The LEGO Ideas Godzilla set, a gray brick-built Godzilla with glowing blue dorsal fins, firing a blue brick-built heat ray against a dark background"
 imageCredit: "Image: The LEGO Group"

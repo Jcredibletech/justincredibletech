@@ -2,6 +2,7 @@
 title: "Hackers Drained About $6.3 Billion From Binance in the Largest Crypto Theft on Record"
 description: "Most of the money left Binance's hot wallets in about 20 minutes on October 29. Binance says a hacked engineer's laptop may have been the way in, blockchain analysts point to North Korea, and about $3 billion has been frozen so far."
 pubDate: 2026-10-30
+section: "tech"
 tags: ["Tech", "Security", "Crypto", "News"]
 imageAlt: "A gold Bitcoin coin resting on a laptop keyboard"
 imageCredit: "Satheesh Sankaran / CC BY 2.0"

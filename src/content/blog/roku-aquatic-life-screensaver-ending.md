@@ -2,6 +2,7 @@
 title: "Roku Is Retiring Its Aquatic Life Fish Tank Screensaver on Dec. 1"
 description: "Roku is showing users an on-screen notice that its Aquatic Life aquarium screensaver will no longer be available starting December 1, 2026, and that affected screens will switch to Roku City. Here's the backstory and how to pick something else."
 pubDate: 2026-11-02
+section: "tech"
 tags: ["Roku", "Streaming", "Smart TV", "Screensavers"]
 imageAlt: "A TV showing Roku's Aquatic Life aquarium screensaver, with coral and a striped angelfish, under an on-screen notice that says the screensaver will no longer be available starting Dec 1, 2026"
 imageCredit: "Photo: JustinCredibleTech (Roku on-screen notice)"

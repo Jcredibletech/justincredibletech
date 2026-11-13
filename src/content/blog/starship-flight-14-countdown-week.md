@@ -2,6 +2,7 @@
 title: "Starship Flight 14 Is One Week Out — On the FAA Calendar, Anyway"
 description: "Airspace advisories still point to Friday Sep 18 (~12:15–14:14 UTC) with Sep 19 backup for Starship Flight 14 — while SpaceX hasn’t locked a public webcast or date. Here’s the countdown-week checklist, not another mission remake."
 pubDate: 2026-09-13
+section: "space"
 tags: ["SpaceX", "Starship", "Space", "Countdown", "Rockets", "Tech"]
 featured: true
 ---

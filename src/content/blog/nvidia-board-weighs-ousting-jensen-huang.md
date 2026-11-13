@@ -2,8 +2,8 @@
 title: "Nvidia's Board Is Reportedly Preparing to Oust Jensen Huang After a Second Alleged Affair"
 description: "The Wall Street Journal reports Nvidia's board is preparing to remove founder and CEO Jensen Huang and was set to meet as soon as November 11, 2026, after The New York Times reported a second alleged affair, this time with an executive who reports to him. Shares fell more than 7% after hours."
 pubDate: 2026-11-11
+section: "tech"
 tags: ["Nvidia", "AI Chips", "Stocks", "Leadership", "news"]
-category: "tech"
 imageAlt: "Nvidia's Voyager headquarters building in Santa Clara, California"
 imageCredit: "Coolcaesar via Wikimedia Commons (CC BY-SA 4.0)"
 featured: true

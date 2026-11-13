@@ -2,8 +2,8 @@
 title: "48 AI Agents Spotted a Maya Pyramid Under the Jungle, but Archaeologists Had Already Mapped It"
 description: "A Google engineer had 48 AI agents comb NASA lidar scans of Mexican jungle and flagged what looked like an unregistered Maya site. On November 11, 2026 he confirmed it was already published in a 2025 lidar study."
 pubDate: 2026-11-11
+section: "science"
 tags: ["AI", "science", "archaeology", "lidar", "news"]
-category: "tech"
 imageAlt: "Structure I, a stepped Maya pyramid rising out of the jungle at Calakmul in Campeche, Mexico (not the site in this story)"
 imageCredit: "Calakmul, Structure I by Arian Zwegers / CC BY 2.0, via Wikimedia Commons (illustrative, not the site in this story)"
 featured: true

@@ -2,6 +2,7 @@
 title: "Nvidia's Board Opens an Investigation After Jensen Huang Admits an Affair With a Suspected Chinese Spy"
 description: "Nvidia CEO Jensen Huang told employees he was unfaithful to his wife, and Nvidia's board launched an independent investigation into reports that he was the target of a foreign intelligence effort. The board says it has no reason to believe secrets were compromised, and Huang stays CEO."
 pubDate: 2026-11-08
+section: "tech"
 tags: ["Nvidia", "AI Chips", "China", "National Security"]
 imageAlt: "Nvidia headquarters building in Santa Clara, California"
 imageCredit: "Coolcaesar via Wikimedia Commons (CC BY-SA 4.0)"

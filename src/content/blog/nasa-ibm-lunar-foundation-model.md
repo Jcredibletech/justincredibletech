@@ -2,6 +2,7 @@
 title: "NASA and IBM just open-sourced a foundation model for the Moon"
 description: "On September 10, 2026, NASA and IBM released a lunar AI foundation model on Hugging Face — craters, volcanic quirks, polar ice, and why that ice matters."
 pubDate: 2026-09-10
+section: "space"
 tags: ["NASA", "IBM", "AI", "space", "Moon"]
 featured: true
 ---

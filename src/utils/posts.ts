@@ -5,44 +5,64 @@ import { withBase } from './paths';
 
 export type Post = CollectionEntry<'blog'>;
 
+export const SECTION_SLUGS = ['tech', 'auto', 'space', 'ev', 'science', 'politics'] as const;
+export type SectionSlug = (typeof SECTION_SLUGS)[number];
+
 export interface Section {
-  slug: string;
+  slug: SectionSlug;
+  /** Full network brand name, e.g. "JC EV". */
   name: string;
+  /** Short label used after the JC chip in badges and the nav, e.g. "EV". */
+  short: string;
   blurb: string;
+  /** Accent for light backgrounds (also used in inline/OG contexts). Theme-aware value is var(--sec) via the .sec-<slug> class. */
   color: string;
-  match: string[];
+  /** Accent for dark backgrounds. */
+  colorDark: string;
 }
 
-/** Order matters: first match wins when picking a post's primary section. */
+/**
+ * The JustinCredible network. Order = nav order. Colors are also defined as CSS tokens
+ * (--c-<slug>) in src/styles/global.css; keep both in sync (see NETWORK.md).
+ */
 export const SECTIONS: Section[] = [
-  { slug: 'health', name: 'Health', blurb: 'Medical breakthroughs, approvals and research that could change care.', color: '#e0475b',
-    match: ['health', 'medicine', 'medical breakthroughs', 'fda', 'mrna', 'cancer', 'moderna', 'aging'] },
-  { slug: 'cars', name: 'Cars & EVs', blurb: 'Electric vehicles, self-driving, robotaxis and the cars worth knowing about.', color: '#1fa971',
-    match: ['ev', 'cars', 'tesla', 'cybertruck', 'byd', 'mercedes-amg', 'fsd', 'robotaxi', 'cybercab', 'self-driving', 'roadster', 'affordable evs', 'sports cars', 'autopilot'] },
-  { slug: 'space', name: 'Space', blurb: 'Rockets, launches, satellites and missions.', color: '#5b6cff',
-    match: ['space', 'spacex', 'starship', 'nasa', 'falcon 9', 'starlink', 'rockets', 'moon', 'super heavy', 'starbase'] },
-  { slug: 'science', name: 'Science', blurb: 'Discoveries and research, explained without the jargon.', color: '#a259ff',
-    match: ['science', 'research', 'math'] },
-  { slug: 'ai', name: 'AI', blurb: 'Models, labs and the AI tools showing up in everyday products.', color: '#f08a24',
-    match: ['ai', 'openai', 'anthropic', 'xai', 'gemini'] },
-  { slug: 'tech', name: 'Tech', blurb: 'Phones, computers, apps and the companies behind them.', color: '#c9a227',
-    match: ['tech', 'apple', 'google', 'microsoft', 'iphone', 'mac', 'apps', 'gadgets', 'consumer tech', 'foldables', 'foldable', 'discord', 'privacy', 'connectivity', 'security'] },
-  { slug: 'news', name: 'News', blurb: 'Non-political breaking news.', color: '#8a8f98',
-    match: ['news', 'breaking news'] },
+  { slug: 'tech', name: 'JustinCredible Tech', short: 'Tech', color: '#8a6a0c', colorDark: '#d8b03a',
+    blurb: 'Phones, computers, AI, apps and the companies behind them.' },
+  { slug: 'auto', name: 'JC Auto', short: 'Auto', color: '#c8102e', colorDark: '#ff5c63',
+    blurb: 'Cars, trucks, motorsport and the wider world of transportation.' },
+  { slug: 'space', name: 'JC Space', short: 'Space', color: '#4338ca', colorDark: '#9b9cff',
+    blurb: 'Rockets, launches, satellites and missions beyond Earth.' },
+  { slug: 'ev', name: 'JC EV', short: 'EV', color: '#0e7490', colorDark: '#22d3ee',
+    blurb: 'Electric vehicles, charging, batteries and self-driving tech.' },
+  { slug: 'science', name: 'JC Science', short: 'Science', color: '#15803d', colorDark: '#4ade80',
+    blurb: 'Discoveries, health and research, explained without the jargon.' },
+  { slug: 'politics', name: 'JC Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0',
+    blurb: 'Policy, government and elections, reported factually and without taking sides.' },
 ];
 
+/** Pre-network `category:` values (and old /category/<slug>/ URLs) mapped to network sections. */
+export const LEGACY_SECTION: Record<string, SectionSlug> = {
+  tech: 'tech', ai: 'tech', news: 'tech', cars: 'auto', auto: 'auto', ev: 'ev', evs: 'ev',
+  space: 'space', science: 'science', health: 'science', politics: 'politics',
+};
+
+export function getSection(slug: string): Section {
+  return SECTIONS.find((s) => s.slug === slug) ?? SECTIONS[0];
+}
+
+/** A post's section: frontmatter `section`, else legacy `category`, else Tech. */
 export function sectionFor(post: Post): Section {
-  if (post.data.category) {
-    const s = SECTIONS.find((x) => x.slug === post.data.category!.toLowerCase() || x.name.toLowerCase() === post.data.category!.toLowerCase());
-    if (s) return s;
-  }
-  const tags = post.data.tags.map((t) => t.toLowerCase());
-  for (const s of SECTIONS) if (tags.some((t) => s.match.includes(t))) return s;
-  return SECTIONS[SECTIONS.length - 1];
+  if (post.data.section) return getSection(post.data.section);
+  const legacy = post.data.category ? LEGACY_SECTION[post.data.category.toLowerCase()] : undefined;
+  return getSection(legacy ?? 'tech');
 }
 
 export function postsInSection(posts: Post[], slug: string): Post[] {
   return posts.filter((p) => sectionFor(p).slug === slug);
+}
+
+export function sectionUrl(slug: string): string {
+  return withBase(`${slug}/`);
 }
 
 export async function getPosts(): Promise<Post[]> {

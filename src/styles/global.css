@@ -12,6 +12,16 @@
   --link: #8a6a0c;
   --radius: 6px;
   --max: 1240px;
+  /* JustinCredible network section accents (light theme; >= 5:1 on #fff). Mirror of SECTIONS in src/utils/posts.ts. */
+  --c-tech: #8a6a0c;
+  --c-auto: #c8102e;
+  --c-space: #4338ca;
+  --c-ev: #0e7490;
+  --c-science: #15803d;
+  --c-politics: #7a3e8e;
+  --sec-ink: #ffffff; /* text on a solid section-color fill */
+  --brand-navy: #0B1426;
+  --brand-gold: #D8B03A;
   color-scheme: light;
 }
 [data-theme='dark'] {
@@ -23,6 +33,14 @@
   --muted: #9da0a8;
   --line: #2a2c33;
   --link: #e3bf55;
+  /* Dark theme accents (>= 6:1 on #0f1013). */
+  --c-tech: #d8b03a;
+  --c-auto: #ff5c63;
+  --c-space: #9b9cff;
+  --c-ev: #22d3ee;
+  --c-science: #4ade80;
+  --c-politics: #c99ae0;
+  --sec-ink: #0f1013;
   color-scheme: dark;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -69,3 +87,18 @@ a { color: var(--link); }
 .prose table { width: 100%; border-collapse: collapse; font: 500 .95rem/1.4 var(--font-sans); }
 .prose th, .prose td { border-bottom: 1px solid var(--line); padding: .6rem .5rem; text-align: left; }
 .prose video { border-radius: 12px; background: #000; }
+
+/* ---- JustinCredible network sections ---- */
+.sec-tech { --sec: var(--c-tech); }
+.sec-auto { --sec: var(--c-auto); }
+.sec-space { --sec: var(--c-space); }
+.sec-ev { --sec: var(--c-ev); }
+.sec-science { --sec: var(--c-science); }
+.sec-politics { --sec: var(--c-politics); }
+/* A whole page scoped to a section: links, focus rings and quotes pick up its accent. */
+.sec-scope { --link: var(--sec); --gold: var(--sec); }
+.sec-badge { display: inline-flex; align-items: stretch; border-radius: 4px; overflow: hidden; font: 900 .72rem/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; vertical-align: middle; box-shadow: 0 0 0 1px color-mix(in srgb, var(--sec) 60%, transparent); }
+.sec-badge .jc { background: var(--brand-navy); color: var(--brand-gold); padding: .38rem .45rem; font-style: italic; letter-spacing: .02em; }
+.sec-badge .nm { background: var(--sec); color: var(--sec-ink); padding: .38rem .55rem; }
+.sec-badge--lg { font-size: .9rem; }
+.sec-badge--lg .jc, .sec-badge--lg .nm { padding: .5rem .65rem; }

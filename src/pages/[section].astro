@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Story from '../components/Story.astro';
+import SectionBadge from '../components/SectionBadge.astro';
+import { getPosts, SECTIONS, postsInSection, type Section, type Post } from '../utils/posts';
+import { withBase } from '../utils/paths';
+import { CANONICAL_ORIGIN } from '../consts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return SECTIONS.map((s) => ({ params: { section: s.slug }, props: { s, items: postsInSection(posts, s.slug) } }));
+}
+const { s, items } = Astro.props as { s: Section; items: Post[] };
+const [lead, ...rest] = items;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: s.name, description: s.blurb, url: `${CANONICAL_ORIGIN}/${s.slug}/`, isPartOf: { '@type': 'WebSite', name: 'JustinCredible', url: CANONICAL_ORIGIN } };
+---
+<BaseLayout title={s.name} description={`${s.name}: ${s.blurb}`} sectionSlug={s.slug} jsonLd={jsonLd} noindex={items.length === 0}>
+  <div class="sec-hero">
+    <div class="container sec-hero-in">
+      <SectionBadge slug={s.slug} size="lg" link={false} />
+      <div>
+        <h1>{s.name}</h1>
+        <p>{s.blurb}</p>
+      </div>
+      <a class="sec-rss" href={withBase(`${s.slug}/rss.xml`)}>RSS</a>
+    </div>
+  </div>
+  <div class="container">
+    {lead ? (
+      <>
+        <div class="cat-lead"><Story post={lead} variant="row" eager /></div>
+        {rest.length > 0 && <div class="grid-3">{rest.map((p) => <Story post={p} showDek />)}</div>}
+      </>
+    ) : (
+      <p class="empty">The first {s.name} stories are on the way. Check back soon.</p>
+    )}
+  </div>
+</BaseLayout>
+<style>
+  .sec-hero { background: color-mix(in srgb, var(--sec) 9%, var(--bg)); border-bottom: 4px solid var(--sec); }
+  .sec-hero-in { display: flex; align-items: center; gap: 1.2rem; padding: 2rem 0 1.8rem; }
+  .sec-hero h1 { margin: 0; font: 900 clamp(1.9rem, 5vw, 3rem)/1.05 var(--font-sans); letter-spacing: -.04em; color: var(--text); }
+  .sec-hero p { margin: .45rem 0 0; color: var(--muted); font-size: 1.05rem; max-width: 44rem; }
+  .sec-rss { margin-left: auto; align-self: flex-start; font: 800 .72rem/1 var(--font-sans); letter-spacing: .12em; color: var(--sec); text-decoration: none; border: 1px solid var(--sec); border-radius: 999px; padding: .45rem .7rem; }
+  @media (max-width: 640px) { .sec-hero-in { flex-direction: column; align-items: flex-start; gap: .8rem; padding: 1.4rem 0; } .sec-rss { margin-left: 0; } }
+  .cat-lead { margin: 2rem 0 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .cat-lead :global(.story-title) { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+  .empty { padding: 3rem 0; color: var(--muted); }
+</style>

@@ -2,6 +2,7 @@
 title: "Meta Reportedly Built a Humanoid Robot Prototype Called Max in Three Months"
 description: "According to The Information, Meta and Chinese robot maker Fourier built a roughly 106-pound humanoid prototype named Max, and a Max 2 is already underway. Meta says it's for internal research, not for sale."
 pubDate: 2026-11-01
+section: "tech"
 tags: ["Robotics", "Meta", "AI", "Gadgets"]
 imageAlt: "The Meta logo sign at the entrance to Meta's headquarters in Menlo Park, California"
 imageCredit: "LPS.1 via Wikimedia Commons (CC0)"

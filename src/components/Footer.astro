@@ -1,5 +1,5 @@
 ---
-import { SECTIONS } from '../utils/posts';
+import { SECTIONS, sectionUrl } from '../utils/posts';
 import { withBase } from '../utils/paths';
 import { SOCIALS, SITE_DESCRIPTION } from '../consts';
 import { SOCIAL_ICONS } from '../utils/socialIcons';
@@ -12,8 +12,8 @@ const year = new Date().getFullYear();
       <p class="foot-blurb">{SITE_DESCRIPTION}</p>
     </div>
     <nav aria-label="Sections">
-      <h4>Sections</h4>
-      <ul>{SECTIONS.map((s) => <li><a href={withBase(`category/${s.slug}/`)}>{s.name}</a></li>)}</ul>
+      <h4>The Network</h4>
+      <ul>{SECTIONS.map((s) => <li><a class="foot-sec" href={sectionUrl(s.slug)} style={`--dot:${s.colorDark}`}>{s.name}</a></li>)}</ul>
     </nav>
     <nav aria-label="More">
       <h4>Follow</h4>
@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
       <ul class="follow-more"><li><a href={withBase('about/')}>About</a></li></ul>
     </nav>
   </div>
-  <div class="container foot-base">© {year} JustinCredibleTech. Independent coverage; no politics.</div>
+  <div class="container foot-base">© {year} JustinCredibleTech. Independent, factual, nonpartisan coverage.</div>
 </footer>
 <style>
   .site-footer { margin-top: 4rem; background: var(--ink); color: #d8d8dc; padding: 3rem 0 1.5rem; }
@@ -45,4 +45,5 @@ const year = new Date().getFullYear();
   .social-icons a:hover { background: #26345a; }
   .social-icons a.rss { color: #FFA500; }
   .follow-more { margin-top: 1rem; }
+.foot-sec::before { content: ''; display: inline-block; width: .55rem; height: .55rem; border-radius: 2px; background: var(--dot); margin-right: .5rem; }
 </style>

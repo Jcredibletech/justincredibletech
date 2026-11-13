@@ -2,6 +2,7 @@
 title: "Starlink at home and in your pocket: what’s real in 2026"
 description: "Dish broadband and Direct-to-Cell are both real — but they’re not one magical plan yet. Here’s the clear, accurate split for home internet vs phone satellite."
 pubDate: 2026-09-08
+section: "space"
 tags: ["Starlink", "SpaceX", "connectivity", "consumer tech"]
 featured: true
 ---

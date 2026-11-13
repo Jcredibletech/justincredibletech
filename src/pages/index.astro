@@ -1,24 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Story from '../components/Story.astro';
+import SectionBadge from '../components/SectionBadge.astro';
 import PlugLifeFeature from '../components/PlugLifeFeature.astro';
-import { getPosts, SECTIONS, postsInSection, postUrl, sectionFor, formatDate } from '../utils/posts';
+import { getPosts, SECTIONS, postsInSection, postUrl, sectionUrl } from '../utils/posts';
 import { withBase } from '../utils/paths';
 import { SITE_TITLE, SITE_DESCRIPTION, CANONICAL_ORIGIN } from '../consts';
 
 const posts = await getPosts();
 const [lead, ...rest] = posts;
 const side = rest.slice(0, 4);
-const latest = rest.slice(4, 12);
-const shown = new Set([lead, ...side, ...latest].filter(Boolean).map((p) => p.id));
-const rails = SECTIONS.map((s) => ({ s, items: postsInSection(posts, s.slug) }))
-  .filter((r) => r.items.length >= 2)
-  .map((r) => ({ ...r, items: [...r.items.filter((p) => !shown.has(p.id)), ...r.items.filter((p) => shown.has(p.id))].slice(0, 4) }));
+const shown = new Set([lead, ...side].filter(Boolean).map((p) => p.id));
+// Network hub: one row per section, newest first, preferring stories not already in the top block.
+const rows = SECTIONS.map((s) => {
+  const all = postsInSection(posts, s.slug);
+  const fresh = all.filter((p) => !shown.has(p.id));
+  return { s, count: all.length, items: (fresh.length >= 4 ? fresh : all).slice(0, 4) };
+});
 const ticker = posts.slice(0, 6);
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_TITLE, url: CANONICAL_ORIGIN, description: SITE_DESCRIPTION };
 ---
 <BaseLayout description={SITE_DESCRIPTION} jsonLd={jsonLd}>
-  <h1 class="visually-hidden">{SITE_TITLE}: tech, EVs, space, science and health news</h1>
+  <h1 class="visually-hidden">{SITE_TITLE}: the JustinCredible network for tech, auto, space, EV, science and politics news</h1>
   {ticker.length > 0 && (
     <div class="ticker">
       <div class="container ticker-in">
@@ -40,17 +43,28 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
       <p class="empty">No stories yet. Check back soon.</p>
     )}
 
-    {latest.length > 0 && (
-      <section aria-labelledby="latest-h">
-        <div class="section-head"><h2 id="latest-h">The Latest</h2><a href={withBase('blog/')}>All stories →</a></div>
-        <div class="grid-4">{latest.map((p) => <Story post={p} />)}</div>
-      </section>
-    )}
+    <section aria-labelledby="network-h">
+      <div class="section-head"><h2 id="network-h">The JustinCredible Network</h2><a href={withBase('blog/')}>All stories →</a></div>
+      <ul class="net">
+        {rows.map(({ s, count }) => (
+          <li class={`net-tile sec-${s.slug}`}>
+            <a href={sectionUrl(s.slug)}>
+              <SectionBadge slug={s.slug} link={false} />
+              <strong>{s.name}</strong>
+              <span>{s.blurb}</span>
+              <em>{count} {count === 1 ? 'story' : 'stories'} →</em>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
 
-    {rails.map(({ s, items }) => (
-      <section aria-labelledby={`h-${s.slug}`} style={`--sec:${s.color}`}>
-        <div class="section-head"><h2 id={`h-${s.slug}`}><i>■</i> {s.name}</h2><a href={withBase(`category/${s.slug}/`)}>More {s.name} →</a></div>
-        <div class="grid-4">{items.map((p) => <Story post={p} />)}</div>
+    {rows.map(({ s, items }) => (
+      <section aria-labelledby={`h-${s.slug}`} class={`sec-row sec-${s.slug}`}>
+        <div class="section-head"><h2 id={`h-${s.slug}`}><SectionBadge slug={s.slug} /> <a class="row-title" href={sectionUrl(s.slug)}>{s.name}</a></h2><a href={sectionUrl(s.slug)}>More {s.short} →</a></div>
+        {items.length > 0
+          ? <div class="grid-4">{items.map((p) => <Story post={p} />)}</div>
+          : <p class="row-empty">The first {s.name} stories are on the way.</p>}
       </section>
     ))}
   </div>
@@ -67,4 +81,17 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SIT
   .top-side :global(.story--card:first-child .story-media) { display: block; }
   @media (max-width: 900px) { .top { grid-template-columns: 1fr; } .top-side { border-left: 0; padding-left: 0; } }
   .empty { padding: 4rem 0; color: var(--muted); text-align: center; }
+  .sec-row .section-head { border-top-color: var(--sec); }
+  .sec-row .section-head h2 { display: flex; align-items: center; gap: .6rem; }
+  .row-title { color: var(--text) !important; font: inherit !important; letter-spacing: inherit !important; text-transform: none !important; }
+  .row-empty { color: var(--muted); padding: 1rem 0; }
+  .net { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .net-tile a { display: grid; gap: .45rem; height: 100%; padding: 1rem 1.1rem 1.1rem; border: 1px solid var(--line); border-top: 4px solid var(--sec); border-radius: var(--radius); text-decoration: none; color: var(--text); background: color-mix(in srgb, var(--sec) 5%, var(--bg)); transition: transform .15s, box-shadow .15s; }
+  .net-tile a:hover { transform: translateY(-2px); box-shadow: 0 6px 18px color-mix(in srgb, var(--sec) 22%, transparent); }
+  .net-tile :global(.sec-badge) { justify-self: start; }
+  .net-tile strong { font: 900 1.15rem/1.1 var(--font-sans); letter-spacing: -.02em; }
+  .net-tile span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+  .net-tile em { font: 800 .74rem/1 var(--font-sans); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); margin-top: .2rem; }
+  @media (max-width: 900px) { .net { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .net { grid-template-columns: 1fr; } }
 </style>

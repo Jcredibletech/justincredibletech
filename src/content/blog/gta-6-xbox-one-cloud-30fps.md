@@ -2,8 +2,8 @@
 title: "GTA 6 Will Stream on Xbox One at Launch, and Rockstar Confirms a 30fps Target on Every Console"
 description: "Rockstar and Microsoft confirmed on November 10, 2026 that Grand Theft Auto VI will be playable on Xbox One through Xbox Cloud Gaming starting November 19, using Xbox Series S graphics settings. Rockstar also confirmed a 30fps target on PS5, PS5 Pro and Xbox Series X|S."
 pubDate: 2026-11-10
+section: "tech"
 tags: ["gaming", "GTA 6", "Xbox", "PlayStation", "cloud gaming"]
-category: "tech"
 imageAlt: "An original Xbox One console with its controller and Kinect sensor"
 imageCredit: "Evan-Amos via Wikimedia Commons (public domain)"
 featured: true

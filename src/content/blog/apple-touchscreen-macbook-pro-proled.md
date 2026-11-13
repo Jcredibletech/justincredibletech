@@ -2,6 +2,7 @@
 title: "Apple Unveils Its First Touchscreen Mac: What the New MacBook Pro Means for You"
 description: "Apple's new MacBook Pro with PROLED XDR Display is the first Mac you can touch. Here's how touch works, what it costs, and who should care."
 pubDate: 2026-10-28
+section: "tech"
 tags: ["Tech", "Apple", "Mac"]
 imageCredit: "Apple"
 featured: true

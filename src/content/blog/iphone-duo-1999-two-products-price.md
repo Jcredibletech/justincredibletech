@@ -2,6 +2,7 @@
 title: "Apple Says iPhone Duo Is ‘Like Two Products’ — So… Would You Pay $1,999?"
 description: "A day after the unveil, Apple executives defended the iPhone Duo’s $1,999 sticker, the foldable display, and the secrecy. Preorders Oct 16, ships Oct 23."
 pubDate: 2026-09-11
+section: "tech"
 tags: ["Apple", "iPhone Duo", "Foldable", "iPhone", "Consumer Tech", "Gadgets"]
 featured: true
 ---

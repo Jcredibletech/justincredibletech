@@ -2,6 +2,7 @@
 title: "Google's AI Satellite Wrote Its First Haiku From Orbit"
 description: "Google's Project Suncatcher prototype ran its Gemma 4 model on a data-center-class TPU in space and sent back a poem. It's an early test of whether AI computing could one day move off the planet."
 pubDate: 2026-10-31
+section: "space"
 tags: ["Space", "AI", "Google", "Science"]
 imageAlt: "The Blue Marble photo of Earth taken by the Apollo 17 crew"
 imageCredit: "NASA / Apollo 17 crew (public domain)"

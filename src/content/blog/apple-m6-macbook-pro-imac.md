@@ -2,6 +2,7 @@
 title: "Apple Announces the M6 14-Inch MacBook Pro and iMac. Pre-Orders Open October 28"
 description: "Apple put its new M6 chip in the 14-inch MacBook Pro ($1,999) and the 24-inch iMac ($1,499). Same designs, faster chips, and a rumored touchscreen MacBook Pro could be right behind them."
 pubDate: 2026-10-27
+section: "tech"
 tags: ["Tech", "Apple", "Mac", "News"]
 imageCredit: "Apple (press image)"
 featured: true

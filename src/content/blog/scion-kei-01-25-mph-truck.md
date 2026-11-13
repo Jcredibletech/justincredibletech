@@ -2,8 +2,8 @@
 title: "Toyota Brings Back Scion With the KEI-01, a Tiny Indiana-Built Truck Capped at 25 mph"
 description: "Toyota revived the Scion name on November 9-10, 2026 as Scion by Toyota. Its first vehicle, the KEI-01 kei truck, will be assembled in Indiana starting in the second half of 2027, sold to fleets first, and limited to 25 mph under federal low-speed vehicle rules."
 pubDate: 2026-11-10
+section: "auto"
 tags: ["auto", "Toyota", "Scion", "trucks", "news"]
-category: "cars"
 imageAlt: "A silver Scion by Toyota KEI-01 kei truck parked on a stone driveway"
 imageCredit: "Toyota Motor North America (press image)"
 featured: true

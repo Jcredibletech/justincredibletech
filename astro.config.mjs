@@ -12,7 +12,7 @@ export default defineConfig({
   site: onVercel ? 'https://justincredibletech.com' : 'https://jcredibletech.github.io',
   base: onVercel ? '/' : '/justincredibletech',
   trailingSlash: 'ignore',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/category/') })],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
   },

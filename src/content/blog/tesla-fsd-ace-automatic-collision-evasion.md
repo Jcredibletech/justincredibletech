@@ -2,6 +2,7 @@
 title: "Tesla’s New FSD Trick: A Panic Button That Presses Itself"
 description: "FSD Supervised v14.3.9 is rolling out with Automatic Collision Evasion on HW4—FSD can jump in while you’re driving manually if a crash looks imminent or you’re not attentive. Here’s the lighthearted consumer take."
 pubDate: 2026-09-12
+section: "ev"
 tags: ["Tesla", "FSD", "Autopilot", "EV", "Software", "Safety"]
 featured: true
 ---

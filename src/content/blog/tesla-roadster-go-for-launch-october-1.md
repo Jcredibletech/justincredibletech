@@ -2,6 +2,7 @@
 title: "Tesla Just Said ‘Go for Launch’ — Roadster Reveal Locked for October 1"
 description: "Tesla posted “Go for launch” with a 10.01 graphic and a countdown on the Roadster page. After years of delays since the Nov 2017 debut, the next-gen sports car finally has a reveal date — thruster lore included. Here’s the evening poll."
 pubDate: 2026-09-12
+section: "ev"
 tags: ["Tesla", "Roadster", "EV", "Sports Cars", "SpaceX", "Consumer Tech"]
 featured: true
 ---

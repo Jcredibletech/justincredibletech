@@ -2,6 +2,7 @@
 title: "SpaceX Picks Qualcomm to Power Starlink Mobile's 5G Cell Sites"
 description: "Qualcomm will supply Dragonwing radio and baseband platforms for tens of thousands of Starlink Mobile cell sites in the US, with the rollout starting in 2027. Financial terms weren't disclosed."
 pubDate: 2026-11-04
+section: "space"
 tags: ["SpaceX", "Starlink", "Qualcomm", "5G", "Wireless"]
 imageAlt: "A tall lattice cell tower covered in antenna panels against a clear blue sky, with green treetops at the bottom"
 imageCredit: "David Ratledge via Wikimedia Commons (CC BY 4.0)"

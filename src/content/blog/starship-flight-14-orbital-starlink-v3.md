@@ -2,6 +2,7 @@
 title: "Starship Flight 14: First Real Orbit + Starlink V3 That Actually Stays Up"
 description: "SpaceX’s FCC paperwork points to a mid-September window for Starship Flight 14—the program’s first full orbital profile and the first shot at parking Starlink V3 sats in a staying orbit."
 pubDate: 2026-09-11
+section: "space"
 tags: ["SpaceX", "Starship", "Starlink", "Space", "Rockets", "Tech"]
 featured: true
 ---

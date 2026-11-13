@@ -2,6 +2,7 @@
 title: "Tesla Winding Down Cybertruck Production at Gigafactory Texas Around Mid-2027"
 description: "Elon Musk said Tesla will wind down Cybertruck production at Gigafactory Texas around mid-2027 to make room for more Cybercab robotaxis, after U.S. sales missed early targets."
 pubDate: 2026-11-06
+section: "ev"
 tags: ["Tesla", "Cybertruck", "EV", "Cybercab"]
 imageAlt: "A production-level Tesla Cybertruck on display in Denver, Colorado"
 imageCredit: "N2e via Wikimedia Commons (CC0)"
