@@ -10,6 +10,9 @@ imageAlt: "The FAA air traffic control tower at Minneapolis-St. Paul Internation
 imageCredit: "Tony Webster / CC BY-SA 2.0, via Wikimedia Commons"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/faa-nationwide-ground-stop-communication-issue.mp4" poster="/justincredibletech/videos/faa-nationwide-ground-stop-communication-issue.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
+
 The Federal Aviation Administration on Friday afternoon, November 13, 2026, ordered a nationwide ground stop on departing flights at U.S. airports after what Transportation Secretary Sean Duffy described as a communication issue affecting Air Route Traffic Control Centers.
 
 The FAA's alert said the halt was "due to extraordinary circumstances and for reasons of safety," and that "all departing traffic should remain ground stopped until further notice." Inbound international flights would be managed case by case, according to [Axios](https://www.axios.com/2026/11/13/faa-nationwide-ground-stop), [NBC News](https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247), and [USA Today](https://www.usatoday.com/story/news/nation/2026/11/13/faa-orders-nationwide-groundstop-at-us-airports-citing-safety/92765499007/). USA Today also reported that flights already in the air were not being told to land immediately, consistent with the advisory's focus on departing traffic.

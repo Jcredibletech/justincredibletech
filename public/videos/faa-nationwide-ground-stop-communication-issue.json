@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/faa-nationwide-ground-stop-communication-issue.mp4",
+  "voice": "elevenlabs:faa-nationwide-ground-stop-communication-issue",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": true,
+  "duration": 31.71,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 29.96,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.59,
+      "idx": 0,
+      "vis_end": 4.87,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.87,
+      "end": 10.81,
+      "idx": 1,
+      "vis_end": 11.09,
+      "start_vis": 4.87
+    },
+    {
+      "kind": "beat",
+      "start": 11.09,
+      "end": 18.25,
+      "idx": 2,
+      "vis_end": 18.53,
+      "start_vis": 11.09
+    },
+    {
+      "kind": "beat",
+      "start": 18.53,
+      "end": 24.14,
+      "idx": 3,
+      "vis_end": 24.42,
+      "start_vis": 18.53
+    },
+    {
+      "kind": "outro",
+      "start": 24.42,
+      "end": 29.36,
+      "idx": 4,
+      "vis_end": 29.96,
+      "start_vis": 24.42
+    }
+  ]
+}
