@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/chatgpt-wallet-ai-agents-buy-for-you.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": false,
+  "duration": 36.61,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.91,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.95,
+      "idx": 0,
+      "vis_end": 5.23,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.23,
+      "end": 13.17,
+      "idx": 1,
+      "vis_end": 13.45,
+      "start_vis": 5.23
+    },
+    {
+      "kind": "beat",
+      "start": 13.45,
+      "end": 21.44,
+      "idx": 2,
+      "vis_end": 21.72,
+      "start_vis": 13.45
+    },
+    {
+      "kind": "beat",
+      "start": 21.72,
+      "end": 28.96,
+      "idx": 3,
+      "vis_end": 29.24,
+      "start_vis": 21.72
+    },
+    {
+      "kind": "outro",
+      "start": 29.24,
+      "end": 34.31,
+      "idx": 4,
+      "vis_end": 34.91,
+      "start_vis": 29.24
+    }
+  ]
+}
