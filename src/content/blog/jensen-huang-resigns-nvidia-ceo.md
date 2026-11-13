@@ -3,7 +3,7 @@ title: "Jensen Huang Resigns as Nvidia CEO; CFO Colette Kress Named Interim Chie
 description: "Nvidia announced on November 12, 2026 that founder Jensen Huang resigned as president, CEO and board member, effective immediately, after a week of reports about two extramarital affairs. CFO Colette Kress is interim CEO, the stock fell as much as about 14%, and President Trump says Tim Cook should get the job."
 pubDate: 2026-11-12
 tags: ["Nvidia", "AI Chips", "Stocks", "Leadership", "news", "politics"]
-category: "tech"
+section: "tech"
 imageAlt: "Jensen Huang speaking at Stanford in April 2026"
 imageCredit: "Anderseidesvik via Wikimedia Commons (CC BY-SA 4.0)"
 featured: true

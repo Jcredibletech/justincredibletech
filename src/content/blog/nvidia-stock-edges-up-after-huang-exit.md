@@ -3,7 +3,7 @@ title: "Update: Nvidia Edges Higher in Premarket After Huang Resignation"
 description: "One day after Jensen Huang resigned as Nvidia CEO, the stock closed Thursday down 4.3% at $166.19 after falling as much as about 14%. In Friday premarket trading it was about 1.6% to 1.7% higher as of about 7:15 a.m. Central Time. Interim CEO Colette Kress takes the first big test on Tuesday, when Nvidia still plans to report earnings."
 pubDate: 2026-11-13
 tags: ["Nvidia", "AI Chips", "Stocks", "Leadership", "news", "tech"]
-category: "tech"
+section: "tech"
 imageAlt: "Jensen Huang speaking at Stanford in April 2026"
 imageCredit: "Anderseidesvik via Wikimedia Commons (CC BY-SA 4.0)"
 featured: true

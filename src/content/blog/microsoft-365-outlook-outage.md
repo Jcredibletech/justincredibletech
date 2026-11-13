@@ -3,7 +3,7 @@ title: "Microsoft 365 and Outlook Outage Is Ongoing, Hitting Teams, SharePoint, 
 description: "A widespread Microsoft 365 outage that started around 10:17 a.m. Central Time on November 12, 2026, is still ongoing. Outlook, Teams, SharePoint, Copilot, and Defender XDR are affected. Microsoft says servers unexpectedly went offline, not a traffic surge."
 pubDate: 2026-11-12
 tags: ["Microsoft", "Outlook", "Microsoft 365", "outage", "news", "tech"]
-category: "tech"
+section: "tech"
 imageAlt: "Building 92 at Microsoft's Redmond, Washington headquarters"
 imageCredit: "Coolcaesar / CC BY-SA 4.0, via Wikimedia Commons"
 featured: true

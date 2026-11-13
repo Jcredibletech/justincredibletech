@@ -3,7 +3,7 @@ title: "Update: Microsoft 365 Outage Enters a Second Day as Recovery Begins"
 description: "The Microsoft 365 and Outlook outage that started at 10:17 a.m. Central Time on November 12, 2026, continued overnight and into Friday. Microsoft says recovery is underway, with broader improvements in North America, and has extended the email timeout window to 48 hours. The incident is still not fully resolved."
 pubDate: 2026-11-13
 tags: ["Microsoft", "Outlook", "Microsoft 365", "outage", "news", "tech"]
-category: "tech"
+section: "tech"
 imageAlt: "Building 92 at Microsoft's Redmond, Washington headquarters"
 imageCredit: "Coolcaesar / CC BY-SA 4.0, via Wikimedia Commons"
 featured: true
