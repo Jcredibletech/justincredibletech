@@ -21,7 +21,7 @@ const ticker = posts.slice(0, 6);
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_TITLE, url: CANONICAL_ORIGIN, description: SITE_DESCRIPTION };
 ---
 <BaseLayout description={SITE_DESCRIPTION} jsonLd={jsonLd}>
-  <h1 class="visually-hidden">{SITE_TITLE}: the JustinCredible network for tech, AI, auto, space, EV, science, health and politics news</h1>
+  <h1 class="visually-hidden">{SITE_TITLE}: independent coverage of tech, AI, autos, space, EVs, science, health and politics</h1>
   {ticker.length > 0 && (
     <div class="ticker">
       <div class="container ticker-in">

@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
     </div>
     <nav aria-label="Sections">
       <h4>The Network</h4>
-      <ul>{SECTIONS.map((s) => <li><a class="foot-sec" href={sectionUrl(s.slug)} style={`--dot:${s.colorDark}`}>{s.name}</a></li>)}</ul>
+      <ul>{SECTIONS.map((s) => <li><a class="foot-sec" href={sectionUrl(s.slug)} style={`--dot:${s.colorTag}`}>{s.name}</a></li>)}</ul>
     </nav>
     <nav aria-label="More">
       <h4>Follow</h4>

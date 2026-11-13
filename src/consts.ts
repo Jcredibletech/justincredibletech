@@ -1,7 +1,7 @@
 export const SITE_TITLE = 'JustinCredibleTech';
-export const SITE_TAGLINE = 'The JustinCredible network: tech, AI, auto, space, EV, science, health and politics news, explained clearly';
+export const SITE_TAGLINE = 'Independent coverage of tech, AI, autos, space, EVs, science, health and politics.';
 export const SITE_DESCRIPTION =
-  'The JustinCredible network: JustinCredible Tech, JustinCredible AI, JustinCredible Auto, JustinCredible Space, JustinCredible EV, JustinCredible Science, JustinCredible Health and JustinCredible Politics. Factual, straightforward news explained clearly by Justin.';
+  'Independent coverage of tech, AI, autos, space, EVs, science, health and politics. Factual, clear and straight to the point.';
 export const SITE_AUTHOR = 'Justin';
 export const SITE_HANDLE = '@JCredibleTech';
 export const SITE_X = 'https://x.com/JCredibleTech';

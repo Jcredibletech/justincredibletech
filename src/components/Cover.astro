@@ -5,7 +5,7 @@ const { post, eager = false } = Astro.props;
 const img = imageFor(post);
 const sec = sectionFor(post);
 ---
-<div class={`cover sec-${sec.slug}`} style={`--sec-fill:${sec.colorDark}`}>
+<div class={`cover sec-${sec.slug}`} style={`--sec-fill:${sec.colorTag}`}>
   {img ? (
     <img src={img} alt={post.data.imageAlt ?? ''} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} />
   ) : (

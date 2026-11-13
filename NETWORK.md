@@ -6,25 +6,30 @@ Never shorten JustinCredible to "JC" in site-facing text; section names are alwa
 
 ## Sections
 
-| Section | `section:` value | Landing page | Section RSS | Light accent | Dark accent |
-|---|---|---|---|---|---|
-| JustinCredible Tech | `tech` | `/tech/` | `/tech/rss.xml` | `#8a6a0c` gold | `#d8b03a` |
-| JustinCredible AI | `ai` | `/ai/` | `/ai/rss.xml` | `#1d4ed8` electric blue | `#60a5fa` |
-| JustinCredible Auto | `auto` | `/auto/` | `/auto/rss.xml` | `#c8102e` red | `#ff5c63` |
-| JustinCredible Space | `space` | `/space/` | `/space/rss.xml` | `#4338ca` deep indigo | `#9b9cff` |
-| JustinCredible EV | `ev` | `/ev/` | `/ev/rss.xml` | `#0e7490` electric teal | `#22d3ee` |
-| JustinCredible Science | `science` | `/science/` | `/science/rss.xml` | `#15803d` green | `#4ade80` |
-| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#c2410c` orange | `#f97316` |
-| JustinCredible Politics | `politics` | `/politics/` | `/politics/rss.xml` | `#7a3e8e` plum | `#c99ae0` |
+| Section | `section:` value | Landing page | Section RSS | Text on white | Text on dark | Tag / bar fill |
+|---|---|---|---|---|---|---|
+| JustinCredible Tech | `tech` | `/tech/` | `/tech/rss.xml` | `#8a6a0c` | `#d8b03a` | `#e0b020` gold |
+| JustinCredible AI | `ai` | `/ai/` | `/ai/rss.xml` | `#1d4ed8` | `#60a5fa` | `#2563eb` |
+| JustinCredible Auto | `auto` | `/auto/` | `/auto/rss.xml` | `#c8102e` | `#ff5c63` | `#e11d2e` |
+| JustinCredible Space | `space` | `/space/` | `/space/rss.xml` | `#4338ca` | `#9b9cff` | `#6d28d9` violet |
+| JustinCredible EV | `ev` | `/ev/` | `/ev/rss.xml` | `#0e7490` | `#22d3ee` | `#06b6d4` |
+| JustinCredible Science | `science` | `/science/` | `/science/rss.xml` | `#15803d` | `#4ade80` | `#16a34a` |
+| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#c2410c` | `#f97316` | `#f97316` orange |
+| JustinCredible Politics | `politics` | `/politics/` | `/politics/rss.xml` | `#7a3e8e` | `#c99ae0` | `#a21caf` |
 
-Light accents are at least 5:1 contrast on white, dark accents at least 6:1 on the dark theme background.
-Colors live in two places that must stay in sync: `SECTIONS` in `src/utils/posts.ts` and the `--c-<slug>`
-tokens in `src/styles/global.css`. The `.sec-<slug>` class sets `--sec` to the section color.
+Text accents (`color` / `colorDark`, and the `--c-<slug>` tokens) stay AA-compliant: at least 5:1 on
+white and 6:1 on the dark theme background. `colorTag` is the vibrant fill for the lockup tag, the
+section dropdown, and the homepage 8-color bar — not for small body text. Keep `SECTIONS` in
+`src/utils/posts.ts` and `--c-<slug>` in `src/styles/global.css` in sync. The `.sec-<slug>` class
+sets `--sec` to the theme-aware text accent.
 
 The header logo is the shared `src/components/SectionLockup.astro` component (badge monogram + stacked
-JUSTIN / CREDIBLE wordmark + a slanted section-name tag). Adding a section to `SECTIONS` automatically
-gives it the same lockup, colored with that section's dark/vivid accent. Do not put "JC" in the tag or
+JUSTIN / CREDIBLE wordmark + a slanted section-name tag). The tag is a dropdown of the other sections.
+On the homepage the tag reads TECH (the main brand). Adding a section to `SECTIONS` automatically
+gives it the same lockup, colored with that section's `colorTag`. Do not put "JC" in the tag or
 any other visible label; the monogram graphic is the only place the JC mark appears.
+Do not list every "JustinCredible <Section>" name in site-facing prose; use the short topic list
+("tech, AI, autos, space, EVs, science, health and politics").
 
 What goes where:
 - **tech**: consumer tech, phones, computers, apps, chips, big tech business, gaming, gadgets, outages.

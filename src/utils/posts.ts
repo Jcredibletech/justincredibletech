@@ -15,10 +15,12 @@ export interface Section {
   /** Short label used in the lockup tag and badges, e.g. "EV". Never prefix with "JC". */
   short: string;
   blurb: string;
-  /** Accent for light backgrounds (also used in inline/OG contexts). Theme-aware value is var(--sec) via the .sec-<slug> class. */
+  /** Accent for small text on light backgrounds (AA). Theme-aware value is var(--sec) via the .sec-<slug> class. */
   color: string;
-  /** Accent for dark backgrounds. */
+  /** Accent for small text on dark backgrounds (AA). */
   colorDark: string;
+  /** Vibrant fill for the lockup tag, dropdown, and 8-color bar. Not for small body text. */
+  colorTag: string;
 }
 
 /**
@@ -26,21 +28,21 @@ export interface Section {
  * (--c-<slug>) in src/styles/global.css; keep both in sync (see NETWORK.md).
  */
 export const SECTIONS: Section[] = [
-  { slug: 'tech', name: 'JustinCredible Tech', short: 'Tech', color: '#8a6a0c', colorDark: '#d8b03a',
+  { slug: 'tech', name: 'JustinCredible Tech', short: 'Tech', color: '#8a6a0c', colorDark: '#d8b03a', colorTag: '#e0b020',
     blurb: 'Phones, computers, apps, gadgets and the companies behind them.' },
-  { slug: 'ai', name: 'JustinCredible AI', short: 'AI', color: '#1d4ed8', colorDark: '#60a5fa',
+  { slug: 'ai', name: 'JustinCredible AI', short: 'AI', color: '#1d4ed8', colorDark: '#60a5fa', colorTag: '#2563eb',
     blurb: 'AI models, tools, companies, policy and research.' },
-  { slug: 'auto', name: 'JustinCredible Auto', short: 'Auto', color: '#c8102e', colorDark: '#ff5c63',
+  { slug: 'auto', name: 'JustinCredible Auto', short: 'Auto', color: '#c8102e', colorDark: '#ff5c63', colorTag: '#e11d2e',
     blurb: 'Cars, trucks, motorsport and the wider world of transportation.' },
-  { slug: 'space', name: 'JustinCredible Space', short: 'Space', color: '#4338ca', colorDark: '#9b9cff',
+  { slug: 'space', name: 'JustinCredible Space', short: 'Space', color: '#4338ca', colorDark: '#9b9cff', colorTag: '#6d28d9',
     blurb: 'Rockets, launches, satellites and missions beyond Earth.' },
-  { slug: 'ev', name: 'JustinCredible EV', short: 'EV', color: '#0e7490', colorDark: '#22d3ee',
+  { slug: 'ev', name: 'JustinCredible EV', short: 'EV', color: '#0e7490', colorDark: '#22d3ee', colorTag: '#06b6d4',
     blurb: 'Electric vehicles, charging, batteries and self-driving tech.' },
-  { slug: 'science', name: 'JustinCredible Science', short: 'Science', color: '#15803d', colorDark: '#4ade80',
+  { slug: 'science', name: 'JustinCredible Science', short: 'Science', color: '#15803d', colorDark: '#4ade80', colorTag: '#16a34a',
     blurb: 'Discoveries, research and the natural world, explained without the jargon.' },
-  { slug: 'health', name: 'JustinCredible Health', short: 'Health', color: '#c2410c', colorDark: '#f97316',
+  { slug: 'health', name: 'JustinCredible Health', short: 'Health', color: '#c2410c', colorDark: '#f97316', colorTag: '#f97316',
     blurb: 'Medicine, drug approvals, nutrition and the research that affects how we live.' },
-  { slug: 'politics', name: 'JustinCredible Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0',
+  { slug: 'politics', name: 'JustinCredible Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0', colorTag: '#a21caf',
     blurb: 'Policy, government and elections, reported factually and straightforwardly.' },
 ];
 

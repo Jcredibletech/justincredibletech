@@ -9,7 +9,7 @@ import { SITE_X } from '../consts';
 const path = Astro.url.pathname;
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' });
 ---
-<header class="masthead" style={`--lockup:${sectionSlug ? getSection(sectionSlug).colorDark : '#d8b03a'}`}>
+<header class="masthead" style={`--lockup:${sectionSlug ? getSection(sectionSlug).colorTag : '#e0b020'}`}>
   <div class="topbar">
     <div class="container topbar-in">
       <span class="date">{today}</span>
@@ -27,14 +27,14 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   <div class="container brand-row">
     <div class="brand-lockup">
       <a class="wordmark" href={withBase('')} aria-label="JustinCredibleTech home">
-        <SectionLockup slug={sectionSlug} reserveTag tagLabel={sectionSlug ? getSection(sectionSlug).short : 'SECTIONS'} />
+        <SectionLockup slug={sectionSlug} reserveTag tagLabel={sectionSlug ? getSection(sectionSlug).short : 'TECH'} />
       </a>
       <SectionSwitcher slug={sectionSlug} />
     </div>
   </div>
   {sectionSlug
     ? <div class="lockup-rule" aria-hidden="true"></div>
-    : <div class="network-bar" aria-hidden="true">{SECTIONS.map((s) => <span style={`background:${s.colorDark}`}></span>)}</div>
+    : <div class="network-bar" aria-hidden="true">{SECTIONS.map((s) => <span style={`background:${s.colorTag}`}></span>)}</div>
   }
   <nav class="story-nav" aria-label="Stories">
     <div class="container story-nav-in">
@@ -55,13 +55,21 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
     if (!root) return;
     var sum = root.querySelector('summary');
     var links = Array.prototype.slice.call(root.querySelectorAll('.sec-menu a'));
+    function placeMenu() {
+      var menu = root.querySelector('.sec-menu');
+      if (!menu) return;
+      menu.style.marginLeft = '0px';
+      if (!root.open) return;
+      var r = menu.getBoundingClientRect();
+      var pad = 8;
+      var dx = 0;
+      if (r.right > window.innerWidth - pad) dx = window.innerWidth - pad - r.right;
+      if (r.left + dx < pad) dx = pad - r.left;
+      if (dx) menu.style.marginLeft = Math.round(dx) + 'px';
+    }
     function sync() {
       sum.setAttribute('aria-expanded', root.open ? 'true' : 'false');
-      if (root.open) {
-        var header = document.querySelector('.masthead');
-        var bottom = header ? header.getBoundingClientRect().bottom : sum.getBoundingClientRect().bottom;
-        document.documentElement.style.setProperty('--switcher-bottom', Math.round(bottom) + 'px');
-      }
+      placeMenu();
     }
     root.addEventListener('toggle', sync);
     sync();
@@ -101,7 +109,7 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   })();
 </script>
 <style>
-  .masthead { background: var(--bg); position: relative; z-index: 5; }
+  .masthead { background: var(--bg); position: relative; z-index: 20; overflow: visible; }
   .topbar { border-bottom: 1px solid var(--line); font: 500 .78rem/1 var(--font-sans); color: var(--muted); }
   .topbar-in { display: flex; justify-content: space-between; align-items: center; min-height: 2.25rem; gap: 1rem; }
   .topbar-links { display: flex; gap: 1.1rem; align-items: center; }
@@ -111,7 +119,7 @@ const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: '
   .i-moon { display: none; } :global([data-theme='dark']) .i-moon { display: block; } :global([data-theme='dark']) .i-sun { display: none; }
   @media (max-width: 560px) { .date { display: none; } .topbar-in { justify-content: flex-end; } }
 
-  .brand-row { display: flex; justify-content: center; padding: .75rem 0 .7rem; }
+  .brand-row { display: flex; justify-content: center; padding: .75rem 0 .7rem; overflow: visible; }
   .brand-lockup { position: relative; display: inline-block; --lockup-h: 56px; line-height: 0; }
   .lockup-rule { height: 3px; background: var(--lockup, var(--brand-gold)); }
   .network-bar { display: flex; height: 4px; }
