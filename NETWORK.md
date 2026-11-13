@@ -14,7 +14,7 @@ Never shorten JustinCredible to "JC" in site-facing text; section names are alwa
 | JustinCredible Space | `space` | `/space/` | `/space/rss.xml` | `#4338ca` deep indigo | `#9b9cff` |
 | JustinCredible EV | `ev` | `/ev/` | `/ev/rss.xml` | `#0e7490` electric teal | `#22d3ee` |
 | JustinCredible Science | `science` | `/science/` | `/science/rss.xml` | `#15803d` green | `#4ade80` |
-| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#be185d` rose | `#fb7185` |
+| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#c2410c` orange | `#f97316` |
 | JustinCredible Politics | `politics` | `/politics/` | `/politics/rss.xml` | `#7a3e8e` plum | `#c99ae0` |
 
 Light accents are at least 5:1 contrast on white, dark accents at least 6:1 on the dark theme background.

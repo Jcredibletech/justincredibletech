@@ -38,7 +38,7 @@ export const SECTIONS: Section[] = [
     blurb: 'Electric vehicles, charging, batteries and self-driving tech.' },
   { slug: 'science', name: 'JustinCredible Science', short: 'Science', color: '#15803d', colorDark: '#4ade80',
     blurb: 'Discoveries, research and the natural world, explained without the jargon.' },
-  { slug: 'health', name: 'JustinCredible Health', short: 'Health', color: '#be185d', colorDark: '#fb7185',
+  { slug: 'health', name: 'JustinCredible Health', short: 'Health', color: '#c2410c', colorDark: '#f97316',
     blurb: 'Medicine, drug approvals, nutrition and the research that affects how we live.' },
   { slug: 'politics', name: 'JustinCredible Politics', short: 'Politics', color: '#7a3e8e', colorDark: '#c99ae0',
     blurb: 'Policy, government and elections, reported factually and straightforwardly.' },
