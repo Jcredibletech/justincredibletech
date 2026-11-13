@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nvidia-stock-edges-up-after-huang-exit.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 30.2,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 28.4,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.15,
+      "idx": 0,
+      "vis_end": 5.43,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.43,
+      "end": 10.79,
+      "idx": 1,
+      "vis_end": 11.07,
+      "start_vis": 5.43
+    },
+    {
+      "kind": "beat",
+      "start": 11.07,
+      "end": 16.07,
+      "idx": 2,
+      "vis_end": 16.35,
+      "start_vis": 11.07
+    },
+    {
+      "kind": "beat",
+      "start": 16.35,
+      "end": 19.05,
+      "idx": 3,
+      "vis_end": 19.33,
+      "start_vis": 16.35
+    },
+    {
+      "kind": "outro",
+      "start": 19.33,
+      "end": 26.43,
+      "idx": 4,
+      "vis_end": 28.4,
+      "start_vis": 19.33
+    }
+  ]
+}

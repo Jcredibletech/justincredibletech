@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/microsoft-365-outage-day-two-recovery.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 31.6,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 29.85,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.94,
+      "idx": 0,
+      "vis_end": 6.22,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.22,
+      "end": 9.87,
+      "idx": 1,
+      "vis_end": 10.15,
+      "start_vis": 6.22
+    },
+    {
+      "kind": "beat",
+      "start": 10.15,
+      "end": 16.46,
+      "idx": 2,
+      "vis_end": 16.74,
+      "start_vis": 10.15
+    },
+    {
+      "kind": "beat",
+      "start": 16.74,
+      "end": 22.16,
+      "idx": 3,
+      "vis_end": 22.44,
+      "start_vis": 16.74
+    },
+    {
+      "kind": "outro",
+      "start": 22.44,
+      "end": 29.25,
+      "idx": 4,
+      "vis_end": 29.85,
+      "start_vis": 22.44
+    }
+  ]
+}

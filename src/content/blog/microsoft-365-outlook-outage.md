@@ -11,6 +11,8 @@ featured: true
 
 <video controls playsinline preload="metadata" src="/justincredibletech/videos/microsoft-365-outlook-outage.mp4" poster="/justincredibletech/videos/microsoft-365-outlook-outage.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
 
+**Update, Nov. 13, 2026:** The outage continued overnight and into a second day. Microsoft now reports recovery progress, including broader improvements in North America, and has extended the email timeout window to 48 hours. It is still not fully resolved. [Read the Friday morning update](https://justincredibletech.com/blog/microsoft-365-outage-day-two-recovery/).
+
 If your Outlook inbox will not load, or Teams and SharePoint are throwing errors, you are not alone. As of mid-afternoon Central Time on Thursday, November 12, 2026, Microsoft is still reporting a service degradation across Microsoft 365, and the company has not marked the incident resolved.
 
 ## What happened

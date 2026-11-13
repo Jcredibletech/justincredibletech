@@ -11,6 +11,8 @@ featured: true
 
 <video controls playsinline preload="metadata" src="/justincredibletech/videos/jensen-huang-resigns-nvidia-ceo.mp4" poster="/justincredibletech/videos/jensen-huang-resigns-nvidia-ceo.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
 
+**Update, Nov. 13, 2026:** Nvidia closed Thursday down 4.3% and was slightly higher in Friday premarket trading. Earnings are still scheduled for November 17. [Read the Friday morning update](https://justincredibletech.com/blog/nvidia-stock-edges-up-after-huang-exit/).
+
 Last night I wrote that Nvidia's board was reportedly getting ready to push Jensen Huang out. This morning it happened. The man who co-founded Nvidia in 1993 and turned it into the chipmaker behind nearly the whole AI boom is gone, and if you own an S&P 500 index fund, you felt it: Nvidia is one of the biggest companies in that index. "Nvidia," "Colette Kress," "Tim Cook" and "$NVDA" are all trending on X right now, and the resignation is the top story on Techmeme and Hacker News.
 
 ## What happened
