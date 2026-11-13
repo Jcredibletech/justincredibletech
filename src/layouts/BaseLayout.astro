@@ -19,6 +19,6 @@ const { sectionSlug, ...props } = Astro.props;
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer sectionSlug={sectionSlug} />
   </body>
 </html>

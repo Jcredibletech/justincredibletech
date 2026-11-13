@@ -4,6 +4,8 @@ import SectionLockup from './SectionLockup.astro';
 import { withBase } from '../utils/paths';
 import { SOCIALS, SITE_DESCRIPTION } from '../consts';
 import { SOCIAL_ICONS } from '../utils/socialIcons';
+interface Props { sectionSlug?: string; }
+const { sectionSlug } = Astro.props;
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -27,7 +29,12 @@ const year = new Date().getFullYear();
       <ul class="follow-more"><li><a href={withBase('about/')}>About</a></li></ul>
     </nav>
   </div>
-  <div class="container foot-base">© {year} JustinCredibleTech. Independent, factual, straightforward coverage.</div>
+  <div class="container foot-base">
+    {sectionSlug
+      ? <p class="foot-rss">RSS: <a href={withBase(`${sectionSlug}/rss.xml`)}>this section</a> · <a href={withBase('rss.xml')}>all stories</a></p>
+      : null}
+    <p class="foot-copy">© {year} JustinCredibleTech. Independent, factual, straightforward coverage.</p>
+  </div>
 </footer>
 <style>
   .site-footer { margin-top: 4rem; background: var(--ink); color: #d8d8dc; padding: 3rem 0 1.5rem; }
@@ -40,7 +47,10 @@ const year = new Date().getFullYear();
   h4 { font: 800 .72rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .14em; color: #D8B03A; margin: 0 0 .9rem; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
   a { color: #d8d8dc; text-decoration: none; font: 500 .92rem/1.2 var(--font-sans); } a:hover { color: #fff; }
-  .foot-base { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c2e34; color: #8a8d95; font: 500 .8rem/1.4 var(--font-sans); }
+  .foot-base { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c2e34; color: #8a8d95; font: 500 .8rem/1.4 var(--font-sans); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem 1.5rem; flex-wrap: wrap; }
+  .foot-rss, .foot-copy { margin: 0; }
+  .foot-rss a { color: #c8cad0; text-decoration: none; }
+  .foot-rss a:hover { color: #fff; }
   .social-icons { display: flex; flex-wrap: wrap; gap: .7rem; }
   .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1a2540; color: #fff; transition: background .15s; }
   .social-icons a:hover { background: #26345a; }
