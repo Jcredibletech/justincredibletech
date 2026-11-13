@@ -13,8 +13,8 @@ Never shorten JustinCredible to "JC" in site-facing text; section names are alwa
 | JustinCredible Auto | `auto` | `/auto/` | `/auto/rss.xml` | `#c8102e` | `#ff5c63` | `#e11d2e` |
 | JustinCredible Space | `space` | `/space/` | `/space/rss.xml` | `#4338ca` | `#9b9cff` | `#6d28d9` violet |
 | JustinCredible EV | `ev` | `/ev/` | `/ev/rss.xml` | `#0e7490` | `#22d3ee` | `#06b6d4` |
-| JustinCredible Science | `science` | `/science/` | `/science/rss.xml` | `#15803d` | `#4ade80` | `#16a34a` |
-| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#c2410c` | `#f97316` | `#f97316` orange |
+| JustinCredible Science | `science` | `/science/` | `/science/rss.xml` | `#15803d` | `#4ade80` | `#15803d` |
+| JustinCredible Health | `health` | `/health/` | `/health/rss.xml` | `#c2410c` | `#f97316` | `#ea580c` orange |
 | JustinCredible Politics | `politics` | `/politics/` | `/politics/rss.xml` | `#7a3e8e` | `#c99ae0` | `#a21caf` |
 
 Text accents (`color` / `colorDark`, and the `--c-<slug>` tokens) stay AA-compliant: at least 5:1 on

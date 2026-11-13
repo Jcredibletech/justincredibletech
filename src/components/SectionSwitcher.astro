@@ -17,6 +17,8 @@ const ink = tagInk(accent);
 const vbW = lockupViewBoxWidth(label, true);
 const others = SECTIONS.filter((s) => s.slug !== currentSlug);
 const menuW = Math.max(tagWidth(label), ...SECTIONS.map((s) => tagWidth(s.short)));
+/** Dropdown chips always use white type; slightly darker fills where the bar color would fail contrast. */
+const MENU_FILL: Partial<Record<string, string>> = { ev: '#0e7490' };
 const ariaLabel = homeIsTech
   ? 'Current section: JustinCredible Tech. Browse sections'
   : `Current section: ${current.name}. Browse sections`;
@@ -36,8 +38,8 @@ const ariaLabel = homeIsTech
       <a
         href={sectionUrl(s.slug)}
         role="menuitem"
-        style={`--tag:${s.colorTag}; --tag-ink:${tagInk(s.colorTag)}; --delay:${40 + i * 28}ms`}
-      ><span class="tag-inner">{s.short.toUpperCase()}</span></a>
+        style={`--tag:${MENU_FILL[s.slug] ?? s.colorTag}; --delay:${30 + i * 22}ms`}
+      ><span class="tag"><span class="tag-inner">{s.short.toUpperCase()}</span></span></a>
     ))}
   </div>
 </details>
@@ -99,74 +101,111 @@ const ariaLabel = homeIsTech
   }
 
   .sec-menu {
+    --inset: 7px;
+    --gap: 3px;
+    --tag-h-css: calc(var(--tag-h) / var(--lockup-vb-h) * var(--lockup-h, 56px));
+    --skew-pad: calc(var(--tag-h-css) * tan(12deg) + 1px);
     position: absolute;
-    /* Hang just under the logo tag. Left padding absorbs the -12° overhang so tags stay aligned. */
-    --inset: 10px;
-    --skew-pad: calc(36px * tan(12deg) + 6px);
-    top: calc(100% + 6px);
-    left: calc(-1 * var(--skew-pad));
+    top: calc(100% + 5px);
+    left: calc(-1 * (var(--inset) + var(--skew-pad)));
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: var(--gap);
     box-sizing: border-box;
-    padding: var(--inset) var(--inset) var(--inset) var(--skew-pad);
-    width: calc(var(--menu-w) + var(--inset) + var(--skew-pad));
-    min-width: calc(var(--menu-w) + var(--inset) + var(--skew-pad));
+    padding: var(--inset);
+    padding-left: calc(var(--inset) + var(--skew-pad));
+    width: calc(var(--menu-w) + (var(--inset) * 2) + var(--skew-pad));
+    min-width: calc(var(--menu-w) + (var(--inset) * 2) + var(--skew-pad));
     margin: 0;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: 0 12px 32px color-mix(in srgb, #0B1426 22%, transparent);
+    border-radius: 6px;
+    box-shadow:
+      0 1px 2px color-mix(in srgb, #0B1426 8%, transparent),
+      0 8px 22px color-mix(in srgb, #0B1426 16%, transparent);
     z-index: 81;
   }
   :global([data-theme='dark']) .sec-menu {
-    box-shadow: 0 14px 36px color-mix(in srgb, #000 55%, transparent);
+    box-shadow:
+      0 1px 2px color-mix(in srgb, #000 40%, transparent),
+      0 10px 26px color-mix(in srgb, #000 50%, transparent);
   }
   .sec-switcher[open] .sec-menu {
-    animation: panel-in .16s ease-out;
+    animation: panel-in .18s ease-out;
   }
   @keyframes panel-in {
-    from { opacity: 0; transform: translateY(-4px); }
+    from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: none; }
   }
+
+  /* Row is the slim tag height; ::after expands the tap target to ~32px without opening the stack. */
   .sec-menu a {
+    position: relative;
     display: flex;
     align-items: stretch;
     width: 100%;
-    height: 36px;
-    min-height: 36px;
+    height: var(--tag-h-css);
     padding: 0;
     margin: 0;
-    background: var(--tag);
-    color: var(--tag-ink, #fff);
+    background: transparent;
+    color: #fff;
     text-decoration: none;
     border: 0;
     box-sizing: border-box;
+  }
+  .sec-menu a::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 50%;
+    height: 32px;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  .sec-menu a .tag {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    background: var(--tag);
+    color: #fff;
     transform: skewX(-12deg);
     transform-origin: top left;
+    transition: filter .15s ease, box-shadow .15s ease;
   }
   .sec-menu a .tag-inner {
-    padding: 0 .5em 0 .5em;
+    padding: 0 .42em 0 .5em;
     width: 100%;
     justify-content: flex-start;
+    color: #fff;
   }
-  .sec-menu a:hover,
+  .sec-menu a:hover .tag,
+  .sec-menu a:focus-visible .tag {
+    filter: brightness(1.12);
+    box-shadow: 0 1px 4px color-mix(in srgb, #0B1426 22%, transparent);
+  }
   .sec-menu a:focus-visible {
-    filter: brightness(1.08);
-    outline: 2px solid var(--tag-ink, #fff);
+    outline: none;
+  }
+  .sec-menu a:focus-visible .tag {
+    outline: 2px solid #fff;
     outline-offset: 2px;
   }
   .sec-switcher[open] .sec-menu a {
-    animation: tag-drop .2s ease-out both;
+    animation: row-in .2s ease-out both;
     animation-delay: var(--delay, 0ms);
   }
-  @keyframes tag-drop {
-    from { opacity: 0; transform: skewX(-12deg) translateY(-6px); }
-    to { opacity: 1; transform: skewX(-12deg) translateY(0); }
+  @keyframes row-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .sec-switcher[open] .sec-menu,
     .sec-switcher[open] .sec-menu a { animation: none; }
+    .sec-menu a .tag { transition: none; }
   }
 </style>
