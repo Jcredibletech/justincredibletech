@@ -10,6 +10,8 @@ imageAlt: "A gold two-seat Tesla Cybercab driving on Interstate 280 near Palo Al
 imageCredit: "Daniel Lu (User:dllu) / CC BY-SA 4.0, via Wikimedia Commons"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/tesla-cybercab-personal-orders-299-subscription.mp4" poster="/justincredibletech/videos/tesla-cybercab-personal-orders-299-subscription.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 You can now buy a Tesla Cybercab, if Tesla invites you and you live in the right place. On Friday, November 13, Tesla's Robotaxi account on X announced that "select customers" can order the two-seat, no-steering-wheel car **for personal use**, sharing screenshots of the order page and invite email, according to [Electrek](https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence/) and [The Verge](https://www.theverge.com/transportation/1033844/tesla-personal-cybercab-orders-299-subscription-fine-print).
 
 ## The deal
@@ -33,6 +35,8 @@ Federal safety standards were written for cars with steering wheels and pedals. 
 ## Why it matters
 
 Musk promised a Cybercab under $30,000 when he unveiled it in 2024, and the sticker hits that. The subscription model is the twist: it turns a car purchase into an ongoing service, which could be a template for how self-driving cars get sold. The Verge, citing the crowd-sourced Robotaxi Tracker, says 278 Cybercabs are already running in Tesla's fleet, about 40% of it.
+
+*Video photos: Daniel Lu (dllu, CC BY-SA 4.0) and 9yz (CC BY 4.0), via Wikimedia Commons.*
 
 **Sources:** [Electrek](https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence/), [The Verge](https://www.theverge.com/transportation/1033844/tesla-personal-cybercab-orders-299-subscription-fine-print)
 
