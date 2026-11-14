@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/tesla-cybercab-personal-orders-299-subscription.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": false,
+  "duration": 36.81,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 35.11,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 6.49,
+      "idx": 0,
+      "vis_end": 6.77,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.77,
+      "end": 13.7,
+      "idx": 1,
+      "vis_end": 13.98,
+      "start_vis": 6.77
+    },
+    {
+      "kind": "beat",
+      "start": 13.98,
+      "end": 21.67,
+      "idx": 2,
+      "vis_end": 21.95,
+      "start_vis": 13.98
+    },
+    {
+      "kind": "beat",
+      "start": 21.95,
+      "end": 29.08,
+      "idx": 3,
+      "vis_end": 29.36,
+      "start_vis": 21.95
+    },
+    {
+      "kind": "outro",
+      "start": 29.36,
+      "end": 34.51,
+      "idx": 4,
+      "vis_end": 35.11,
+      "start_vis": 29.36
+    }
+  ]
+}
