@@ -1,0 +1,67 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/faa-ground-stop-still-in-effect-friday-night.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 35.96,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.18,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.92,
+      "idx": 0,
+      "vis_end": 6.2,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.2,
+      "end": 13.84,
+      "idx": 1,
+      "vis_end": 14.12,
+      "start_vis": 6.2
+    },
+    {
+      "kind": "beat",
+      "start": 14.12,
+      "end": 19.78,
+      "idx": 2,
+      "vis_end": 20.06,
+      "start_vis": 14.12
+    },
+    {
+      "kind": "beat",
+      "start": 20.06,
+      "end": 24.7,
+      "idx": 3,
+      "vis_end": 24.98,
+      "start_vis": 20.06
+    },
+    {
+      "kind": "beat",
+      "start": 24.98,
+      "end": 28.84,
+      "idx": 4,
+      "vis_end": 29.12,
+      "start_vis": 24.98
+    },
+    {
+      "kind": "outro",
+      "start": 29.12,
+      "end": 33.58,
+      "idx": 5,
+      "vis_end": 34.18,
+      "start_vis": 29.12
+    }
+  ]
+}
