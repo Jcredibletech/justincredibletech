@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/dram-price-fixing-lawsuit-samsung-sk-hynix-micron.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": true,
+  "duration": 32.75,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 31.02,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.95,
+      "idx": 0,
+      "vis_end": 6.23,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.23,
+      "end": 13.93,
+      "idx": 1,
+      "vis_end": 14.21,
+      "start_vis": 6.23
+    },
+    {
+      "kind": "beat",
+      "start": 14.21,
+      "end": 21.92,
+      "idx": 2,
+      "vis_end": 22.2,
+      "start_vis": 14.21
+    },
+    {
+      "kind": "beat",
+      "start": 22.2,
+      "end": 25.26,
+      "idx": 3,
+      "vis_end": 25.54,
+      "start_vis": 22.2
+    },
+    {
+      "kind": "outro",
+      "start": 25.54,
+      "end": 30.42,
+      "idx": 4,
+      "vis_end": 31.02,
+      "start_vis": 25.54
+    }
+  ]
+}
