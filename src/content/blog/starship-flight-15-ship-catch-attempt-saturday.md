@@ -34,7 +34,7 @@ The upper stage (Ship 42) reached orbit and deployed **26 Starlink V3 satellites
 
 A caught Ship would be the **first recovery of a Starship upper stage from orbit**. Reusing both stages is the core of SpaceX's plan to make launches far cheaper and more frequent, and Space.com notes Starship is slated to fly an Artemis III demonstration in Earth orbit in summer 2027. Even with the booster loss, a successful Ship catch would be a major milestone. A wave-off would not be a failure of the test by itself; it would mean the safety logic did its job again.
 
-We'll update this story once the outcome is known.
+**Update, Saturday evening:** SpaceX caught the Ship with the tower's chopstick arms at about 3:20 p.m. Central, the first-ever Starship upper-stage catch. Read the follow-up: [SpaceX Catches a Starship Upper Stage With Its Launch Tower for the First Time](https://justincredibletech.com/blog/spacex-catches-starship-ship-first-time/).
 
 **Sources:** [Space.com](https://www.space.com/space-exploration/launches-spacecraft/spacex-chopsticks-catch-starship-upper-stage-flight-14), [Space.com live updates](https://www.space.com/news/live/spacex-starship-flight-15-live-updates-nov-14-2026-starship-first-double-landing-attempt), [AFP](https://www.afp.com/en/spacexs-starship-set-return-earth-after-booster-catch-aborted)
 
