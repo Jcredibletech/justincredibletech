@@ -27,7 +27,7 @@ The rocket wore special black-and-gold livery for the occasion. It was Rocket La
 
 "Few rockets reach 100 launches in their total operational lifetime," Beck said in Rocket Lab's announcement. "The next 100 Electrons are already booked so we're only accelerating from here."
 
-The "fastest" record is Rocket Lab's own claim. Beck told Space.com it means Electron got there faster than even SpaceX's workhorse Falcon 9.
+The "fastest" record is Rocket Lab's own claim. According to Space.com, Beck says that means Electron got there faster than even SpaceX's workhorse Falcon 9.
 
 ## Why it matters
 
