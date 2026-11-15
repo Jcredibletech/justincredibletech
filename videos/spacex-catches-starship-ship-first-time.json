@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/spacex-catches-starship-ship-first-time.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": true,
+  "duration": 37.97,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 36.23,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.96,
+      "idx": 0,
+      "vis_end": 6.24,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.24,
+      "end": 14.76,
+      "idx": 1,
+      "vis_end": 15.04,
+      "start_vis": 6.24
+    },
+    {
+      "kind": "beat",
+      "start": 15.04,
+      "end": 20.84,
+      "idx": 2,
+      "vis_end": 21.12,
+      "start_vis": 15.04
+    },
+    {
+      "kind": "beat",
+      "start": 21.12,
+      "end": 28.39,
+      "idx": 3,
+      "vis_end": 28.67,
+      "start_vis": 21.12
+    },
+    {
+      "kind": "outro",
+      "start": 28.67,
+      "end": 35.63,
+      "idx": 4,
+      "vis_end": 36.23,
+      "start_vis": 28.67
+    }
+  ]
+}
