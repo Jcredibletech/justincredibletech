@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/microsoft-outage-hotel-pool-chlorine-alarm-email.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 39.41,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 37.7,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 7.47,
+      "idx": 0,
+      "vis_end": 7.75,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 7.75,
+      "end": 15.9,
+      "idx": 1,
+      "vis_end": 16.18,
+      "start_vis": 7.75
+    },
+    {
+      "kind": "beat",
+      "start": 16.18,
+      "end": 22.0,
+      "idx": 2,
+      "vis_end": 22.28,
+      "start_vis": 16.18
+    },
+    {
+      "kind": "beat",
+      "start": 22.28,
+      "end": 30.07,
+      "idx": 3,
+      "vis_end": 30.35,
+      "start_vis": 22.28
+    },
+    {
+      "kind": "outro",
+      "start": 30.35,
+      "end": 37.1,
+      "idx": 4,
+      "vis_end": 37.7,
+      "start_vis": 30.35
+    }
+  ]
+}
