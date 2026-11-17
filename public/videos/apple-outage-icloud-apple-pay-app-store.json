@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/apple-outage-icloud-apple-pay-app-store.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": false,
+  "duration": 35.84,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.12,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.72,
+      "idx": 0,
+      "vis_end": 4.0,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.0,
+      "end": 12.76,
+      "idx": 1,
+      "vis_end": 13.04,
+      "start_vis": 4.0
+    },
+    {
+      "kind": "beat",
+      "start": 13.04,
+      "end": 21.03,
+      "idx": 2,
+      "vis_end": 21.31,
+      "start_vis": 13.04
+    },
+    {
+      "kind": "beat",
+      "start": 21.31,
+      "end": 28.27,
+      "idx": 3,
+      "vis_end": 28.55,
+      "start_vis": 21.31
+    },
+    {
+      "kind": "outro",
+      "start": 28.55,
+      "end": 33.52,
+      "idx": 4,
+      "vis_end": 34.12,
+      "start_vis": 28.55
+    }
+  ]
+}
