@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/gta-6-reviews-99-metacritic-no-60fps.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 36.09,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.29,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 5.89,
+      "idx": 0,
+      "vis_end": 6.17,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 6.17,
+      "end": 14.48,
+      "idx": 1,
+      "vis_end": 14.76,
+      "start_vis": 6.17
+    },
+    {
+      "kind": "beat",
+      "start": 14.76,
+      "end": 21.58,
+      "idx": 2,
+      "vis_end": 21.86,
+      "start_vis": 14.76
+    },
+    {
+      "kind": "beat",
+      "start": 21.86,
+      "end": 26.79,
+      "idx": 3,
+      "vis_end": 27.07,
+      "start_vis": 21.86
+    },
+    {
+      "kind": "outro",
+      "start": 27.07,
+      "end": 33.69,
+      "idx": 4,
+      "vis_end": 34.29,
+      "start_vis": 27.07
+    }
+  ]
+}
