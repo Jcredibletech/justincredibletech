@@ -10,6 +10,8 @@ imageAlt: "An illustration of a Voyager spacecraft with its large dish antenna a
 imageCredit: "NASA/JPL / Public domain, via Wikimedia Commons"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/voyager-1-reaches-one-light-day-from-earth.mp4" poster="/justincredibletech/videos/voyager-1-reaches-one-light-day-from-earth.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 Send a text to Voyager 1 today and it won't arrive until tomorrow. Literally.
 
 ## What happened
@@ -44,6 +46,6 @@ The mission turns **50** next year. Voyager 2 is on a slower path and won't reac
 
 Voyager 1 is still measuring cosmic rays, particles and radio waves in a region of space we'd otherwise only know from theory. And it shows what a well-built machine from the 1970s can still do.
 
-**Sources:** [NASA Science](https://science.nasa.gov/resource/voyager-one-light-day-downloads/), [Space.com](https://www.space.com/space-exploration/voyager/1-light-day-from-earth-nasas-voyager-1-probe-hits-huge-milestone-in-interstellar-space)
+**Sources:** [NASA Science](https://science.nasa.gov/resource/voyager-one-light-day-downloads/), [Space.com](https://www.space.com/space-exploration/voyager/1-light-day-from-earth-nasas-voyager-1-probe-hits-huge-milestone-in-interstellar-space). Video images: NASA/JPL (public domain), via Wikimedia Commons.
 
 If you could add one thing to Voyager's Golden Record today, what would it be?
