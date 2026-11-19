@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/voyager-1-reaches-one-light-day-from-earth.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 32.46,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 30.73,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.72,
+      "idx": 0,
+      "vis_end": 5.0,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 5.0,
+      "end": 11.9,
+      "idx": 1,
+      "vis_end": 12.18,
+      "start_vis": 5.0
+    },
+    {
+      "kind": "beat",
+      "start": 12.18,
+      "end": 18.18,
+      "idx": 2,
+      "vis_end": 18.46,
+      "start_vis": 12.18
+    },
+    {
+      "kind": "beat",
+      "start": 18.46,
+      "end": 23.62,
+      "idx": 3,
+      "vis_end": 23.9,
+      "start_vis": 18.46
+    },
+    {
+      "kind": "outro",
+      "start": 23.9,
+      "end": 30.13,
+      "idx": 4,
+      "vis_end": 30.73,
+      "start_vis": 23.9
+    }
+  ]
+}
