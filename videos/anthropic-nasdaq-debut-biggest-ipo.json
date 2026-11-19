@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/anthropic-nasdaq-debut-biggest-ipo.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": false,
+  "duration": 34.18,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 32.39,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.69,
+      "idx": 0,
+      "vis_end": 3.97,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 3.97,
+      "end": 11.92,
+      "idx": 1,
+      "vis_end": 12.2,
+      "start_vis": 3.97
+    },
+    {
+      "kind": "beat",
+      "start": 12.2,
+      "end": 19.17,
+      "idx": 2,
+      "vis_end": 19.45,
+      "start_vis": 12.2
+    },
+    {
+      "kind": "beat",
+      "start": 19.45,
+      "end": 25.42,
+      "idx": 3,
+      "vis_end": 25.7,
+      "start_vis": 19.45
+    },
+    {
+      "kind": "outro",
+      "start": 25.7,
+      "end": 31.79,
+      "idx": 4,
+      "vis_end": 32.39,
+      "start_vis": 25.7
+    }
+  ]
+}
