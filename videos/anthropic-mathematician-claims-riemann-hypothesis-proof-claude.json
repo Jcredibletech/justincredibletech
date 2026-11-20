@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/anthropic-mathematician-claims-riemann-hypothesis-proof-claude.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 35.88,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.14,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.55,
+      "idx": 0,
+      "vis_end": 4.83,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.83,
+      "end": 12.12,
+      "idx": 1,
+      "vis_end": 12.4,
+      "start_vis": 4.83
+    },
+    {
+      "kind": "beat",
+      "start": 12.4,
+      "end": 20.84,
+      "idx": 2,
+      "vis_end": 21.12,
+      "start_vis": 12.4
+    },
+    {
+      "kind": "beat",
+      "start": 21.12,
+      "end": 27.83,
+      "idx": 3,
+      "vis_end": 28.11,
+      "start_vis": 21.12
+    },
+    {
+      "kind": "outro",
+      "start": 28.11,
+      "end": 33.54,
+      "idx": 4,
+      "vis_end": 34.14,
+      "start_vis": 28.11
+    }
+  ]
+}
