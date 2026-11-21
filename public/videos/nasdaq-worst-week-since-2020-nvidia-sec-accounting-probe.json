@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/nasdaq-worst-week-since-2020-nvidia-sec-accounting-probe.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 38.75,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 36.98,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.51,
+      "idx": 0,
+      "vis_end": 4.79,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.79,
+      "end": 12.31,
+      "idx": 1,
+      "vis_end": 12.59,
+      "start_vis": 4.79
+    },
+    {
+      "kind": "beat",
+      "start": 12.59,
+      "end": 21.18,
+      "idx": 2,
+      "vis_end": 21.46,
+      "start_vis": 12.59
+    },
+    {
+      "kind": "beat",
+      "start": 21.46,
+      "end": 28.43,
+      "idx": 3,
+      "vis_end": 28.71,
+      "start_vis": 21.46
+    },
+    {
+      "kind": "outro",
+      "start": 28.71,
+      "end": 36.38,
+      "idx": 4,
+      "vis_end": 36.98,
+      "start_vis": 28.71
+    }
+  ]
+}
