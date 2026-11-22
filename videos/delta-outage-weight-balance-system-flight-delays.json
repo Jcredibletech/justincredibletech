@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/delta-outage-weight-balance-system-flight-delays.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 30.14,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 28.42,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.58,
+      "idx": 0,
+      "vis_end": 3.86,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 3.86,
+      "end": 10.99,
+      "idx": 1,
+      "vis_end": 11.27,
+      "start_vis": 3.86
+    },
+    {
+      "kind": "beat",
+      "start": 11.27,
+      "end": 16.64,
+      "idx": 2,
+      "vis_end": 16.92,
+      "start_vis": 11.27
+    },
+    {
+      "kind": "beat",
+      "start": 16.92,
+      "end": 21.45,
+      "idx": 3,
+      "vis_end": 21.73,
+      "start_vis": 16.92
+    },
+    {
+      "kind": "outro",
+      "start": 21.73,
+      "end": 27.82,
+      "idx": 4,
+      "vis_end": 28.42,
+      "start_vis": 21.73
+    }
+  ]
+}
