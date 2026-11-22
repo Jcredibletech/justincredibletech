@@ -10,6 +10,8 @@ imageAlt: "A row of Sony PlayStation consoles from the original PlayStation to t
 imageCredit: "JDC808 / CC BY-SA 4.0, via Wikimedia Commons (illustrative: GTA 6 launched on PS5 and Xbox Series X|S)"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/gta-6-3-79-billion-first-day-sales-record.mp4" poster="/justincredibletech/videos/gta-6-3-79-billion-first-day-sales-record.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 We already knew Grand Theft Auto VI's launch broke the internet a little. Now we know how much money it made on day one, and the number is bigger than any movie has ever made in its entire run.
 
 ## What happened
