@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/tesla-fsd-v15-rollout-reality-view.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 33.52,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 31.81,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.3,
+      "idx": 0,
+      "vis_end": 4.58,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.58,
+      "end": 12.2,
+      "idx": 1,
+      "vis_end": 12.48,
+      "start_vis": 4.58
+    },
+    {
+      "kind": "beat",
+      "start": 12.48,
+      "end": 18.68,
+      "idx": 2,
+      "vis_end": 18.96,
+      "start_vis": 12.48
+    },
+    {
+      "kind": "beat",
+      "start": 18.96,
+      "end": 24.85,
+      "idx": 3,
+      "vis_end": 25.13,
+      "start_vis": 18.96
+    },
+    {
+      "kind": "outro",
+      "start": 25.13,
+      "end": 31.21,
+      "idx": 4,
+      "vis_end": 31.81,
+      "start_vis": 25.13
+    }
+  ]
+}

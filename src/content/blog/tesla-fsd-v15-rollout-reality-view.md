@@ -10,6 +10,8 @@ imageAlt: "The interior of a white and black Tesla Model Y with its steering whe
 imageCredit: "Ethan Llamas / CC BY-SA 4.0, via Wikimedia Commons (illustrative: Model Y interior, not showing FSD v15)"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/tesla-fsd-v15-rollout-reality-view.mp4" poster="/justincredibletech/videos/tesla-fsd-v15-rollout-reality-view.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 Tesla's biggest self-driving software update in months is reaching its first owners, and the screen is what everyone is talking about.
 
 ## What happened
@@ -20,8 +22,8 @@ Tesla's release notes, as published by [Electrek](https://electrek.co/2026/11/21
 
 - An upgraded vision system shared between FSD, Robotaxi and the Optimus robot, which Tesla says improves the **critical intervention rate by 25x**.
 - **Tesla Reality View**, a real-time generated visualization from a virtual camera above the car, which Tesla says lets you "see & control what FSD is planning to do."
-- Better detection of **road signs, potholes, debris, small animals and deep standing water**, and better speed handling in **school zones** and bad weather.
-- Driver monitoring that works more often with **hats and sunglasses**.
+- Better detection of **road signs, potholes, debris and small animals**, better avoidance of **deep standing water**, and better speed handling in **school zones** and bad weather.
+- Driver monitoring that works more often with **hats and sunglasses**, and is less strict in higher-speed driver profiles.
 - **Speed-camera slowdowns** (which drivers can cancel) and a **Bike Rack Mode** that allows FSD with a hitch accessory.
 
 ## Why people are talking about it
