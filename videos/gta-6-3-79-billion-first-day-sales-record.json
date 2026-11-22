@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/gta-6-3-79-billion-first-day-sales-record.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "card",
+  "style_auto": false,
+  "duration": 32.25,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 30.47,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 4.25,
+      "idx": 0,
+      "vis_end": 4.53,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 4.53,
+      "end": 12.03,
+      "idx": 1,
+      "vis_end": 12.31,
+      "start_vis": 4.53
+    },
+    {
+      "kind": "beat",
+      "start": 12.31,
+      "end": 16.93,
+      "idx": 2,
+      "vis_end": 17.21,
+      "start_vis": 12.31
+    },
+    {
+      "kind": "beat",
+      "start": 17.21,
+      "end": 22.47,
+      "idx": 3,
+      "vis_end": 22.75,
+      "start_vis": 17.21
+    },
+    {
+      "kind": "outro",
+      "start": 22.75,
+      "end": 29.87,
+      "idx": 4,
+      "vis_end": 30.47,
+      "start_vis": 22.75
+    }
+  ]
+}
