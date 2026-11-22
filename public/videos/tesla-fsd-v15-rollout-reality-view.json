@@ -3,14 +3,14 @@
   "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
   "rate": "n/a",
   "style": "clean",
-  "style_auto": true,
-  "duration": 33.52,
+  "style_auto": false,
+  "duration": 30.74,
   "width": 1080,
   "height": 1920,
   "vcodec": "h264",
   "acodec": "aac",
   "end_card": {
-    "start": 31.81,
+    "start": 28.97,
     "duration": 1.8,
     "url": "justincredibletech.com"
   },
@@ -18,42 +18,42 @@
     {
       "kind": "intro",
       "start": 0.3,
-      "end": 4.3,
+      "end": 2.51,
       "idx": 0,
-      "vis_end": 4.58,
+      "vis_end": 2.79,
       "start_vis": 0.0
     },
     {
       "kind": "beat",
-      "start": 4.58,
-      "end": 12.2,
+      "start": 2.79,
+      "end": 10.41,
       "idx": 1,
-      "vis_end": 12.48,
-      "start_vis": 4.58
+      "vis_end": 10.69,
+      "start_vis": 2.79
     },
     {
       "kind": "beat",
-      "start": 12.48,
-      "end": 18.68,
+      "start": 10.69,
+      "end": 15.83,
       "idx": 2,
-      "vis_end": 18.96,
-      "start_vis": 12.48
+      "vis_end": 16.11,
+      "start_vis": 10.69
     },
     {
       "kind": "beat",
-      "start": 18.96,
-      "end": 24.85,
+      "start": 16.11,
+      "end": 22.01,
       "idx": 3,
-      "vis_end": 25.13,
-      "start_vis": 18.96
+      "vis_end": 22.29,
+      "start_vis": 16.11
     },
     {
       "kind": "outro",
-      "start": 25.13,
-      "end": 31.21,
+      "start": 22.29,
+      "end": 28.37,
       "idx": 4,
-      "vis_end": 31.81,
-      "start_vis": 25.13
+      "vis_end": 28.97,
+      "start_vis": 22.29
     }
   ]
 }
