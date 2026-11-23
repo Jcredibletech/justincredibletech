@@ -10,6 +10,8 @@ imageAlt: "Jensen Huang speaking at Stanford in April 2026"
 imageCredit: "Anderseidesvik via Wikimedia Commons (CC BY-SA 4.0), file photo"
 ---
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/nvidia-reinstates-jensen-huang-ceo-stock-jumps.mp4" poster="/justincredibletech/videos/nvidia-reinstates-jensen-huang-ceo-stock-jumps.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 *This is an update to our November 17 story, [Jensen Huang Says He'd Return as Nvidia CEO; the Board Says It Doesn't Intend to Reinstate Him](/blog/nvidia-board-rejects-huang-return-earnings/).*
 
 Six days ago, Nvidia's board said it did not intend to bring Jensen Huang back. On Monday it did exactly that.
