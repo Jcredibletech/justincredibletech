@@ -12,6 +12,8 @@ imageCredit: "Santeri Viinamäki / CC BY-SA 4.0, via Wikimedia Commons (illustra
 
 Paying a monthly fee to turn on heated seats your car already has is about to be illegal in New York. But the new law has a long list of exceptions, so it won't end every in-car subscription.
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/new-york-bans-car-feature-subscription-fees.mp4" poster="/justincredibletech/videos/new-york-bans-car-feature-subscription-fees.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 ## What happened
 
 On Monday, Gov. Kathy Hochul [signed S.9348A/A.10411A](https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-signs-bill-restricting-exploitative-vehicle-subscription), which became Chapter 414 of 2026, according to the [state Senate's bill page](https://www.nysenate.gov/legislation/bills/2025/A10411). The bill passed the legislature in June and takes effect **February 27, 2027**.
@@ -45,3 +47,5 @@ For buyers, the takeaway is simple: starting in late February, a New York dealer
 **Sources:** [New York Governor's Office](https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-signs-bill-restricting-exploitative-vehicle-subscription), [NY Senate bill A10411A](https://www.nysenate.gov/legislation/bills/2025/A10411), [Spectrum News](https://spectrumlocalnews.com/nys/central-ny/news/2026/11/23/hochul-signs-law-to-restrict-built-in-car-feature-subscription-fees), [Subscription Insider](https://www.subscriptioninsider.com/blog/new-york-limits-what-automakers-can-sell-as-subscriptions)
 
 **Have you ever been asked to pay a subscription for something your car already had? Tell me on X.**
+
+*Video photos: Santeri Viinamäki and Beyond My Ken (CC BY-SA 4.0), via Wikimedia Commons.*

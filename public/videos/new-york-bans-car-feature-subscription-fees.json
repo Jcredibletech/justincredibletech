@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/new-york-bans-car-feature-subscription-fees.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 33.3,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 31.5,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 3.51,
+      "idx": 0,
+      "vis_end": 3.79,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 3.79,
+      "end": 13.74,
+      "idx": 1,
+      "vis_end": 14.02,
+      "start_vis": 3.79
+    },
+    {
+      "kind": "beat",
+      "start": 14.02,
+      "end": 20.99,
+      "idx": 2,
+      "vis_end": 21.27,
+      "start_vis": 14.02
+    },
+    {
+      "kind": "beat",
+      "start": 21.27,
+      "end": 24.15,
+      "idx": 3,
+      "vis_end": 24.43,
+      "start_vis": 21.27
+    },
+    {
+      "kind": "outro",
+      "start": 24.43,
+      "end": 30.9,
+      "idx": 4,
+      "vis_end": 31.5,
+      "start_vis": 24.43
+    }
+  ]
+}
