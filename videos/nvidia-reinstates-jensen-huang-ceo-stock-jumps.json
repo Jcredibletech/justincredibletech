@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/tiktok-pipeline/work/render-base-nvidia-reinstates-jensen-huang-ceo-stock-jumps-v3b.mp4",
+  "voice": "elevenlabs:Jason (Justin voice clone, energetic v3 stab 0)",
+  "rate": "n/a",
+  "style": "split",
+  "style_auto": false,
+  "duration": 30.62,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 28.86,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 2.4,
+      "idx": 0,
+      "vis_end": 2.68,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 2.68,
+      "end": 6.53,
+      "idx": 1,
+      "vis_end": 6.81,
+      "start_vis": 2.68
+    },
+    {
+      "kind": "beat",
+      "start": 6.81,
+      "end": 17.36,
+      "idx": 2,
+      "vis_end": 17.64,
+      "start_vis": 6.81
+    },
+    {
+      "kind": "beat",
+      "start": 17.64,
+      "end": 20.66,
+      "idx": 3,
+      "vis_end": 20.94,
+      "start_vis": 17.64
+    },
+    {
+      "kind": "outro",
+      "start": 20.94,
+      "end": 28.26,
+      "idx": 4,
+      "vis_end": 28.86,
+      "start_vis": 20.94
+    }
+  ]
+}
