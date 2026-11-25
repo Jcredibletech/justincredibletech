@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/cia-odni-unclassified-intelligence-system-hacked.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "clean",
+  "style_auto": true,
+  "duration": 33.27,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 31.49,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 2.86,
+      "idx": 0,
+      "vis_end": 3.14,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 3.14,
+      "end": 10.87,
+      "idx": 1,
+      "vis_end": 11.15,
+      "start_vis": 3.14
+    },
+    {
+      "kind": "beat",
+      "start": 11.15,
+      "end": 19.33,
+      "idx": 2,
+      "vis_end": 19.61,
+      "start_vis": 11.15
+    },
+    {
+      "kind": "beat",
+      "start": 19.61,
+      "end": 23.95,
+      "idx": 3,
+      "vis_end": 24.23,
+      "start_vis": 19.61
+    },
+    {
+      "kind": "outro",
+      "start": 24.23,
+      "end": 30.89,
+      "idx": 4,
+      "vis_end": 31.49,
+      "start_vis": 24.23
+    }
+  ]
+}
