@@ -9,6 +9,7 @@ import { withBase } from '../utils/paths';
 import SectionBadge from '../components/SectionBadge.astro';
 import { getPosts, sectionFor, sectionUrl, imageFor, formatDate, relatedPosts, postUrl, type Post } from '../utils/posts';
 import { SITE_AUTHOR, SITE_TITLE, SITE_X, CANONICAL_ORIGIN } from '../consts';
+import { organizationNode, websiteNode, authorNode, breadcrumbs, imageSize, responsiveImage, ORG_ID, SITE_ID, AUTHOR_ID } from '../utils/seo';
 
 interface Props { post: Post; }
 const { post } = Astro.props;
@@ -25,11 +26,39 @@ const idx = all.findIndex((p) => p.id === post.id);
 const more = all.filter((p) => p.id !== post.id && !related.includes(p)).slice(0, 5);
 const canonical = new URL(`/blog/${post.id}/`, CANONICAL_ORIGIN).href;
 const imgAbs = img ? new URL(img.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), ''), CANONICAL_ORIGIN).href : undefined;
+const heroDims = img ? await imageSize(img) : undefined;
+const heroResp = img ? await responsiveImage(img) : undefined;
+// Follow-up stories: UPDATE posts start with "This is an update to our ... story, [Title](/blog/<slug>/)".
+const UPDATE_RE = /This is an update to our[^\n]*?\]\((?:https:\/\/justincredibletech\.com)?(?:\/justincredibletech)?\/blog\/([a-z0-9-]+)\/?\)/i;
+const followUps = all.filter((p) => p.id !== post.id && p.data.pubDate >= post.data.pubDate && UPDATE_RE.exec(p.body ?? '')?.[1] === post.id);
+// Embedded video (first <video> in the body) -> VideoObject, so the clip can appear in video results.
+const vid = (post.body ?? '').match(/<video[^>]*\ssrc="([^"]+)"[^>]*>/);
+const vidPoster = vid?.[0].match(/poster="([^"]+)"/)?.[1];
+const abs = (u: string) => new URL(u.replace(/^\/justincredibletech(?=\/)/, ''), CANONICAL_ORIGIN).href;
+const videoNode = vid && vidPoster ? {
+  '@type': 'VideoObject', name: post.data.title, description: post.data.description,
+  thumbnailUrl: [abs(vidPoster)], contentUrl: abs(vid[1]), uploadDate: post.data.pubDate.toISOString(),
+  publisher: { '@id': ORG_ID },
+} : undefined;
 const jsonLd = {
-  '@context': 'https://schema.org', '@type': 'NewsArticle', headline: post.data.title, description: post.data.description,
-  datePublished: post.data.pubDate.toISOString(), dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
-  author: { '@type': 'Person', name: SITE_AUTHOR, url: SITE_X }, publisher: { '@type': 'Organization', name: SITE_TITLE, logo: { '@type': 'ImageObject', url: `${CANONICAL_ORIGIN}/logo.png` } },
-  mainEntityOfPage: canonical, articleSection: sec.name, keywords: post.data.tags.join(', '), ...(imgAbs ? { image: [imgAbs] } : {}),
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'NewsArticle', '@id': `${canonical}#article`, headline: post.data.title, description: post.data.description,
+      datePublished: post.data.pubDate.toISOString(), dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+      author: { '@id': AUTHOR_ID }, publisher: { '@id': ORG_ID }, isPartOf: { '@id': SITE_ID },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }, url: canonical,
+      articleSection: sec.name, keywords: post.data.tags.join(', '), inLanguage: 'en-US', isAccessibleForFree: true,
+      ...(imgAbs ? { image: [{ '@type': 'ImageObject', url: imgAbs, ...(heroDims ?? {}) }] } : { image: [`${CANONICAL_ORIGIN}/og-default.png`] }),
+      ...(videoNode ? { video: videoNode } : {}),
+    },
+    breadcrumbs([
+      { name: 'Home', url: `${CANONICAL_ORIGIN}/` },
+      { name: sec.name, url: `${CANONICAL_ORIGIN}/${sec.slug}/` },
+      { name: post.data.title, url: canonical },
+    ]),
+    organizationNode, websiteNode, authorNode,
+  ],
 };
 const shareText = encodeURIComponent(post.data.title);
 const shareUrl = encodeURIComponent(`${canonical}?utm_source=share&utm_medium=x`);
@@ -59,12 +88,14 @@ const shareUrl = encodeURIComponent(`${canonical}?utm_source=share&utm_medium=x`
     </header>
     {img && (
       <figure class="a-hero container-wide">
-        <img src={img} alt={post.data.imageAlt ?? ''} fetchpriority="high" />
+        <img src={img} srcset={heroResp?.srcset} sizes={heroResp ? '(max-width: 1140px) calc(100vw - 2.5rem), 1100px' : undefined} width={heroDims?.width} height={heroDims?.height} alt={post.data.imageAlt ?? ''} fetchpriority="high" decoding="async" />
         {post.data.imageCredit && <figcaption>Image: {post.data.imageCredit}</figcaption>}
       </figure>
     )}
     <div class="a-grid container">
-      <div class="a-body"><div class="prose"><slot /></div><PostActions slug={post.id} title={post.data.title} url={canonical} />{showPlugLife && <PlugLifeFeature variant="box" />}</div>
+      <div class="a-body">{followUps.length > 0 && (
+        <aside class="followup" aria-label="Follow-up coverage"><strong>Follow-up:</strong> {followUps.map((p, i) => <>{i > 0 && ' · '}<a href={postUrl(p)}>{p.data.title.replace(/^Update:\s*/i, '')}</a> <span>({formatDate(p.data.pubDate, 'short')})</span></>)}</aside>
+      )}<div class="prose"><slot /></div><PostActions slug={post.id} title={post.data.title} url={canonical} />{showPlugLife && <PlugLifeFeature variant="box" />}</div>
       <aside class="a-rail" aria-label="More stories">
         <h2 class="rail-h">Most recent</h2>
         <ol>{more.map((p) => <li><a href={postUrl(p)}>{p.data.title}</a><span>{formatDate(p.data.pubDate, 'short')}</span></li>)}</ol>
@@ -91,6 +122,8 @@ const shareUrl = encodeURIComponent(`${canonical}?utm_source=share&utm_medium=x`
 </BaseLayout>
 <style>
   .article { padding-top: 2rem; }
+  .followup { margin: 0 0 1.6rem; padding: .9rem 1.1rem; border-left: 4px solid var(--sec); background: var(--surface-2); border-radius: 6px; font: 500 .95rem/1.45 var(--font-sans); }
+  .followup a { color: var(--text); font-weight: 700; } .followup span { color: var(--muted); font-size: .85rem; }
   .a-head { max-width: 860px; }
   .a-sec { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
   .crumbs { display: flex; gap: .5rem; font: 700 .75rem/1 var(--font-sans); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
@@ -107,7 +140,7 @@ const shareUrl = encodeURIComponent(`${canonical}?utm_source=share&utm_medium=x`
   .share a:hover, .share button:hover { border-color: var(--text); }
   @media (max-width: 560px) { .share { display: none; } }
   .container-wide { width: min(1100px, 100% - 2.5rem); margin: 2rem auto 0; }
-  .a-hero img { width: 100%; max-height: 640px; object-fit: cover; border-radius: var(--radius); display: block; }
+  .a-hero img { width: 100%; height: auto; max-height: 640px; object-fit: cover; border-radius: var(--radius); display: block; }
   .a-hero figcaption { margin-top: .5rem; font: 500 .78rem/1.4 var(--font-sans); color: var(--muted); }
   .a-grid { display: grid; grid-template-columns: minmax(0, 680px) 280px; justify-content: center; gap: 4rem; margin-top: 2.2rem; }
   .a-rail { position: sticky; top: 4.5rem; align-self: start; font-family: var(--font-sans); }

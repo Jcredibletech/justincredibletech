@@ -10,7 +10,7 @@ featured: true
 
 <video controls playsinline preload="metadata" src="/justincredibletech/videos/iphone-duo-screen-crack-reports.mp4" poster="/justincredibletech/videos/iphone-duo-screen-crack-reports.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
 
-Apple's first foldable, the **iPhone Duo**, went on sale on **Friday, October 23** ([here's our launch rundown](/justincredibletech/blog/iphone-duo-foldable-launch/)). Two days later, the hot topic isn't the $1,999 price tag. It's photos of cracked screens.
+Apple's first foldable, the **iPhone Duo**, went on sale on **Friday, October 23** ([here's our launch rundown](/blog/iphone-duo-foldable-launch/)). Two days later, the hot topic isn't the $1,999 price tag. It's photos of cracked screens.
 
 ## What's being reported
 

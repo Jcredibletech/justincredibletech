@@ -96,6 +96,11 @@ Articles do **not** need a video or voiceover. Publish articles with photos in e
 picks only the most compelling stories across the network for social videos (TikTok, Reels, X). When a video
 exists, embed it as existing posts do (`/videos/<slug>.mp4` + `.png` poster).
 
+## SEO
+
+Follow `SEO-RULES.md` for titles, descriptions, slugs, internal links and tags. After a deploy is live,
+run `node scripts/indexnow.mjs` (no account needed; it submits the changed article URLs to IndexNow engines).
+
 ## Rules that never change
 
 - Never delete, move, rename or prune anything in `public/videos/` or `public/images/`.

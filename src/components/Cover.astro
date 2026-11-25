@@ -1,13 +1,16 @@
 ---
 import { imageFor, sectionFor, type Post } from '../utils/posts';
+import { responsiveImage } from '../utils/seo';
 interface Props { post: Post; eager?: boolean; sizes?: string; }
-const { post, eager = false } = Astro.props;
+const { post, eager = false, sizes } = Astro.props;
 const img = imageFor(post);
 const sec = sectionFor(post);
+const resp = img ? await responsiveImage(img) : undefined;
+const imgSizes = sizes ?? (eager ? '(max-width: 1000px) 100vw, 60vw' : '(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw');
 ---
 <div class={`cover sec-${sec.slug}`} style={`--sec-fill:${sec.colorTag}`}>
   {img ? (
-    <img src={img} alt={post.data.imageAlt ?? ''} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} />
+    <img src={img} srcset={resp?.srcset} sizes={resp ? imgSizes : undefined} width={resp?.width} height={resp?.height} alt={post.data.imageAlt ?? ''} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} />
   ) : (
     <div class="cover-fallback" aria-hidden="true">
       <span class="cf-sec">{sec.name}</span>
