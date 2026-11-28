@@ -12,6 +12,8 @@ imageCredit: "Beyond My Ken / CC BY-SA 4.0, via Wikimedia Commons (file photo, 2
 
 New York Gov. **Kathy Hochul** signed a law on **Tuesday, Nov. 24** that puts a **five-year moratorium** on making, distributing and selling toys with built-in AI chatbots in the state. That covers talking stuffed animals, dolls and robots that use the internet to hold conversations with kids. The ban takes effect **Feb. 22, 2027**, 90 days after signing, so it does not apply to this holiday season.
 
+<video controls playsinline preload="metadata" src="/justincredibletech/videos/new-york-bans-ai-chatbot-toys.mp4" poster="/justincredibletech/videos/new-york-bans-ai-chatbot-toys.png" style="width:100%;max-width:420px;display:block;margin:0 auto 1.5rem;border-radius:12px;"></video>
+
 ## What happened
 
 The bill, **S.9408A/A.11144B**, was sponsored by state Sen. Andrew Gounardes and Assemblymember Rebecca Kassay. According to the [governor's office](https://www.governor.ny.gov/news/consumers-begin-their-holiday-shopping-season-governor-hochul-signs-five-year-ban-ai-chatbot):
