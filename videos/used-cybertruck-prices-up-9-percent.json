@@ -1,0 +1,59 @@
+{
+  "out": "/workspace/justincredibletech/public/videos/used-cybertruck-prices-up-9-percent.mp4",
+  "voice": "elevenlabs:Chris - Charming, Down-to-Earth",
+  "rate": "n/a",
+  "style": "classic",
+  "style_auto": true,
+  "duration": 36.28,
+  "width": 1080,
+  "height": 1920,
+  "vcodec": "h264",
+  "acodec": "aac",
+  "end_card": {
+    "start": 34.49,
+    "duration": 1.8,
+    "url": "justincredibletech.com"
+  },
+  "timeline": [
+    {
+      "kind": "intro",
+      "start": 0.3,
+      "end": 2.51,
+      "idx": 0,
+      "vis_end": 2.79,
+      "start_vis": 0.0
+    },
+    {
+      "kind": "beat",
+      "start": 2.79,
+      "end": 11.68,
+      "idx": 1,
+      "vis_end": 11.96,
+      "start_vis": 2.79
+    },
+    {
+      "kind": "beat",
+      "start": 11.96,
+      "end": 20.21,
+      "idx": 2,
+      "vis_end": 20.49,
+      "start_vis": 11.96
+    },
+    {
+      "kind": "beat",
+      "start": 20.49,
+      "end": 28.27,
+      "idx": 3,
+      "vis_end": 28.55,
+      "start_vis": 20.49
+    },
+    {
+      "kind": "outro",
+      "start": 28.55,
+      "end": 33.89,
+      "idx": 4,
+      "vis_end": 34.49,
+      "start_vis": 28.55
+    }
+  ]
+}
